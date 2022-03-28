@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			img {
+				display: block;
+			}
+
+
+			.container {
+				width: 640px;
+				height: 340px;
+				margin: 100px auto;
+				position: relative;
+				background-color: #0000FF;
+			}
+
+			.title {
+				/* background-color: hsla(0, 100%, 50%, 1); */
+				/* background-image: linear-gradient(hsla(0, 100%, 50%, 0), hsla(0, 100%, 50%, 1)); */
+				background-image: linear-gradient(hsla(0, 100%, 0%, 0), hsla(0, 100%, 0%, 1));
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 490px;
+				height: 90px;
+				line-height: 90px;
+				color: white;
+				font-size: 1.2rem;
+			}
+
+
+
+			.bnt {
+				width: 80px;
+				height: 100px;
+				line-height: 160px;
+				background-image: url(./img/sprite.png);
+				background-repeat: no-repeat;
+				/* 不重复 */
+				color: white;
+				text-align: center;
+			}
+
+			.bntl {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				background-position: -260px -164px;
+				text-indent: -23px;
+			}
+
+			.bntl:hover {
+				/* background-color: hsla(0, 100%, 50%, 1); */
+				background-position: 0 -168px;
+				/* 使用背景图 */
+			}
+
+
+			.bntr {
+				position: absolute;
+				right: 0px;
+				top: 50%;
+				transform: translateY(-50%);
+				background-position: -130px -164px;
+				text-indent: 20px;
+			}
+
+			.bntr:hover {
+				/* background-color: hsla(0, 100%, 50%, 1); */
+				background-position: -310px 0px;
+			}
+
+
+			.sn {
+				position: absolute;
+				/* background-image: linear-gradient(hsla(0, 100%, 50%, 0), hsla(0, 100%, 50%, 1)); */
+				background-image: linear-gradient(hsla(0, 100%, 0%, 0), hsla(0, 100%, 0%, 1));
+				right: 0;
+				bottom: 0;
+				width: 150px;
+				height: 90px;
+				line-height: 150px;
+			}
+
+			.sn li {
+				display: inline-block;
+				width: 25px;
+				height: 7px;
+				background-color: hsla(0, 0%, 50%, 1);
+				transform: skewx(-25deg);
+			}
+
+			.sn li:hover {
+				background-color: hsla(0, 100%, 50%, 1);
+			}
+
+			.active {
+				background-color: red !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<img id="on" src="img/ia_100000024.jpg" />
+			<h2 class="title">[NBA]勇士104-89骑士 库里9三分砍40分</h2>
+			<div class="bnt bntl"><span>1/5</span></div>
+			<div class="bnt bntr"><span>1/5</span></div>
+			<ul class="sn">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<script type="text/javascript">
+				var oContainer = document.querySelector('.container')
+				var oImg = document.getElementById('on')
+				var oYou = document.querySelector('.bntr')
+				var oZou = document.querySelector('.bntl')
+				var oTitles = document.querySelector("h2")
+				var oSpan = document.querySelectorAll("span")
+				var oSn = document.querySelector("sn")
+				var last = 0
+				var aLi = document.querySelectorAll('li')
+				var imgUrls = ["img/ia_100000024.jpg", "img/ia_100000025.jpg", "img/ia_100000026.jpg",
+					"img/ia_100000027.jpg", "img/ia_100000028.jpg"
+				]
+
+				var imgSpan = ["1/5", "2/5", "3/5", "4/5", "5/5"]
+				var imgTitles = ["[NBA]勇士104-89骑士 库里9三分砍40分",
+					"国足全体抵达苏州 开始进行集中隔离",
+					"足协宣布水庆霞担任中国女足主教练 ",
+					"为中国足球奋斗！ 武磊30岁生日快乐！ ",
+					"张家齐与姆巴佩联动 为旅法大熊猫命名 "
+				]
+				var n = 0
+				var len = imgTitles.length
+				var timer = null
+
+				function autoplay() {
+					timer = setInterval(function() {
+						mycontainer(n)
+						n++
+						n %= len
+					}, 1000)
+				}
+				autoplay()
+				oContainer.onmouseover = function() {
+					//clearImmediate(timer)
+					clearInterval(timer)
+				}
+			
+				oContainer.onmouseout = autoplay
+
+
+				// oImg.src = imgUrls[0] //赋予值
+				// oTitles.innerHTML = imgTitles[0] //赋予值
+				// oSpan.innerHTML = imgSpan[0] //赋予值
+				// aLi[0].className = 'active' //赋予值
+				function mycontainer(num) {
+					oImg.src = imgUrls[num] //赋予值
+					oTitles.innerHTML = imgTitles[num] //赋予值
+					oSpan[0].innerHTML = oSpan[0 + 1].innerHTML = imgSpan[num] //赋予值
+					aLi[num].className = 'active' //赋予值
+					aLi[last].className = ''
+					last = num
+				}
+
+
+
+				oYou.onclick = function() {
+					aLi[last].className = ''
+					n++
+					if (n == len) {
+						n = 0
+					}
+					mycontainer(n)
+
+					// oImg.src = imgUrls[n] //赋予值
+					// oTitles.innerHTML = imgTitles[n] //赋予值
+					// oSpan[0].innerHTML = imgSpan[n] //赋予值
+					// oSpan[1].innerHTML = imgSpan[n] //赋予值
+					// aLi[n].className = 'active'
+					// last = n //清除=n
+				}
+				oZou.onclick = function() {
+					aLi[last].className = ''
+						--n
+					if (n == -1) {
+						n = 4
+					}
+					mycontainer(n)
+					// oImg.src = imgUrls[n]
+					// oTitles.innerHTML = imgTitles[n] //赋予值
+					// oSpan[0].innerHTML = imgSpan[n] //赋予值
+					// oSpan[1].innerHTML = imgSpan[n] //赋予值
+					// aLi[n].className = 'active'
+					// last = n
+				}
+				for (var i = 0; i < len; i++) {
+					aLi[i].index = i
+					aLi[i].onmouseover = function() {
+						mycontainer(this.index)
+						n = this.index
+
+						// this.className = 'active' //自定义当前  赋予值
+						// oImg.src = imgUrls[this.index] // 自定义当前   赋予值
+						// oTitles.innerHTML = imgTitles[this.index] //赋予值
+						// oYou.innerHTML = oZou.innerHTML = (this.index + 1) //  +"/"+len//赋予值
+						// aLi[last].className = '' // 赋予值
+						// last = this.index
+					}
+				}
+			</script>
+
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				margin: 0 auto;
+				width: 350px;
+				height: 200px;
+				border-radius: 10px;
+				transform: translate(0, 100px);
+				position: relative;
+				top: -240px;
+				background-color: red;
+				animation: dmad 500ms forwards, tmad 1s 501ms forwards;
+				/* animation-fill-mode: forwards; */
+				transform: rotate(0deg);
+			}
+
+			
+
+
+			@keyframes dmad {
+				0% {
+					top: -100px;
+				}
+
+				70% {
+					top: 200px;
+				}
+
+				100% {
+					top: 150px;
+				}
+			}
+
+			@keyframes tmad {
+				0% {
+					transform-origin: 5px 5px;
+					transform: rotate(70deg);
+					}
+
+					25% {transform-origin: 5px 5px;
+					transform: rotate(50deg);
+
+					}
+					75% {transform-origin: 5px 5px;
+					transform: rotate(60deg);
+
+					100% {transform-origin: 5px 5px;
+					transform: rotate(50deg);
+						
+					}
+				}
+
+
+
+				/* .box:hover{transform: rotate(45deg);
+				transform-origin:100px 100px;} */
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="box">
+
+			3D
+			幻影
+		</div>
+	</body>
+
+</html>

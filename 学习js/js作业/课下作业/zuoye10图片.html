@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			#center {
+				width: 500px;
+				height:600px;
+				display: flex;
+				flex-wrap: wrap;
+				margin: 100px auto;
+				background-image: url(img/p1ic.jpg);
+			}
+			.box {
+				width: 100px;
+				height: 100px;
+				border: 1PX solid #CCCCCC;
+				background-color: #CCCCCC;
+				flex-wrap: wrap;
+				/* border: 1px solid red; */
+				display: block;
+				
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="center" >
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+		<script type="text/javascript">
+        // var oBox = document.getElementById('box')
+		// oBox.onclick = function (){
+		// 	document.getElementById('box').style.display = 'none'
+			
+		// }
+		// document.getElementById("box").addEventListener("mouseover", mouseOver);
+		// document.getElementById("box").addEventListener("mouseout", mouseOut);
+		// alert(1)
+		// function mouseOver() {
+		//   document.getElementById('box').style.display = 'none';
+		// }
+		
+		// function mouseOut() {
+		//   document.getElementById('box').style.display = 'block';}
+	
+		
+		var aDiv = document.querySelectorAll('.box')//获取对象
+		
+		
+		for(var i=0;i<aDiv.length;i++){ //循环
+				
+			aDiv[i].onmouseover = function(){//鼠标划过的时候
+				this.style.background = 'none'//
+			}
+		}
+		// .onmouseover = funcion(){
+			
+		// }
+		</script>
+	</body>
+
+</html>

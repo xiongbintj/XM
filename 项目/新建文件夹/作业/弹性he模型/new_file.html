@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+	<head>
+		
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_2877804_lbymooig7li.css"/>
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+		
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			ul {
+				display: flex;
+				list-style: none;
+				flex-wrap: wrap;
+				background-color: #000;
+			}
+
+			li {
+				padding: .5rem 1rem;
+
+			}
+
+			a {
+				text-decoration: none;
+				color: #fff;
+				/* 	background-color: #00FF00; */
+
+			}
+			
+
+			.nav-logo {
+				flex-grow: 1;
+
+			}
+
+			.nav-icon {/* display: none; */}
+
+			.nav-link {}
+
+			.nav-link:hover {
+				background-color: #00FFFF;
+
+			}
+
+			.nav-link:hover a {
+				color: #000;
+
+			}
+
+			@media (max-width:480px) {
+				
+				ul li.nav-link {
+					/* flex-basis: 100%; */
+					text-align: center;
+				}
+			}
+			@media (max-width:440px){
+				.nav-link {display: none;}
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li class="nav-logo"><a href="#">BUHIOQ</a></li>
+			<li class="nav-icon"><a href="#">
+			<i class="iconfont icon-list"></i></a></li>
+			<li class="nav-link" id="bacc"><a href="#">首页</a></li>
+			<li class="nav-link"><a href="#">新闻</a></li>
+			<li class="nav-link"><a href="#">产品</a></li>
+			<li class="nav-link"><a href="#">关于</a></li>
+
+<script type="text/javascript">
+var btn=document.getElementById('icon')
+btn.onclick=function("bacc"){
+	document.getElementById("bacc").style.display='block'
+}
+</script>
+	</body>
+ 
+</html>

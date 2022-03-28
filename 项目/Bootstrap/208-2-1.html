@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+	</head>
+	<body>
+		<p>你好！张鹏，你的密码是123！</p>
+		<script type="text/javascript">
+			const params = location.search.substr(1)
+			const oP = documen.querySelector('p')
+			let str = ""
+			let array2 = []
+			console.log(params)
+			let array1 = params.split('&')
+			console.log(array1)
+			for(let i=0;i<array1.length;i++){
+				array2 = array1[i].split('=')
+				str+=`${array2[0]}:${array1[1]}`
+			}
+			console.log(str)
+			oP.innerHTML = str
+		</script>
+	</body>
+</html>

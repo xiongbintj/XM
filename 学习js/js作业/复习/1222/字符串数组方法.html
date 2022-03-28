@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+
+	<body>
+
+	</body>
+	<script>
+		let str = "   ABCDEFfcA"
+		let str1 = 'hDdgjKL'
+		let arr = [111, 13, 4, 12]
+		let arr1 = [5, 6, 7]
+		let arr2 = ['小红', '雄安', '小刚']
+		// ###字符串方法
+
+		document.write(str.charAt(5) + "<br />") //返回在指定位置的字符。C
+		document.write(str.charCodeAt(5) + "<br />") //返回在指定的位置的字符的 Unicode 编码。67
+		document.write(str.split(" ") + "<br />")//方法用于把一个字符串分割成字符串数组。
+		document.write(str.split("") + "<br />")
+		document.write(str.concat(str1) + "<br />") //连接字符串。ABCDEF hg
+		document.write(str.indexOf("A") + "<br />") //indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。3
+		document.write(str.indexOf("d") + "<br />") //结果为0-str.length或者就是-1(没找到)
+		document.write(str.lastIndexOf("A") + "<br />") //lastIndexOf() 方法可返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索 11
+		document.write(str.lastIndexOf("d") + "<br />") //-1
+		document.write(str.match("DE") + "<br />") //match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。DE
+		document.write(str.match("Fc") + "<br />") //没找打就是null
+		document.write(str.split(" ") + "<br />") //把字符串分割为字符串数组。,,,ABCDEFfcA
+		document.write(str.split("") + "<br />") //, , ,A,B,C,D,E,F,f,c,A
+
+		document.write(str.strike() + "<br />") //strike() 方法用于显示加删除线的字符串。
+
+		document.write(str.slice(5) + "<br />") //可提取字符串的某个部分，并以新的字符串返回被提取的部分。CDEFfcA
+		document.write(str.substr(5) + "<br />") //可提取字符串的某个部分，并以新的字符串返回被提取的部分。CDEFfcA
+		document.write(str.substring(5) + "<br />") //可提取字符串的某个部分，并以新的字符串返回被提取的部分。CDEFfcA
+
+		console.log(str.trim()) //去掉空白返回新的字符串
+		console.log(str.trimLeft()) //
+		console.log(str.trimRight()) //
+		console.log(arr.sort())
+		// ###数组方法
+		document.write(arr.concat(5) + "<br />") //1,3,4,2,5
+		document.write(arr.concat(5, 6) + "<br />") //1,3,4,2,5,6
+		document.write(arr.concat(arr1) + "<br />") //1,3,4,2,5,6,7
+		document.write(arr.toString() + "<br />"); // toString()方法，此方法表示把数组转化为字符串并返回结果
+		document.write(arr.join() + "<br />"); //join()方法，该方法把数组的所有元素放入一个字符串
+		document.write(arr.slice(0) + "<br />"); //slice()方法，这个方法表示从某个已有的数组返回选定的元素
+
+		document.write(arr.sort() + "<br />"); //sort()方法，该方法表明对数组的元素进行排序，一般是升序排列
+
+		document.write(arr.reverse() + "<br />"); //reverse()方法，这个方法表示颠倒数组中元素的顺序
+		// let arr3 = arr2.forEach(function(item, i, arr2) {
+		// 	text += i + ": " + item + "<br>";
+		// })
+		//forEach() 方法按顺序为数组中的每个元素调用一次函数。
+
+		let arr4 = arr.map(function(item) {//map() 方法使用为每个数组元素调用函数的结果创建新数组
+			return item + 1
+		})
+		document.write((arr4) + "<br />")
+		console.log(arr4)
+		let arr51 = arr.every(function(item) {// every() 方法检查数组中的所有元素是否都通过了测试（被作为函数提供）
+			return item > 10
+		})
+		document.write((arr51) + "<br />")//false
+		console.log(arr51)
+
+		let arr5 = arr.filter(function(item) { //filter()使用数组中通过测试的每个元素创建新数组。
+			return item > 10
+		})
+		document.write((arr5) + "<br />")
+		console.log(arr5)
+
+		let arr6 = arr.some(function(item) { //some() 方法检查数组中的任何元素是否通过测试（作为函数提供）。
+			return item > 10
+		})
+		document.write((arr6) + "<br />")
+		console.log(arr6)
+
+		let arr7 = arr.reduce(function(acc, item) {
+			return acc + item //reduce() 方法为数组的每个值（从左到右）执行提供的函数。函数的返回值存储在累加器中（结果/总计）。
+			// return acc - item//reduce() 方法将数组缩减为单个值，第一个值减去后面所有值
+		})
+		document.write((arr7) + "<br />")
+		console.log(arr7)
+		
+	</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>无标题文档</title>
+	</head>
+
+	<body>
+		<input type="text" id="text1" />
+		<ul id="ul1"></ul>
+	</body>
+	<script type="text/javascript">
+		let oInput = document.querySelector('input')
+		let oUl = document.querySelector('ul')
+		oInput.onkeyup = function(ev) {
+			if (oInput.value == "") {
+				alert("请输入文字")
+			} else {
+				if (ev.keyCode == 13 ) {
+					let oLi = document.createElement("li")
+					oLi.innerHTML = oInput.value
+					if (oUl.firstElementChild) { //firstElementChild()指向第一个子元素
+						oUl.insertBefore(oLi, oUl.firstElementChild) //insertBefore() 方法可在已有的子节点前插入一个新的子节点。
+					} else {
+						oUl.appendChild(oLi) //appendChild() 方法向节点添加最后一个子节点。
+					}
+					oInput.value = ""
+				}
+			}
+		}
+	</script>
+</html>

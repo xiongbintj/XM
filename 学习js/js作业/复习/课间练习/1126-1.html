@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			button {
+				margin: 0 auto;
+				width: 300px;
+				height: 50px;
+				border-radius: 50px;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body><button>登录</button>
+		<script type="text/javascript">
+			let arr = [20, -20, 18, -18, 16, -16, 14, -14, 12, -12, 10, -10, 8, -8, 6, -6, 4, -4, 2, -2, 0, -0]
+			let oBtn = document.querySelector("button")
+			let timer = null
+			let finished = false
+			let p = 0
+			let n = 0
+			oBtn.onclick = dou
+			// clearInterval(timer)
+			// timer = setInterval(dou, 50)
+			function dou() {
+				clearInterval(timer)
+				timer = setInterval(dou, 50)
+				if (!finished) {
+					p = parseInt(getComputedStyle(oBtn).left)
+					// console.log(p)
+					// finished = true
+				} else {
+					return
+				}
+
+				oBtn.style.left = p + arr[n] + 'px'
+				n++
+				if (n === arr.length) {
+					// clearInterval(timer)
+					// n = 0
+					// // finished = false
+					// finished = true
+
+				}
+			}
+		</script>
+	</body>
+</html>

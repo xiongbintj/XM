@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p {
+				width: 290px;
+				height: 200px;
+				border: 1px solid #0000FF;
+			}
+
+			a {
+				width: 10px;
+				height: 10px;
+				margin: 5px ;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text">
+		<input type="button" value="判断">
+		<p></p>
+		<script type="text/javascript">
+			var aInput = document.querySelectorAll('input')
+			var oP = document.querySelector('P')
+			var arrColor = ['#FFC', '#CC3', '#6FC', '#9C9'];
+			aInput[1].onclick = function() {
+				var str = aInput[0].value;//aInput[0].value是个字符串
+				var arr = str.split('');//split()将字符串转换成数组
+				for (var i = 0; i < arr.length; i++) {
+					arr[i] = '<a style="background:' + arrColor[i % arrColor.length] + ';">' + arr[i] + '</a>';//arr[i]arr数组中的每一个的样子是这样的==它们加了不同颜色在一个a标签里
+				}
+				oP.innerHTML += arr.join('')//split()将字符串转换成数组
+				aInput[0].value = ''
+			}
+		</script>
+	</body>
+</html>

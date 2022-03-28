@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table {
+				margin: 0 auto;
+			}
+
+			.box1 {
+				margin: 0 auto;
+				width: 300px;
+				height: 300px;
+				border: 1px solid #0000FF;
+			}
+
+			.box2 {
+
+				width: 400px;
+				height: 30px;
+				border: 1px solid #0000FF;
+			}
+
+			.box3 {
+				margin: 0 auto;
+				width: 300px;
+				height: 300px;
+				border: 1px solid #0000FF;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+
+
+		</table>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+
+		<script type="text/javascript">
+			const people = [{
+					firstName: 'Sam',
+					lastName: 'Hughes',
+					DOB: '07/07/1978',
+					department: '开发',
+					salary: '45000'
+				},
+				{
+					firstName: 'Terri',
+					lastName: 'Bishop',
+					DOB: '02/04/1989',
+					department: '开发',
+					salary: '35000'
+				},
+				{
+					firstName: 'Jar',
+					lastName: 'Burke',
+					DOB: '11/01/1985',
+					department: '市场',
+					salary: '38000'
+				},
+				{
+					firstName: 'Julio',
+					lastName: 'Miller',
+					DOB: '12/07/1991',
+					department: '销售',
+					salary: '40000'
+				},
+				{
+					firstName: 'Chester',
+					lastName: 'Flores',
+					DOB: '03/15/1988',
+					department: '开发',
+					salary: '41000'
+				},
+				{
+					firstName: 'Madison',
+					lastName: 'Marshall',
+					DOB: '09/22/1980',
+					department: '销售',
+					salary: '32000'
+				},
+				{
+					firstName: 'Ava',
+					lastName: 'Pena',
+					DOB: '11/02/1986',
+					department: '开发',
+					salary: '38000'
+				},
+				{
+					firstName: 'Gabriella',
+					lastName: 'Steward',
+					DOB: '08/26/1994',
+					department: '市场',
+					salary: '46000'
+				},
+				{
+					firstName: 'Charles',
+					lastName: 'Campbell',
+					DOB: '09/04/1977',
+					department: '销售',
+					salary: '42000'
+				},
+				{
+					firstName: 'Tiffany',
+					lastName: 'Lambert',
+					DOB: '05/11/1990',
+					department: '开发',
+					salary: '34000'
+				},
+				{
+					firstName: 'Antonio',
+					lastName: 'Gonzalez',
+					DOB: '03/24/1985',
+					department: '经理',
+					salary: '49000'
+				},
+				{
+					firstName: 'Aaron',
+					lastName: 'Garrett',
+					DOB: '09/04/1985',
+					department: '开发',
+					salary: '39000'
+				},
+			];
+			let oTable = document.querySelector("table")
+			let oBox1 = document.querySelector('.box1')
+			let oBox2 = document.querySelector('.box2')
+			let oBox3 = document.querySelector('.box3')
+			let str = ""
+			let str1 = ""
+			let result
+			//题1：把people数组中的数据用表格渲染在页面上
+			// people.forEach(function(v, i) {
+			// 	str +=
+			// 		`<tr><td> ${i + 1} </td><td>${v.firstName}${v.lastName}</td> <td>${v.DOB}</td><td>${v.department}</td> <td> ${v.salary}</td></tr>`})oTable.innerHTML = str
+
+			//数组：for (item of arr)item是数组的元素(Node 对象)
+			//对象：for (tey in item) tey是对象item项目值 
+			for (i of people) {
+				str += "<tr>"
+				for (tey in i) {
+					str += '<td>' + i[tey] + '</td>'
+				}
+				str += "</tr>"
+			}
+			oTable.innerHTML = str
+
+
+
+
+
+			//题2：筛选出people数组中年龄大于30的人
+			result = people.filter(function(i) {
+				return new Date().getFullYear() - new Date(i.DOB).getFullYear() > 30
+			})
+			console.log(result)
+			// oBox1.innerHTML = result
+
+
+
+			//题3：把people数组中所有人的人名			
+			// let result2 = people.map(v => `<p>${v.firstName}${v.lastName}</p>`)
+			// oBox2.innerHTML = (result2.join())
+			result = people.map(function(i) {
+				return i.firstName + '' + i.lastName
+			})
+			console.log(result)
+
+
+
+
+
+			//题4：按照年龄从小到大排序people数组
+			result = people.sort(function(a, b) {
+				return new Date(b.DOB) - new Date(a.DOB)
+			})
+			console.log(result)
+
+
+
+
+
+			//题5：求平均工资
+			let result1 = people.reduce(function(acc, i) {
+				return acc + Number(i.salary)
+			}, 0)/// people.length
+			console.log(result1 / people.length) //总数除以数组的长度
+			oBox3.innerHTML = (result1 / people.length)
+		</script>
+	</body>
+</html>

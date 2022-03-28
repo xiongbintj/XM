@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			.calendar {
+				margin: 50px auto;
+				width: 350px;
+				background-color: #444444;
+				color: white;
+				padding: 20px;
+			}
+
+			#box1 {
+				font-size: 26px;
+			}
+
+			#box2 {
+				padding: 0 0 20px 0;
+				/* font-size: 14px; */
+				color: #20B2AA;
+				border-bottom: 1px solid #999;
+			}
+
+			#box3 {
+				display: flex;
+				height: 21.33px;
+				line-height: 21.33px;
+				padding: 20px 0 0 0;
+
+			}
+
+			#btn2 {
+				/* float: right; */
+			}
+
+			#btn1 {
+				margin: 0 0 0 20px;
+			}
+
+			#box3 p {
+				flex-grow: 1;
+				float: left;
+			}
+
+			#box4 {
+				display: flex;
+				flex-wrap: wrap;
+				width: 350px;
+
+			}
+
+			#box4 span {
+				width: 30px;
+				flex-grow: 1;
+				padding: 10px;
+				text-align: center;
+
+
+			}
+
+			#box51 {
+				display: flex;
+				flex-wrap: wrap;
+
+			}
+
+			#box51 li {
+				padding: 10px;
+				flex-grow: 1;
+				width: 30px;
+				text-align: center;
+			}
+
+			.active {
+				background-color: #20B2AA;
+			}
+
+			.last {
+				color: #777;
+			}
+
+			.next {
+				color: #777;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="calendar">
+			<div id="box1"></div>
+			<div id="box2"></div>
+			<div id="box3">
+				<p id="p"></p><button id="btn1">上个月</button>
+				<button id="btn2">下个月</button>
+			</div>
+			<div id="box4">
+				<span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+			</div>
+			<div id="box5">
+				<ul id="box51">
+					<li class='last'>27</li>
+					<li class='last'>28</li>
+					<li class='last'>29</li>
+					<li class='last'>30</li>
+					<li class='last'>31</li>
+					<li>1</li>
+					<li class='active'>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+					<li>10</li>
+					<li>11</li>
+					<li>12</li>
+					<li>13</li>
+					<li>14</li>
+					<li>15</li>
+					<li>16</li>
+					<li>17</li>
+					<li>18</li>
+					<li>19</li>
+					<li>20</li>
+					<li>21</li>
+					<li>22</li>
+					<li>23</li>
+					<li>24</li>
+					<li>25</li>
+					<li>26</li>
+					<li>27</li>
+					<li>28</li>
+					<li>29</li>
+					<li>30</li>
+					<li>31</li>
+					<li class='next'>1</li>
+					<li class='next'>2</li>
+					<li class='next'>3</li>
+					<li class='next'>4</li>
+					<li class='next'>5</li>
+					<li class='next'>6</li>
+				</ul>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//需求分析
+			// h2: 时分秒
+			// p/div：年月日
+			// p: 年月   button*2
+			//星期几：方法1：从时间对象上获取再转换 方法2：['一','二','三'......]
+			//日期：
+			// <li>上月日期（数字1-31）</li> 
+			//<li>本月日期（数字1-31）</li>（必须）
+			//<li>下月日期（数字1-31）</li>
+			let time = null
+			let aBtn1 = document.getElementById('btn1')
+			let aBtn2 = document.getElementById('btn2')
+			let n = 0
+			let aWeek = ['一', '二', '三', '四', '五', '六', '日', ]
+			// function myTime() {
+			let nowDate = new Date()
+			let nowYear = nowDate.getFullYear()
+			let nowMonth = nowDate.getMonth() + 1
+			let nowDates = nowDate.getDate()
+			let nowHours = nowDate.getHours()
+			let nowMinutes = nowDate.getMinutes()
+			let nowgetSeconds = nowDate.getSeconds()
+			let text = document.getElementById('box1')
+			text.innerHTML = zero(nowHours) + ":" + zero(nowMinutes) + ':' + zero(nowgetSeconds)
+			let text1 = document.getElementById('box2')
+			text1.innerHTML = zero(nowYear) + "年" + zero(nowMonth) + '月' + zero(nowDates) + '日'
+			let text2 = document.getElementById('p')
+			text2.innerHTML = zero(nowYear) + "年" + zero(nowMonth) + '月'
+			let oUl = document.getElementById('box51')
+			let str = ""
+
+			function zero(n) {
+				return n < 10 ? "0" + n : n
+			}
+			// }
+			// myTime()
+			// time = setInterval(myTime, 1000);
+			// rende()
+
+			function rende() {
+				str = ""
+				text2.innerHTML = nowDate.getFullYear() + "年" + zero(nowDate.getMonth() + 1) + '月'
+				//拿到本月的最后一天
+				let lastDay = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 0).getDate()
+				//拿到本月首日对应的星期几
+				let nextDayNum = new Date(nowDate.getFullYear(), nowDate.getMonth(), 1).getDay()
+				//拿到上个月的最后一天
+				let lastMonthDay = new Date(nowDate.getFullYear(), nowDate.getMonth(), 0).getDate()
+				//拿到本月最后一天的星期几
+				let lastDayNum = new Date(nowDate.getFullYear(), nowDate.getMonth() + 1, 0).getDay()
+				console.log(lastDay)
+				for (let i = nextDayNum; i > 0; i--) {////for循环本月首日对应的星期几做基准
+					str += `<li class="last">${lastMonthDay-i+1}</li>`//让其上个月号数跟着本月的星期几依次连接
+				}
+				for (let i = 1; i <= lastDay - 1; i++) {//for循环用本月的最后一天的数做基准
+					str += `<li>${i}</li>`
+				}
+				for (let i = 0; i < 7 - lastDayNum; i++) {//for循环用本月最后一天的星期几做基准
+					str += `<li class="last">${i+1}</li>`//让其下个月号数跟着本月的星期几依次连接
+				}
+				oUl.innerHTML = str
+			}
+
+			console.log(str)
+
+			aBtn1.onclick = function() {
+				str = ""
+				nowDate.setMonth(nowDate.getMonth() - 1)//用当下月份减去一然后运用setMonth() 方法用于设置月份
+				rende()
+			}
+
+			aBtn2.onclick = function() {
+				str = ""
+				nowDate.setMonth(nowDate.getMonth() + 1)//用当下月份加上一然后运用setMonth() 方法用于设置月份
+				rende()
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text">
+		<input type="button" value="判断字符串">
+
+		<script type="text/javascript">
+			var aInput = document.querySelectorAll("input")
+			aInput[1].onclick = function() {
+				if (isNaN(aInput[0].value)) {
+					console.log('不是数字')
+				} else {
+					console.log('是数字')
+				}
+			}
+			console.log(typeof(true))
+			// console.log(parseFloat(a))
+			// console.log(isNaN('a2'))
+			console.log(Number(NaN === NaN))
+			console.log(Number('n' === 'n'))
+			console.log(NaN === NaN)
+			console.log('n' === 'n')
+			console.log(parseInt('23.45元'))
+			// var num = '12.34元'
+			// if(parseInt(num) == parseFloat(num)){
+			// 	console.log('整数')
+			// } else {
+			// 	console.log('小数')
+			// }
+		</script>
+	</body>
+</html>

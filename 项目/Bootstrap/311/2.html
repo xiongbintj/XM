@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+			}
+
+			.slider {
+				position: absolute;
+				width: 100vw;
+			}
+
+			.wrapper {
+				overflow: hidden;
+				position: relative;
+				width: 100vw;
+			}
+
+			.slides {
+				display: flex;
+				position: relative;
+				top: 0;
+				left: -100vm;
+				width: 10000px;
+			}
+
+			.slides.switch {
+				transition: left .8s;
+			}
+
+			.slide {
+				width: vw;
+			}
+
+			.slide img {
+				width: 100vw;
+			}
+
+			nav {
+				position: absolute;
+				left: 0;
+				right: 10px;
+				bottom: 10px;
+				text-align: center;
+				height: 10px;
+
+			}
+
+			nav span {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				margin: 0 15px;
+				border-radius: 50%;
+				background-color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slider">
+			<div class="wrapper">
+				<div class="slides">
+					<a href="#" class="slide"><img src="../img/1.jpg" alt=""></a>
+					<a href="#" class="slide"><img src="../img/2.jpg" alt=""></a>
+					<a href="#" class="slide"><img src="../img/3.jpg" alt=""></a>
+				</div>
+				<nav>
+					<span></span>
+					<span></span>
+					<span></span>
+				</nav>
+			</div>
+		</div>
+
+		cloneNode
+		<script type="text/javascript">
+			//获取元素
+			const slidePa = document.querySelector('.slides')
+			const nav = document.querySelector('nav')
+			const dots = document.querySelectorAll('nav san')
+			const slides = slidePa.querySelectorAll('.slide')
+			let slidesLen = slides.length
+			let slideW = slides[0].offsetWidth
+
+			let posX1 = 0,
+				posX2 = 0,
+				posPaX1 = 0,
+				index = 0,
+				distance = 0;
+			num = 100
+			let firstSlide = slides[0] //第一个子节点
+			let lastSlide = slides[slides.length - 1] //最后一个子节点
+
+			let cloneFirst = firstSlide.cloneNode(true) //克隆第一个子节点
+			let cloneLast = lastSlide.cloneNode(true) //克隆最后一个子节点
+			slidePa.appendChild(cloneFirst)
+			slidePa.insertBefore(cloneLast, firstSlide)
+			//添加事件
+			slidePa.addEventListener('touchstart', touchstart);
+			slidePa.addEventListener('touchmove', touchmove);
+			slidePa.addEventListener('touchend', touchend)
+			//Touche事件
+			function touchstart(ev) {
+				ev.preventDefault()
+				posX1 = ev.touches[0].clientX
+				posPaX1 = slidePa.offsetLeft
+			}
+
+			function touchmove(ev) {
+				//移动距离
+				distance = posX1 - ev.touches[0].clientX
+				posX1 = ev.touches[0].clientX
+				slidePa.style.left = slidePa.offsetLeft - distance + "px"
+			}
+
+			function touchend(ev) {
+				let posPaX2 = slidePa.offsetLeft
+				if (posPaX2 - posPaX1 < -num) {
+					switchSlide(-1)
+
+				} else if (posPaX2 - posPaX1 > num) {
+					switchSlide(1)
+
+				} else {
+					slidePa.style.left = posPaX1 + "px"
+
+				}
+			}
+
+			function switchSlide(dir) { //切换
+				slidePa.classList.add('switch')
+				if (dir === -1) {
+					slidePa.style.left = posPaX1 - slideW + 'px'
+					index++
+				} else if (dir === 1) {
+					slidePa.style.left = posPaX1 + slideW + 'px'
+					index--
+				}
+			}
+			slidePa.addEventListener('transitionend', function() {
+				slidePa.classList.remove('switch');
+				if (index == -1) {
+					slidePa.style.left = -(sildesLen * slideW) + "px"
+					index = slidesLen - 1
+				}
+				if (index == slidesLen) {
+					slidePa.style.left = -slideW + "px"
+					index = 0
+				}
+			})
+		</script>
+	</body>
+</html>

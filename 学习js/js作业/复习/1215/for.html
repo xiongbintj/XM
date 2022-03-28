@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				margin: 0;
+				width: 300px;
+				height: 200px;
+
+			}
+
+			div {
+				margin: 5px;
+				width: 50px;
+				height: 50px;
+				background-color: #0000FF;
+				position: absolute;
+			}
+
+			#btn {
+				position: relative;
+				left: 305px;
+				top: 0;
+			}
+		</style>
+
+	</head>
+	<body>
+		<p class="box"></p>
+		<button type="button" id="btn">开始</button>
+
+		<script type="text/javascript">
+			let oDiv = document.querySelector(".box")
+			let oBtn = document.querySelector("#btn")
+			let str = ""
+			let n = 0
+			oBtn.onclick = function() {
+				// for (var i = 0; i < 10; i++)
+				// 	document.body.innerHTML += (i)
+				// for (var i = 1; i < 10; i += 2)
+				// 	document.body.innerHTML += (i)
+				// str += '<div>' + (i) + '</div>'
+				// str += `<div style= "left:${i*50}px;top:${i*0}px;">${i}</div>`
+				// str += `<div style= "left:${i*0}px;top:${i*50}px;">${i}</div>`
+				if (n == 0) {
+					str = ''
+					for (var i = 0; i < 5; i++)
+						
+						// 上
+						if (i < 5 / 2) {
+							str += `<div style= "left:${i*50}px;top:${i*50}px;">${i}</div>`
+						} else {
+							str += `<div style= "left:${i*50}px;top:${(5-i-1)*50}px;">${i}</div>`
+						}
+					n++
+				} else if (n == 1) {
+					str = ''
+					for (var i = 0; i < 5; i++)
+						if (i < 5 / 2) {
+							str += `<div style= "left:${i*50}px;top:${(5-i-1)*50}px;">${i}</div>`
+						} else {
+							str += `<div style= "left:${i*50}px;top:${i*50}px;">${i}</div>`
+						} n++
+				} else if (n == 2) {
+					str = ''
+					for (var i = 0; i < 5; i++)
+						if (i < 5 / 2) {
+							str += `<div style= "left:${i*50}px;top:${i*50}px;">${i}</div>`
+						} else {
+							str += `<div style= "left:${(5-i-1)*50}px;top:${i*50}px;">${i}</div>`
+						} n++
+				} else if (n == 3) {
+					str = ''
+					for (var i = 0; i < 5; i++)
+						if (i < 5 / 2) {
+							str += `<div style= "left:${(5-i-1)*50}px;top:${i*50}px;">${i}</div>`
+						} else {
+							str += `<div style= "left:${i*50}px;top:${i*50}px;">${i}</div>`
+						}
+				}
+				oDiv.innerHTML = str
+			}
+		</script>
+
+
+	</body>
+</html>

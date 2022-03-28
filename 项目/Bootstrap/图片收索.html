@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.container div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid red;
+				background-size: cover;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text">
+		<button type="button">搜索</button>
+		<div class="container">
+			
+		</div>
+
+		<script type="text/javascript">
+			const oInput = document.querySelector('input')
+			const oBtn = document.querySelector('button')
+			const oDiv = document.querySelector('.container')
+			// search/
+			
+			//输入关键字，点击按钮
+			oBtn.onclick = function() {
+				showPhoto()
+			}
+			//通过AJAX从服务器获取相关数据
+			function showPhoto() {
+				const url = `https://api.unsplash.com/search/photos?query=${oInput.value}&page=1&client_id=3FzSIp3I7GOAqygcqEznknh5y5g4QA4P3vKUMHWRmSY`
+				let xhr = new XMLHttpRequest()
+				xhr.open('GET', url, true)
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						let data = JSON.parse(xhr.response)
+						console.log(data)
+						loadImages(data)
+					}
+				}
+				xhr.send()
+			}
+
+			//把数据写入dom里
+			function loadImages(data) {
+				oDiv.innerHTML = ""
+				for (let i = 0; i < data.results.length; i++){
+					// results.
+					let div = document.createElement('div')
+					div.style.backgroundImage = `url(${data.results[i].urls.regular})`
+					// .results
+						oDiv.appendChild(div)
+					console.log(oDiv.innerHTML)
+				}
+			}
+			window.onload = dayNightMode()
+
+			function dayNightMode() {
+				let date = new Data()
+				let hour = date.getHours()
+				if (hour < 7 || hour > 19) {
+					document.body.style.backgroundColor = "#222"
+					document.body.style.color = "#fff"
+				} else {
+					document.body.style.backgroundColor = "#00FFFF"
+					document.body.style.color = "#222"
+				}
+			}
+		</script>
+	</body>
+</html>

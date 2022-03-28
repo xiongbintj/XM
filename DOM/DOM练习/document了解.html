@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 1. 把<html>的背景色设置为红色 -->
+
+		<!-- 1. 把<html>的背景色设置为红色 -->
+		<h1>一级标题</h1>
+		<h2>二级标题</h2>
+		<h2>二级标题</h2>
+		<p>段落一文本。<a
+				href="http://www.baidu.com">百度</a>。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。<a
+				href="http://www.sina.com">新浪体育</a>段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。段落一文本。</p>
+		<p>段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。<a
+				href="http://www.164.com">网易邮箱</a>。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。段落二文本。
+		</p>
+		<img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="">
+		<img src="https://n.sinaimg.cn/sports/transform/180/w640h340/20220102/92b3-fd535cb8ec2f3cdbf2c35fbd88bb2962.jpg"
+			alt="">
+		<form action="">
+			<input type="text" id="" value="" /> <br>
+			<input type="password" name="" />
+		</form>
+
+		<form action="">
+			<input type="text" id="" value="" /><br>
+			<input type="password" name="" />
+		</form>
+
+
+		<script type="text/javascript">
+			console.log(document)//根对象
+			document.documentElement.style.backgroundColor = "red"//html对象
+			document.body.style.backgroundImage = 'linear-gradient(120deg, orange, #159957)';
+			//方法1：直接下表修改
+			// document.images[0].style.border = "10px solid blue"
+			// document.images[1].style.border = "10px solid blue"
+            //方法2：Array.from循环修改
+			Array.from(document.images).forEach(function(item) {
+				item.style.border = "10px solid blue"
+			})
+			Array.from(document.images).forEach(item => item.style.border = "10px solid blue")
+			
+			
+			
+		</script>
+	</body>
+</html>

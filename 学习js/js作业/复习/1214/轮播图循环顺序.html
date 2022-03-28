@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.container {
+				width: 550px;
+				height: 388px;
+				margin: 100px auto;
+				position: relative;
+				/* 相对定位 */
+				background-color: #0000FF;
+			}
+
+			img {
+				position: absolute;
+				/* 绝对定位 */
+				top: 20%;
+				/* 	transform: rotatex(100%);/* 定义沿着 Y 轴的 3D 旋转。 */
+				*/ display: block;
+			}
+
+			.links {
+				margin: 30px auto;
+				position: absolute;
+				/* 绝对定位 */
+				right: 205px;
+				display: block;
+			}
+
+			#you {
+				top: 50%;
+				right: 0;
+			}
+
+			#zuo {
+				top: 50%;
+				left: 0;
+			}
+
+			.tips {
+				margin: 0 auto;
+				width: 300px;
+				height: 180px;
+				position: absolute;
+				/* 绝对定位 */
+				top: 30%;
+				/* 离定位对象上内边距向下92% */
+				right: 130px;
+				background-color: #FFFFFF;
+				color: #555555;
+				text-align: center;
+				display: none;
+			}
+
+			#p {
+				margin: 0 auto;
+				position: absolute;
+				/* 绝对定位 */
+				top: 92%;
+				/* 离定位对象上内边距向下92% */
+				right: 240px;
+				color: #FF0000;
+			}
+
+			#sn {
+				margin: 0 auto;
+				position: absolute;
+				/* 绝对定位 */
+				top: 20%;
+				/* 离定位对象上内边距向下20% */
+				right: 265px;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+
+			<div class="links">
+				<button class="box1">循环切换</button>
+				<button id="box2">顺序切换</button>
+			</div>
+
+			<img id="on" src="../img/img01.jpg" />
+			<img id="you" src="../img/next.png" />
+			<img id="zuo" src="../img/prev.png" />
+			<div class="tips">
+				<p>抱歉！已到第一张！</p>
+				<button class="shut">确定</button>
+				<img class="shut-icon" src="images/close.png" alt="关闭">
+			</div>
+			<p id="p">犀牛战车</p>
+			<span id="sn">1/4</span>
+		</div>
+		<script type="text/javascript">
+			var oImg = document.getElementById('on')
+			var oYou = document.getElementById('you')
+			var oZou = document.getElementById('zuo')
+			var oBox1 = document.querySelector('.box1')
+			var oBox2 = document.getElementById('box2')
+			var oTips = document.querySelector('.tips')
+			var oTitles = document.querySelector("#p")
+			var oSn = document.querySelector("#sn")
+			var oA = document.querySelector("#a")
+			var imgUrls = ["../img/img01.jpg", "../img/img02.jpg", "../img/img03.jpg", "../img/img04.jpg"]
+			var imgTitles = ["犀牛战车", "双瞳探索机", "星际战甲", "宇宙飞行器"]
+			var imgSn = ["1/4", "2/4", "3/4", "4/4"]
+			var imgoA = ["图片只能顺序切换", "图片可以循环切换"]
+			var n = 0
+			var on = true
+
+			oImg.src = imgUrls[0]
+			oTitles.innerHTML = imgTitles[0]
+			oSn.innerHTML = imgSn[0]
+
+			oBox1.onclick = function() { // 点击左边的按钮时候执行函数体
+				on = true //变量n是真的
+			}
+			oBox2.onclick = function() {
+
+				on = false // 点击右边的按钮时候变量n是假的
+			}
+
+			oYou.onclick = function() {
+					n++
+					if (n == 3) { //点击右边的时候变量n等于3的时候
+						if (on) { //如果变量on为真的时候(循环)
+							n = 0 // 就让变量n等于0
+						} else { //如果变量on为假的时候(顺序)
+							n = 3 //就让变量n等于3
+							oTips.style.display = 'block';
+						}
+
+						// if (on) {
+						// 	n < 4 ? n++ : n = 1;
+						// } else {
+						// 	n < 4 ? n++ : n = 4;
+						// 	if (n == 4) {
+						// 		oTips.style.display = 'block';
+						// 	}
+						// }
+						oImg.src = imgUrls[n] // oIMg的src属性等于"img/img01.jpg"
+						oTitles.innerHTML = imgTitles[n]
+						oSn.innerHTML = imgSn[n]
+					}}
+
+					oZou.onclick = function() { //点击左边的时候
+						// alert(n)
+						n--
+						if (n == -1) { //点击左边的时候变量n等于-1的时候
+							if (on) { //如果变量on为真的时候(循环)
+								n = 3 // 就让变量n等于3
+							} else { //如果变量on为假的时候(顺序)
+								n = 0 //就让变量n等于0
+							}
+						}
+
+
+						oImg.src = imgUrls[n]
+						oTitles.innerHTML = imgTitles[n]
+						oSn.innerHTML = imgSn[n]
+}
+					
+		</script>
+	</body>
+</html>

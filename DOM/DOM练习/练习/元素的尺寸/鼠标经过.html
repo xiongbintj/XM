@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box2 {
+				width: 100px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+				left: -100px;
+				top: 100px;
+			}
+
+			.box1 {
+				width: 20px;
+				height: 100px;
+				background-color: #000000;
+				color: #fff;
+				position: absolute;
+				left: 100px;
+				top: 0
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box2">
+			<div class="box1">分享到</div>
+		</div>
+		<script type="text/javascript">
+			let oBox2 = document.querySelector('.box2')
+			let oBnt = document.querySelector('.box1')
+			oBox2.onmouseover = function() {
+				oBox2.style.left = "0px"
+			}
+			oBox2.onmouseout = function() {
+				oBox2.style.left = "-100px"
+			}
+		</script>
+	</body>
+</html>

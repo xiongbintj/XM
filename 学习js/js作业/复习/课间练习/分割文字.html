@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box {
+				width: 200px;
+				height: 100px;
+				border: 1px solid black;
+
+
+			}
+		/* 	span{
+				background-color: red;
+			} */
+
+			span:nth-child(odd) {
+				background-color: red;
+			}
+
+			span:nth-child(even) {
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+
+		</div>
+		<input type="text">
+		<input type="button" value="按钮" />
+		<script type="text/javascript">
+			// 要求：使用split方法。点击按钮，把获取到的字符放入div里面，并且每一个字符带有不同的背景色
+			let oDiv = document.querySelector('.box')
+			let aInput = document.querySelectorAll('input')
+			let arr = ['red', 'yellow', 'blue', 'green']
+			let oSpan = document.querySelector('span')
+			let str1 = ""
+			let str2 = ""
+			var n = 0
+
+			aInput[1].onclick = function() {
+				str1 = aInput[0].value //它本生就是字符串
+				// for (let i = 0; i < str1.length; i++) {
+				// 	str2 += String.fromCharCode(str1.charCodeAt(i))
+				// }
+				// oDiv.innerHTML = str2
+				// oDiv.innerHTML= str2.split("")
+				str2 = str1.split("") //然后把它分割成多个数据
+				// console.log(str2)
+				for (var i = 0; i < str2.length; i++) {
+					str2[i] = '<span>' + str2[i] + '</span>'
+				}
+				oDiv.innerHTML = str2
+				// let oSpan = document.querySelector('span')
+				// for (var i = 0; i < str2.length; i++) {
+				// 	oSpan[i].backgroundColor = arr[n]
+				// 	if (i > str2.length) {
+				// 		oSpan[i].style.backgroundColor = arr[0]
+				// 	} else {
+				// 		oSpan[i].style.backgroundColor = arr[str2.length - 1]
+				// 	}
+				// }
+			}
+		</script>

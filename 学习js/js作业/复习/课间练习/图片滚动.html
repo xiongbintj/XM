@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arr = ["img/img01.jpg", "img/img02.jpg", "img/img03.jpg", "img/img04.jpg"]
+			let n = 0
+			let timer = null
+
+			function changdebg() {
+			
+					clearInterval(timer)
+				
+				document.body.style.backgroundImage = url(arr{n})
+			}	timer = setInterval(changdebg,10)
+			
+		</script>
+	</body>
+</html>

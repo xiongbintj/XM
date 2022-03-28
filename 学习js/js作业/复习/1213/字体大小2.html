@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#container {
+				margin: 10px auto;
+				/* border: 1px solid red; */
+			}
+
+			button {
+				margin: 0;
+				width: 30px;
+				height: 30px;
+			}
+
+			.bo1 {
+				width: 400px;
+				border: 10px solid #00518D;
+				background-color: #FCF913;
+				color: #000000;
+				 !important;
+			}
+
+			.bo2 {
+				width: 400px;
+				border: 10px solid #00518D;
+				background-color: red;
+				color: magenta;
+				 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<button id="btn1">+</button><button id="btn2">-</button><button id="btn3">黄</button><button
+				id="btn4">红</button>
+			<p id="p">开垦南泥湾
+				1937年卢沟桥事变爆发后，全面抗战开始，中国共产党提出的抗日民族统一战线，开启了国共第二次合作。工农红军被改编为八路军，在敌后战场上进行游击战术，与正面战场配合完成军事打击，共同抗击着侵略的外敌。
+
+				然而，行军打仗除了优秀的战术指挥，士兵的英勇果敢，还有一个非常重要的因素，就是后勤补给。
+
+				虽然当时的八路军归属国军战斗序列，但是蒋介石一直担心共产党方面做大做强，对自己的未来产生威胁，所以常常克扣军饷，物资供应的也不到位，这样一来，无数八路军战士的吃穿用度就成了一个重要的问题。</p>
+		</div>
+		<script type="text/javascript">
+			let oDiv = document.getElementById("container")
+			let oP = document.getElementById("p")
+			let dXz = 14
+			document.getElementById("btn1").onclick = function() {
+				// if (dXz < 24) {
+				// 	dXz += 1
+				dXz < 24 ? dXz++ : dXz = 24
+				oP.style.fontSize = dXz + "px";
+				// }
+			}
+			document.getElementById("btn2").onclick = function() {
+				if (dXz > 10) {
+					dXz -= 1
+					oP.style.fontSize = dXz + "px";
+				}
+			}
+			document.getElementById("btn3").onclick = function() {
+				// document.getElementById('container')
+				oDiv.className = 'bo1'
+			}
+			document.getElementById("btn4").onclick = function() {
+				// document.getElementById('container')
+				oDiv.className = 'bo2'
+			}
+		</script>
+	</body>
+</html>

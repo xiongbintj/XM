@@ -1,0 +1,6 @@
+// var aaa; // 定义变量
+// aaa = window.prompt("你是谁？","请输入")
+// window.alert(aaa);	
+
+
+	

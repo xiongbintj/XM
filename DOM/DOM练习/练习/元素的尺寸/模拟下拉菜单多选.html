@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>模拟select - 多选</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul {
+				padding: 0;
+				margin: 0;
+			}
+
+			li {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+				color: #000;
+				display: block;
+			}
+
+			#div1 {
+				width: 250px;
+				height: 20px;
+				border: 1px solid #fe6601;
+				padding: 5px;
+				line-height: 20px;
+				margin: 20px auto 0 auto;
+			}
+
+			#ul1 {
+				margin: 0 auto;
+				width: 260px;
+				line-height: 20px;
+				border: 1px solid #fe6601;
+				display: none;
+			}
+
+			#ul1 li a {
+				padding: 5px;
+			}
+
+			#ul1 li a:hover {
+				background: #fe6601;
+				color: #fff;
+			}	
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		<div id="div1">按住shift多选</div>
+		<ul id="ul1">
+			<li><a href="javascript:;">宋体</a></li>
+			<li><a href="javascript:;">黑体</a></li>
+			<li><a href="javascript:;">楷体</a></li>
+			<li><a href="javascript:;">微软雅黑</a></li>
+			<li><a href="javascript:;">新宋体</a></li>
+			<li><a href="javascript:;">仿宋</a></li>
+		</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+	    let oDiv = document.querySelector('.box')
+		let oBox = document.querySelector('#div1')
+		let oUl = document.querySelector('#ul1')
+		let aLi = document.querySelectorAll('li')
+		
+		oBox.onclick = function fn() {
+			oUl.style.display = "block"
+			oBox.innerHTML = ""
+			document.onkeydown = function(ev) {
+				if (ev.keyCode == 16) {
+					for (let i = 0; i < aLi.length; i++) {
+						let aA = aLi[i].querySelector('a')
+						aLi[i].onclick = function() {
+							oBox.innerHTML += aA.innerHTML + ","
+						}
+					}
+				}
+			}
+		}
+		document.oncontextmenu = function(fn) {
+			oUl.style.display = "none"
+			
+		}
+		
+	</script>
+</html>

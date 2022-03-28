@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				/* background-color: #eee; */
+			}
+
+			#Canvas {
+				box-shadow: 0px 0px 30px black;
+				background-color: #F4F4F4;
+				position: absolute;
+				left: 100px;
+				top: 50px
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="Canvas"></canvas>
+		<script>
+			var canvas = document.querySelector("#Canvas");
+			var ctx = canvas.getContext("2d"); //引入绘图环境2d
+			canvas.width = 400
+			canvas.height = 400
+
+			ctx.save() //保存了27行之前ctx对象的状态，内存栈
+			ctx.fillStyle = "red"
+			ctx.fillRect(10, 10, 100, 100)
+			
+            ctx.restore()//重新存储
+			ctx.fillRect(150, 50, 100, 100)
+		</script>
+	</body>
+</html>

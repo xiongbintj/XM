@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				/* background-color: #eee; */
+			}
+
+			#Canvas {
+				box-shadow: 0px 0px 30px black;
+				background-color: #F4F4F4;
+				position: absolute;
+				left: 100px;
+				top: 50px
+			}
+		</style>
+		<script src="../Packaging/ball.js" type="text/javascript">
+
+		</script>
+	</head>
+	<body>
+		<canvas id="Canvas"></canvas>
+		<script>
+			const canvas = document.querySelector("#Canvas");
+			const ctx = canvas.getContext("2d"); //引入绘图环境2d
+			let cW = canvas.width = 800
+			let cH = canvas.height = 400
+			let mouse = C.getMousePos(canvas)
+			//实例化一个箭头对象
+			let arrow = new Arrow({
+				x: cW / 2,
+				y: cH / 2,
+				w: 100,
+				h: 40
+			}).render(ctx) //箭头应该显示在上面
+
+			;(function rotateFn() {
+				window.requestAnimationFrame(rotateFn)
+				ctx.clearRect(0, 0, cW, cH)
+				arrow.rotation += 5 * Math.PI / 180//rotation角度
+				arrow.render(ctx)
+			})()
+		</script>
+	</body>
+</html>

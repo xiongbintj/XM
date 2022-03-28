@@ -1,0 +1,161 @@
+/* 全局属性 */
+*,
+*::before,
+*::after{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+html{
+	font:62.5%/1.6 bold Helvetica,Arial,PingFang SC,"Hiragino Sans GB","Source Han Sans CN",Roboto,"\5fae\8f6f\96c5\9ed1","sans-serif";
+}
+body{
+	font-size:1.6rem;
+}
+h1{
+	font-size:3.2rem;
+}
+h2{
+	font-size:2.4rem;
+}
+h3{
+	font-size:2rem;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	/* text-decoration: underline; */
+}
+ul,li,ol{
+	list-style: none;
+}
+img{
+	/* display:block; */
+	vertical-align: bottom;
+	/* 干掉图片下面的空隙 */
+}
+a img{
+	border:none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.container{
+	width:100%;
+	max-width:1130px;
+	margin:0 auto;
+}
+
+/* 变量 */
+:root {
+ --dark-blue: hsl(233, 26%, 24%);
+ --lime-green: hsl(136, 65%, 51%);
+ --bright-cyan: hsl(192, 70%, 51%);
+ --grayish-blue: hsl(233, 8%, 62%);
+ --light-grayish-blue: hsl(220, 16%, 96%);
+ --very-light-gray: hsl(0, 0%, 98%);
+ --white: hsl(0, 0%, 100%);
+ --black: hsl(0, 0%, 0%);
+}
+/* 公共类 */
+.s{
+	padding:1rem;
+}
+.m{
+	padding:2rem;
+}
+.l{
+	padding:3rem;
+}
+
+/* header样式 */
+header{
+	/* background-color:red ; */
+	height:6rem;
+}
+.container{
+	
+}
+.flexbox{
+	display: flex;
+	/* background-color: gold; */
+	gap:3rem;
+	height:6rem;
+	align-items: center;
+}
+.site-logo{
+	flex-grow: 1;
+	/* background-color:yellow; */
+}
+.site-logo img{
+	max-width:13.9rem;
+}
+.site-nav a{
+	/* background-color: aqua; */
+	padding:0 2rem;
+	display: inline-block;
+	height:6rem;
+	line-height: 6rem;
+	position: relative;
+}
+.site-nav a::before{
+	content:"";
+	width:100%;
+	height:.3rem;
+	background-color:red ;
+	position:absolute;
+	left:0;
+	bottom:0;
+	transform: scaleX(0);
+	transition: .3s;
+}
+.site-nav a:hover::before{
+	transform: scaleX(1);
+}
+.btn-login{
+	padding:.3rem 1.2rem;
+	background-color:var(--black);
+	color:var(--white);
+}
+
+/* breaking-news样式 */
+.grid1{
+	display: grid;
+	grid-template-columns:repeat(auto-fill,minmax(565px,1fr));
+}
+.grid1 img{
+	width:100%;
+}
+.grid2{
+	display: grid;
+	grid-template-columns:repeat(auto-fill,minmax(50%,1fr));
+}
+
+/* aside样式 */
+/* footer样式 */
+/* 手机  */
+/* 平板 */
+/* 电脑端 */
+/* 动画 */
+
+
+
+
+
+
+main{
+	background-color:greenyellow;
+}
+
+aside{
+	background-color:lightgoldenrodyellow;
+}
+footer{
+	background-color:greenyellow;
+}
+
+section{
+	background-color:pink;
+}

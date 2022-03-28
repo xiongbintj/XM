@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			button {
+				margin: 0 auto;
+				width: 80px;
+				height: 40px;
+				border: none;/* 没有边框 */
+			}
+
+			ul{ margin: 0;/* 和上面紧挨着 */
+				list-style: none;
+				width: 80px;
+				background-color: #FCF913;
+				display: none;
+			}
+			/* li{list-style: none;} */
+			
+		</style>
+	</head>
+	<body>
+		<button id="a1">微博</button>
+		<ul id="a2">
+			<li>私信</li>
+			<li>评论</li>
+			<li>@我</li>
+		</ul>
+
+		<script>
+			document.getElementById("a1").addEventListener("mouseover", mouseOver);
+			//addEventListener() 方法用于向指定元素添加事件句柄("事件"，事件名称)
+			document.getElementById("a1").addEventListener("mouseout", mouseOut);
+            //addEventListener() 方法用于向指定元素添加事件句柄("事件"，事件名称)
+			function mouseOver() {
+				document.getElementById("a1").style.backgroundColor = "gold";
+				document.getElementById("a2").style.display = "block";
+			}
+			// alert(document.getElementById("a1"))
+			function mouseOut() {
+				document.getElementById("a1").style.backgroundColor = " #FCF913";
+				document.getElementById("a2").style.display = "none";
+			}
+			
+		</script>
+
+	</body>
+</html>

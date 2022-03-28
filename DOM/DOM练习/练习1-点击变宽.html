@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				background-color: red;
+				width:100px;
+				transition: 1s;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="">超链接1</a></li>
+			<li><a href="">超链接2</a></li>
+			<li><a href="">超链接3</a></li>
+			<li><a href="">超链接4</a></li>
+			<li><a href="">超链接5</a></li>
+		</ul>
+		
+		<script type="text/javascript">
+			// const oUl = document.querySelector('ul')
+			// console.log(oUl.childNodes.length)
+			// document.onclick = function(){
+			// 	for(let i=0;i<oUl.childNodes.length;i++){
+			// 		if(oUl.childNodes[i].nodeType == 1){
+			// 			oUl.childNodes[i].style.width = '200px'
+			// 		}
+			// 	}
+			// }
+			let oUl=document.querySelector('ul')
+			document.onclick = function(){
+				for(let i=0;i<oUl.childNodes.length;i++){
+				// 	if(oUl.childNodes[i].nodeType ==1){
+				// 		oUl.childNodes[i].style.width ="300px"
+				// 	}
+				oUl.children[i].style.width ="300px"
+				}
+			}
+			// nodeType节点类型1:#element元素   2:#attribute属性  3:#text文本  8:#comment注释  9:document文档
+			
+		</script>
+	</body>
+</html>

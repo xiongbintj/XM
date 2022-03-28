@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<style>
+			#btn {
+				position: relative;
+				left: 251px;
+				top: 0;
+			}
+			div {
+				width: 50px;
+				height: 50px;
+				background-color: #0000FF;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button type="button" id="btn">开始</button>
+		<main id="mn"></main>
+
+
+		<script type="text/javascript">
+			var oBtn = document.querySelector("#btn")//变量使用querySelector注意要加#号
+			var oBox = document.querySelector("#mn")//变量使用querySelector注意要加#号
+			var str = ""
+			var n = 0
+
+			for (var i = 0; i < 5; i++) {
+				str += '<div>' + (i + 1) + '</div>'
+			}
+
+			oBtn.onclick = function() {//点击按钮时发生的事件
+				oBox.innerHTML = str   //赋予值
+				var aDiv = document.querySelectorAll("div")//变量
+
+				if (n == 0) {
+					for (var i = 0; i < 5; i++) {
+						aDiv[i].style.left = i * 50 + 'px'
+						if (i < 2) {
+							// i小于二就是向下
+							aDiv[i].style.top = i * 50 + 'px'
+						} else {
+							aDiv[i].style.top = (5 - i - 1) * 50 + 'px'
+						}
+					}
+					n++
+				} else if (n == 1) {
+					for (var i = 0; i < 5; i++) {
+						aDiv[i].style.top = i * 50 + 'px'
+						if (i > 2) {
+							// i大于二就是向左
+							aDiv[i].style.left = i * 50 + 'px'
+						} else {
+							aDiv[i].style.left = (5 - i - 1) * 50 + 'px'
+						}
+					}
+					n++
+
+				} else if (n == 2) {
+					for (var i = 0; i < 5; i++) {
+						aDiv[i].style.left = i * 50 + 'px'
+						if (i > 2) {
+							// i大于二就是向上
+							aDiv[i].style.top = i * 50 + 'px'
+						} else {
+							aDiv[i].style.top = (5 - i - 1) * 50 + 'px'
+						}
+					}
+					n++
+					}else if( n == 3 ){
+						for (var i = 0; i < 5; i++) {
+							aDiv[i].style.top = i * 50 + 'px'
+							if (i < 2) {
+								// i小于二就是向右
+								aDiv[i].style.left = i * 50 + 'px'
+							} else {
+								aDiv[i].style.left = (5 - i - 1) * 50 + 'px'
+							}
+				}
+				n++
+			}
+			}
+		
+		
+
+
+
+
+
+
+
+
+
+
+	// 	}else if( n == 3 ){
+			// 		//oBox.innerHTML = ''
+			// 		for(){}
+			// 		n = 0
+			// 	}
+			// }
+
+
+			// var oBox = document.querySelector("mn")
+			// var str =''
+			// for (var i = 0; i < 5; i++) {
+			// document.body.innerHTML+= '<div>' + (i + 1) + '</div>'
+			// }
+			// var aDiv = document.querySelectorAll("div")
+			// for (var i = 0; i < 5; i++) {
+			// 	aDiv[i].style.left = i * 50 + 'px'
+			// 	if (i > 2) {
+			// 		// i大于二就是向上
+			// 		aDiv[i].style.top = i * 50 + 'px'
+			// 	} else {
+			// 		aDiv[i].style.top = (5 - i - 1) * 50 + 'px'
+			// 	}
+				// 	document.body.innerHTML = str
+				// }
+
+
+				// var oBox1 = document.querySelector("mn1")
+				// var str = ''
+				// for (var i = 0; i < 5; i++) {
+				// 	document.body.innerHTML += '<div>' + (i + 1) + '</div>'
+				// }
+				// var aDiv1 = document.querySelectorAll("div")
+				// for (var i = 0; i < 5; i++) {
+				// 	aDiv1[i].style.left = i * 50 + 'px'
+				// 	if (i < 2) {
+				// 		// i小于二就是向下
+				// 		aDiv1[i].style.top = i * 50 + 'px'
+				// 	} else {
+				// 		aDiv1[i].style.top = (5 - i - 1) * 50 + 'px'
+				// 	}
+
+				// }
+
+
+				// var oBox2 = document.querySelector("mn2")
+				// var str = ''
+				// for (var i = 0; i < 5; i++) {
+				// 	document.body.innerHTML += '<div>' + (i + 1) + '</div>'
+				// }
+				// var aDiv = document.querySelectorAll("div")
+				// for (var i = 0; i < 5; i++) {
+				// 	aDiv[i].style.top = i * 50 + 'px'
+				// 	if (i < 2) {
+				// 		// i小于二就是向右
+				// 		aDiv[i].style.left = i * 50 + 'px'
+				// 	} else {
+				// 		aDiv[i].style.left = (5 - i - 1) * 50 + 'px'
+				// 	}
+				// 	oBox2.innerHTML = str
+				// }
+
+				// var oBox3 = document.querySelector("mn3")
+				// var str = ''
+				// for (var i = 0; i < 5; i++) {
+				// 	document.body.innerHTML += '<div>' + (i + 1) + '</div>'
+				// }
+				// var aDiv3 = document.querySelectorAll("div")
+				// for (var i = 0; i < 5; i++) {
+				// 	aDiv3[i].style.top = i * 50 + 'px'
+				// 	if (i > 2) {
+				// 		// i大于二就是向左
+				// 		aDiv3[i].style.left = i * 50 + 'px'
+				// 	} else {
+				// 		aDiv3[i].style.left = (5 - i - 1) * 50 + 'px'
+				// 	}
+				// 	oBox.innerHTML = str
+				// }
+		</script>
+	</body>
+
+</html>

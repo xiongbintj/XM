@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+	
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>SamHughes</td>
+				<td>07/07/1978</td>
+				<td>开发</td>
+				<td>45000</td>
+			</tr>
+		</table>
+		</body>
+		<script type="text/javascript">
+			const people = [{
+					firstName: 'Sam',
+					lastName: 'Hughes',
+					DOB: '07/07/1978',
+					department: '开发',
+					salary: '45000'
+				},
+				{
+					firstName: 'Terri',
+					lastName: 'Bishop',
+					DOB: '02/04/1989',
+					department: '开发',
+					salary: '35000'
+				},
+				{
+					firstName: 'Jar',
+					lastName: 'Burke',
+					DOB: '11/01/1985',
+					department: '市场',
+					salary: '38000'
+				},
+				{
+					firstName: 'Julio',
+					lastName: 'Miller',
+					DOB: '12/07/1991',
+					department: '销售',
+					salary: '40000'
+				},
+				{
+					firstName: 'Chester',
+					lastName: 'Flores',
+					DOB: '03/15/1988',
+					department: '开发',
+					salary: '41000'
+				},
+				{
+					firstName: 'Madison',
+					lastName: 'Marshall',
+					DOB: '09/22/1980',
+					department: '销售',
+					salary: '32000'
+				},
+				{
+					firstName: 'Ava',
+					lastName: 'Pena',
+					DOB: '11/02/1986',
+					department: '开发',
+					salary: '38000'
+				},
+				{
+					firstName: 'Gabriella',
+					lastName: 'Steward',
+					DOB: '08/26/1994',
+					department: '市场',
+					salary: '46000'
+				},
+				{
+					firstName: 'Charles',
+					lastName: 'Campbell',
+					DOB: '09/04/1977',
+					department: '销售',
+					salary: '42000'
+				},
+				{
+					firstName: 'Tiffany',
+					lastName: 'Lambert',
+					DOB: '05/11/1990',
+					department: '开发',
+					salary: '34000'
+				},
+				{
+					firstName: 'Antonio',
+					lastName: 'Gonzalez',
+					DOB: '03/24/1985',
+					department: '经理',
+					salary: '49000'
+				},
+				{
+					firstName: 'Aaron',
+					lastName: 'Garrett',
+					DOB: '09/04/1985',
+					department: '开发',
+					salary: '39000'
+				},
+			];
+
+			//题1：把people数组中的数据渲染在页面上
+			const oTable = document.querySelector("table")
+			let str = ""
+			people.forEach(function(v, i) {
+				str +=
+					`<tr><td> ${i + 1} </td><td>${v.firstName}${v.lastName}</td> <td>${v.DOB}</td><td>${v.department}</td> <td> ${v.salary}</td></tr>`
+			})
+			oTable.innerHTML = str
+
+			//题2：求people数组中所有人的薪水的平均值//reduce
+			//array.reduce()让数组元素减少，最终返回一个结果
+			//array.reduce(function(acc,v,i,array){},初始值：数字)
+			// console.log(people[0].salary)
+			let result1 = people.reduce(function(acc, v) {
+				return acc + parseInt(v.salary)
+			}, 0)
+			console.log(result1 / people.length)
+
+			//题3：筛选出people数组中年龄大于30的人
+			people.filter(fn)
+
+			function fn(v) {
+				return new Date().getFullYear() - new Date(v.DOB).getFullYear() >= 30;
+			}
+			console.log(people.filter(fn))
+			t2 = new Date().getFullYear()
+			t1 = new Date(09 / 04 / 1977).getFullYear()
+			//题4：把people数组中所有人的人名
+			let result2 = people.map(v => `${v.firstName}${v.lastName}`)
+			console.log(result2.join())
+			//题5：按照年龄从小到大排序people数组
+			 // let result3 = people.sort(v => new Date().getFullYear() - new Date(v.DOB).getFullYear()
+			let result3 = people.sort((a, b) => {return new Date(a.DOB) - new Date(b.DOB)})
+			console.log(result3)
+			// let str1 =""
+			//    let str1 = new Date().getFullYear() - new Date(v.DOB).getFullYear() 
+			// }
+			// console.log(str1)
+		</script>
+	
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>判断两个整数大小</title>
+		<style type="text/css">
+			#result {
+				width: 200px;
+				height: 200px;
+				background-color: #D3D3D3;
+			}
+		</style>
+	</head>
+	<body>
+		<input id="num1" type="text" value="6"><input id="num2" type="text" value="2"><div id="result"></div>
+		
+
+		<script type="text/javascript">
+			//需求：
+			// 1. 通过对话框输入两个整数
+			// 2. 比较大小
+			// 3. 把结果写在result内
+			let aA = document.getElementById("num1")
+			let aB = document.getElementById("num2")
+			let oDiv = document.getElementById("result")
+			oDiv.onclick = function(){
+				if (parseInt(aA.value) < parseInt(aB.value)) {
+					oDiv.innerHTML = aA.value + '小于' + aB.value
+				} else if (parseInt(aA.value) > parseInt(aB.value)) {
+					oDiv.innerHTML = aA.value + '大于' + aB.value
+				} else {
+					oDiv.innerHTML = aA.value + '等于' + aB.value
+				}
+			}
+			
+		</script>
+	</body>
+</html>

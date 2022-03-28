@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			str = "sasadsadsad2022fasdfdsfa01cdsdsfdsf08"
+			let arr = []
+			let str2 = ''
+			// let arr = str.replace(/[^\d]/g, ' ')
+			// //str.replace(/[^\d]/g,'')，就是将str内非数字的值替换为空（''）
+			// console.log(arr)
+			// document.write(arr + "<p>")
+			// str1 = 'asdasdfsa3.1212fdsfsdfsdfsd79.3232dfdjgdfjgdf2324.23'
+			// let arr1 = str1.match(/\d+(.\d+)?/g, ' ')
+			// //str1.match(/\d+(.\d+)?/g, ' ')，就是将str1内非数字的值替换为空（''）
+			// console.log(arr1)
+			// document.write(arr1 + "<p>")
+			// //str="123456789".match(/\d{3,5}?/g),从123456789字符传中第 3 个位置查找,结束位置在第 5 个位置,全局匹配查找,最终会返回一个数组[123, 456, 789]
+
+
+
+
+			for (let i = 0; i < str.length; i++) {
+				if (str.charAt(i) <= '9' && str.charAt(i) >= '0') {
+					str2 += str.charAt(i)
+				} else {
+					if (str2) {
+						arr.push(str2)
+						str2 = ''
+					}
+					
+					console.log("不是数字")
+				}
+			}
+			arr.push(str2)
+			console.log(arr)
+		</script>
+	</body>
+</html>

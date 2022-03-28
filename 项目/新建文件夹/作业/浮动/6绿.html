@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.dage {
+				width: 1100px;
+				height: 1100px;
+			
+			
+			}
+
+			.box {
+				width: 100px;
+				height: 100px;
+			}
+
+			.box1 {
+				background-color: hsl(120, 100%, 50%);
+				transition-timing-function: linear;
+				transition-duration: 3s;
+			}
+
+			.box2 {
+				background-color: hsl(120, 100%, 45%);
+				transition-timing-function: ease;
+				transition-duration: 4s;
+			}
+
+			.box3 {
+				background-color: hsl(120, 100%, 40%);
+				transition-timing-function: ease-in;
+				transition-duration: 3s;
+			}
+
+			.box4 {
+				background-color: hsl(120, 100%, 35%);
+				transition-timing-function: ease-out;
+				transition-duration: 3s;
+			}
+
+			.box5 {
+				background-color: hsl(120, 100%, 30%);
+				transition-timing-function: ease-in-out;
+				transition-duration: 3s;
+			
+			}
+
+			.box6 {
+				background-color: hsl(120, 100%, 25%);
+				transition-timing-function: cubic-bezier(1, .5,.9,.3,1,1);
+				transition-duration: 4s;
+			}
+
+			.dage:hover div{
+				width: 600px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="dage">
+			<div class="box">
+				<div class="box box1"></div>
+				<div class="box box2"></div>
+				<div class="box box3"></div>
+				<div class="box box4"></div>
+				<div class="box box5"></div>
+				<div class="box box6"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

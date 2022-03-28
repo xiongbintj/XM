@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id= "input">
+		<script type="text/javascript">
+			
+			var input = document.querySelector("#input");
+			                
+			                input.onkeydown = function(event){
+			                    
+			                    event = event || window.event;
+			                    
+			                    //console.log(event.keyCode);
+			                    //数字 48 - 57
+			                    //使文本框中不能输入数字
+			                    if(event.keyCode >= 48 && event.keyCode <= 57){
+			                        //在文本框中输入内容，属于onkeydown的默认行为
+			                        //如果在onkeydown中取消了默认行为，则输入的内容，不会出现在文本框中
+			                        return false;
+			                    }
+			                    
+			                    
+			                };
+			            };
+			            
+		</script>
+	</body>
+</html>

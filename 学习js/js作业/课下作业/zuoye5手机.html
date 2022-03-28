@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				margin: 20px auto;
+				width: 270px;
+				height: 500px;
+				background-color: #555;
+				border-radius: 20px;
+				position: relative;
+			}
+
+			.content {
+				margin: 20px auto;
+				width: 260px;
+				height: 490px;
+				background-color: #333;
+				border-radius: 20px;
+				position: absolute;
+				top: -15px;
+				left: 5px;
+			}
+
+			.topbar {
+				margin: 20px auto;
+				width: 250px;
+				height: 460px;
+				background-color: #F4F4F4;
+				border-radius: 20px;
+				position: absolute;
+				top: -15px;
+				left: 5px;
+			}
+
+			.topbar1 {
+				margin: 8px auto;
+				width: 3px;
+				height: 3px;
+				background-color: #555;
+				position: absolute;
+				top: 7px;
+				left: 12px;
+			}
+
+			.topbar2 {
+				margin: 0 auto;
+				width: 3px;
+				height: 6px;
+				background-color: #555;
+				position: absolute;
+				top: 12px;
+				left: 16px;
+			}
+
+			.topbar3 {
+				margin: 0 auto;
+				width: 3px;
+				height: 9px;
+				background-color: #555;
+				position: absolute;
+				top: 9px;
+				left: 20px;
+			}
+
+			.topbar4 {
+				margin: 0 auto;
+				width: 3px;
+				height: 11px;
+				background-color: #555;
+				position: absolute;
+				top: 7px;
+				left: 25px;
+			}
+
+			.topbar5 {
+				margin: 0 auto;
+				width: 3px;
+				height: 13px;
+				background-color: #555;
+				position: absolute;
+				top: 5px;
+				left: 30px;
+			}
+
+			.topbar6 {
+				margin: 0 auto;
+				position: absolute;
+				top: 3px;
+				left: 185px;
+				font-size: .6rem
+			}
+
+			.topbar7 {
+				margin: 0 auto;
+				position: absolute;
+				top: 30px;
+				left: 105px;
+				font-size: .6rem
+			}
+
+			.topbar8 {
+				margin: 20px auto;
+				width: 250px;
+				height: 40px;
+				background-color: #fff;
+				border-radius: 0 0 20px 20px;
+				position: absolute;
+				top: 381px;
+				left: 0;
+			}
+
+			#txt {
+				width: 65%;
+				height: 30px;
+				position: absolute;
+				border-radius: 8px;
+				border: 1px solid red;
+				outline: none;
+				top: 14px;
+				right: 43px;
+			}
+
+			.submit {
+				position: absolute;
+				top: 14px;
+				right: 6px;
+			}
+
+			.submit input {
+				background-color: #FF4600;
+				color: white;
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				line-height: 30x;
+				text-align: center;
+				border: none;
+				font-weight: bold;
+				/* 文字加粗 */
+			}
+
+			img {
+				margin: 20px auto;
+				width: 30px;
+				height: 30px;
+				background-color: #555;
+				border-radius: 15px;
+				position: absolute;
+				top: 395px;
+				left: 5px;
+			}
+
+			.links {
+				margin: 20px auto;
+				width: 80px;
+				height: 20px;
+				background-color: #333;
+				border-radius: 5px 5px 15px 15px;
+				position: absolute;
+				top: -22px;
+				left: 86px;
+			}
+
+			.site {
+				margin: 20px auto;
+				width: 35px;
+				height: 8px;
+				border-radius: 4px;
+				background-color: #555;
+				position: absolute;
+				top: -16px;
+				left: 18px;
+			}
+
+			.first {
+				margin: 20px auto;
+				width: 12px;
+				height: 12px;
+				border-radius: 6px;
+				background-color: #555;
+				position: absolute;
+				top: -21px;
+				left: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="content">
+				<div class="topbar" id="msgs">
+					<div class="topbar1"></div>
+					<div class="topbar2"></div>
+					<div class="topbar3"></div>
+					<div class="topbar4"></div>
+					<div class="topbar5"></div>
+					<div class="topbar6">中国移动</div>
+					<div class="topbar7">微信</div>
+					<div class="topbar8"><textarea cols="" id="txt"></textarea>
+						<div class="submit"><input type="submit" id="btn"value="发送"></div>
+					</div>
+					<img src="img/boy.png" id="img1">
+
+					<div class="links">
+						<div class="site">
+							<div class="first">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<script type="text/javascript">
+		    var oText = document.getElementById('txt')
+		    var oBtn = document.getElementById('btn')
+		    var oMsgs = document.getElementById('msgs')
+			var oImg = document.getElementById("img1")
+			var on = true
+			oImg.onclick = function() {
+				if (on) {
+					oImg.src = "img/girl.png"
+					on = false
+				} else {
+					oImg.src = "img/boy.png"
+					on = true
+				}
+			}
+			oBtn.onclick = function() {
+			oMsgs.innerHTML = oMsgs.innerHTML + oText.value + '<br>'}
+		</script>
+	</body>
+
+</html>

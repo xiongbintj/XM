@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<!--
+
+-->
+	<body>
+		<div class="question">
+			var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function() {
+			alert(1);
+			}, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {
+			alert(3);
+			}, 'xyz' - 90];
+			<ul>
+				<li>所有的数字：</li>
+				<li>可以转成数字的</li>
+				<li>转成数字的最大值</li>
+				<li>所有运算结果是NaN的位置</li>
+			</ul>
+		</div>
+		<hr>
+		<div class="answer">
+
+		</div>
+		<script>
+			var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function() {
+				alert(1);
+			}, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {
+				alert(3);
+			}, 'xyz' - 90];
+			let str1 = ''
+			let str2 = ""
+			let str3 = ""
+			let str4 = ""
+			let len = arr.length //变量 长度
+
+
+			for (var i = 0; i < len; i++) { //循环 变量
+				if (typeof arr[i] == 'number' && arr[i] == arr[i]) {//寻找数字类型，数据类型不能是NaN
+					str1 += arr[i] + '、'//所有的结果
+				}
+			}
+			console.log(str1) //发送可以转成数字的结果去控制台
+			
+			for(var i = 0; i < len; i++){//循环 变量
+				if(typeof arr[i]=='number'){//寻找数字类型，
+					str2+=arr[i]+"、"//所有的结果
+				}
+			}
+			console.log(str2)  //发送所有的数字结果去控制台
+			
+			for(var i = 0; i < len; i++){//循环 变量
+				if(typeof arr[i] ){//所有运算结果是NaN的位置
+					str3+=arr[i]+"、"//所有的结果
+				}
+			}
+			console.log(str3)  //发送类型结果去控制台
+			
+			for(var i = 0; i < len; i++){//循环 变量
+				if(typeof arr[i] == 'number' && arr[i] > 30 ){//转成数字的最大值，
+					str4+=arr[i]+"、" //所有的结果
+				}
+			}
+			console.log(str4)  //发送类型结果去控制台
+		</script>
+	</body>
+</html>

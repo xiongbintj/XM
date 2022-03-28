@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>数据类型判断</title>
+		<style type="text/css">
+			#result {
+				width: 500px;
+				height: 200px;
+				background-color: white;
+				border: 1px solid #0000FF;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<p>
+			arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true,
+			'200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];
+		</p>
+		<ol>
+			<li>找到arr里所有的数字：</li> <!-- -98765, 34, -2, 0, 5-->
+			<li>找到可以转成数字的： </li>
+			<!--'100px', -98765, 34, -2, 0, '300', '23.45元',  5-->
+			<li>把转成数字以后，最大值判断出来：</li>
+			<!--300-->
+			<li>把 NaN 所在的位置找出来：</li>
+			<!--1 14 17  19-->
+		</ol>
+		<input id="button1" type="button" value="找到arr里所有的数字">
+		<input id="button2" type="button" value="找到可以转成数字的">
+		<input id="button3" type="button" value="把转成数字以后，最大值判断出来">
+		<input id="button4" type="button" value="把 NaN 所在的位置找出来">
+		<div id="result"></div>
+
+
+
+		<script type="text/javascript">
+			var arr = ['100px', 'abc' - 6, [], -98765, 34, -2, 0, '300', , function() {
+				alert(1);
+			}, null, document, [], true, '200px' - 30, '23.45元', 5, Number('abc'), function() {
+				alert(3);
+			}, 'xyz' - 90];
+			let aBnt1 = document.getElementById("button1")
+			let aBnt2 = document.getElementById("button2")
+			let aBnt3 = document.getElementById("button3")
+			let aBnt4 = document.getElementById("button4")
+			let oDiv = document.getElementById("result")
+			let str = ""
+
+			aBnt1.onclick = function() {
+				for (i = 0; i < arr.length; i++) {
+					if (Number(arr[i]) == parseFloat(arr[i]))
+						str += arr[i] + "<br>"
+					
+				}
+				oDiv.innerHTML = str;
+				console.log(str)
+			}
+
+
+			aBnt2.onclick = function() {
+				oDiv.innerHTML = ""
+				for (i = 0; i < arr.length; i++) {
+					str += (parseFloat(arr[i])) + ","
+					console.log(str)
+				}
+				oDiv.innerHTML = str;
+			}
+
+
+			aBnt3.onclick = function() {
+				oDiv.innerHTML = ""
+				for (i = 0; i < arr.length; i++) {
+					if (Number(arr[i]) == parseFloat(arr[i]))
+						str += arr[i] + ","
+				}
+				let temp = str[0];
+				for (var i = 0; i < str.length; i++) {
+					if (temp > str[i]) {
+						temp = str[i];
+					}
+				}
+				oDiv.innerHTML = temp;
+			}
+
+			// 	// console.log(parseInt(arr[i]))
+			// console.log(typeof(arr[i]))
+
+			// aBnt3.onclick = function() {
+			// 	for (i = 0; i < arr.length; i++) {
+			// 		str += parseFloat(arr[i])
+			// 	} 
+			// 	var str1= str.split(",");
+			// 	str1.sort();//
+			// 	oDiv.innerHTML = str;
+			// }
+
+
+			aBnt4.onclick = function() {
+				for (i = 0; i < arr.length; i++) {
+					if (typeof(arr[i]) === 'number' && isNaN(arr[i]))
+						str += i + ","
+
+				}
+				console.log(str)
+				oDiv.innerHTML = str;
+			}
+
+		</script>
+	</body>
+</html>

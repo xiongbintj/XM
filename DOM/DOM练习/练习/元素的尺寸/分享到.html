@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box2 {
+				width: 100px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+				left: -100px;
+				top: 100px;
+				/* 	transition: left 3s; */
+			}
+
+			.box1 {
+				width: 20px;
+				height: 100px;
+				background-color: #000000;
+				color: #fff;
+				position: absolute;
+				left: 100px;
+				top: 0
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box2">
+			<div class="box1">分享到</div>
+		</div>
+		<script type="text/javascript">
+			let oBox2 = document.querySelector('.box2')
+			let oBnt = document.querySelector('.box1')
+			
+			oBox2.onmouseover = function() {
+				mvoefn(0)
+				// oBox2.style.left = "0px"
+			}
+			oBox2.onmouseout = function() {
+				mvoefn(-100)
+				// oBox2.style.left = "-100px"
+			}
+
+
+			let timer = null
+
+			function mvoefn(target) {
+				let step = 0
+				if (oBox2.offsetLeft < target) {
+					step = 10
+				} else {
+					step = -10
+				}
+				clearInterval(timer)
+				timer = setInterval(function() {
+					// oBox2.style.left = oBox2.offsetLeft + step + "px"
+					if (oBox2.style.left == target) {
+						clearInterval(timer)
+					} else {
+						oBox2.style.left = oBox2.offsetLeft + step + "px"
+					}
+				}, 50)
+			}
+		</script>
+	</body>
+</html>

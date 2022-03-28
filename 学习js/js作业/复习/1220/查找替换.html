@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				background: #EFEFE7;
+			}
+
+			p {
+				background: #fff;
+				width: 600px;
+				padding: 50px;
+				font-family: '微软雅黑';
+				font-size: 22px;
+				line-height: 36px;
+			}
+
+			#wrap {
+				width: 800px;
+				margin: 50px auto;
+				position: relative;
+			}
+
+			#buttons {
+				width: 100px;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+
+			#buttons a {
+				display: block;
+				text-decoration: none;
+				margin-bottom: 5px;
+				color: #fff;
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				background: #C0C0C0;
+				text-align: center;
+				display: none;
+				font-weight: bold;
+				font-family: '微软雅黑';
+				font-size: 20px;
+			}
+
+			#buttons a:hover {
+				background: #E76308;
+			}
+
+			#buttons a:first-child {
+				background: #94948C;
+				display: block;
+			}
+
+			#toolbox {
+				border: 10px solid #E71063;
+				width: 640px;
+				padding: 20px;
+				background: #E7E7B5;
+				font-size: 0;
+				display: none;
+				position: relative;
+			}
+
+			#toolbox span {
+				font-family: '微软雅黑';
+				font-size: 20px;
+				padding: 5px 20px;
+				cursor: pointer;
+			}
+
+			#toolbox span.active {
+				background: #E73100;
+				color: #fff;
+			}
+
+			#search,
+			#replace {
+				border-top: 3px solid #F7634A;
+				margin-top: 3px;
+			}
+
+			#search input[type="text"],
+			#replace input[type="text"] {
+				margin: 20px 0px;
+				padding: 2px;
+				height: 24px;
+				width: 200px;
+				font-size: 24px;
+				margin-right: 10px;
+			}
+
+			#search input[type="button"],
+			#replace input[type="button"] {
+				margin: 20px 0;
+				height: 30px;
+				width: 56px;
+				font-size: 20px;
+			}
+
+			#close {
+				font-size: 24px;
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<p>通过对元宇宙构思和概念的“考古”，可以从时空性、真实性、独立性、连接性四个方面去交叉定义元宇宙。从时空性来看，元宇宙是一个空间维度上虚拟而时间维度上真实的数字世界；从真实性来看，元宇宙中既有现实世界的数字化复制物，也有虚拟世界的创造物；从独立性来看，元宇宙是一个与外部真实世界既紧密相连，又高度独立的平行空间；从连接性来看，元宇宙是一个把网络、硬件终端和用户囊括进来的一个永续的、广覆盖的虚拟现实系统。
+			</p>
+			<div id="buttons">
+				<a href="javascript:">展开</a>
+				<a href="javascript:">查找</a>
+				<a href="javascript:">替换</a>
+			</div>
+			<div id="toolbox">
+				<div id="close">×</div>
+				<span>查找</span>
+				<span>替换</span>
+				<div id="search">
+					<input type="text"><input type="button" value="查找">
+				</div>
+				<div id="replace">
+					<input type="text"><input type="text">
+					<input type="button" value="替换">
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			let oBtn = document.querySelectorAll("#buttons a")[0]
+			let oBtnSearch = document.querySelectorAll("#buttons a")[1]
+			let oBtnReplace = document.querySelectorAll("#buttons a")[2]
+			let oPannel = document.querySelector('#toolbox')
+			let oPannelSearch = document.querySelector('#search')
+			let oPannelReplace = document.querySelector('#replace')
+			let oBtnSearch2 = document.querySelectorAll('#toolbox span')[0]
+			let oBtnReplace2 = document.querySelectorAll('#toolbox span')[1]
+			let oClose = document.querySelector('#close')
+			let aInputSearch = document.querySelectorAll('#search input')
+			let aInputReplace = document.querySelectorAll('#replace input')
+			let oP = document.querySelector('#wrap p')
+			let str = document.querySelector('#wrap p').innerHTML
+			let arr = []
+
+			//点击展开按钮 显示查找按钮（背景色）显示替换按钮（背景色）
+			oBtn.onclick = function() {
+				oBtnSearch.style.display = "block"
+				oBtnReplace.style.display = "block"
+			}
+			//点击查找按钮  显示查找替换面板k
+			oBtnSearch.onclick = function() {
+				oPannel.style.display = "block"
+				oPannelReplace.style.display = "none"
+				oBtnSearch2.classList.add('active')
+				oBtnReplace2.classList.remove('active')
+				oPannelSearch.style.display = "block"
+			}
+
+			//点击替换按钮  显示查找替换面板
+			oBtnReplace.onclick = function() {
+				oPannel.style.display = "block"
+				oPannelSearch.style.display = "none"
+				oBtnReplace2.classList.add('active')
+				oBtnSearch2.classList.remove('active')
+				oPannelReplace.style.display = "block"
+			}
+			// 点击×   隐藏查找替换面板
+			oClose.onclick = function() {
+				oPannel.style.display = "none"
+			}
+
+			//点击查找标签  显示查找面板
+			oBtnSearch2.onclick = function() {
+				oPannelSearch.style.display = "block"
+				oPannelReplace.style.display = "none"
+				oBtnSearch2.classList.add('active')
+				oBtnReplace2.classList.remove('active')
+			}
+
+			//点击替换标签  显示替换面板
+			oBtnReplace2.onclick = function() {
+				oPannelReplace.style.display = "block"
+				oPannelSearch.style.display = "none"
+				oBtnReplace2.classList.add('active')
+				oBtnSearch2.classList.remove('active')
+			}
+			//点击查找按钮2  获取input.value值   if空就……  if找到了  if没找到
+			aInputSearch[1].onclick = function() {
+
+				if (aInputSearch[0].value == "") {
+					alert('不能为空')
+				} else if (str.indexOf(aInputSearch[0].value) == -1) {
+					alert('不能找到')
+				} else {
+					arr = str.split(aInputSearch[0].value)
+					oP.innerHTML = arr.join(`<span style='background-color:gold'>${aInputSearch[0].value}</span>`)
+				}
+			}
+
+
+			//点击查找按钮2  获取2个input.value值   if空就……  if找到了  if没找到
+
+			aInputReplace[2].onclick = function(){
+					if (aInputReplace[0].value == "") {
+						alert('不能为空')
+					} else if (str.indexOf(aInputReplace[0].value) == -1) {
+						alert('不能找到')
+					} else {
+						if (!aInputReplace[1].value) {
+							if (!confirm('您确定要删除输入的内容吗？')) {
+								aInputReplace[0].value = '';
+								return;
+							}
+						}
+					}oP.innerHTML = str;
+						var arr = str.split(aInputReplace[0].value);
+						oP.innerHTML = arr.join( aInputReplace[1].value);
+						str = oP.innerHTML;
+						aInputReplace[0].value = '';
+						aInputReplace[1].value = '';
+					}
+		</script>
+
+
+
+	</body>
+</html>

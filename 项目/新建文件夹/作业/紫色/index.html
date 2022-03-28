@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>浮动伪类</title>
+		<style>
+			body {
+				background-color: #f0daf2;
+				width: 1200px;
+				margin: 0 auto;
+			}
+
+			h1 {width: 400px;
+				height: 60px;
+				float: left;
+				color: #fff;
+			}
+
+			h2 {
+				color: #752B7D;
+			}
+
+			header {
+				background-color: #752b7d;
+			}
+
+
+			.x1 {overflow: hidden;
+				color: aliceblue;
+			}
+
+			.x11 {width: 600px;
+			      height: 60px;
+				color: #fff;
+				float: right;
+
+			}
+
+            
+
+			#menu li {background-color: #612168;
+				list-style: none;
+				width: 160px;
+				height: 20px;
+			     float: left;
+				 margin: 0 auto;
+				 }
+
+			#menu li a {
+				color:#fff;
+				text-decoration: none;
+			}
+			main{background-color: #F0DAF2;
+			width: 1200px;overflow: hidden;
+			}
+
+			.zuo {
+				width: 800px;
+				float: left;
+			}
+
+
+			.you {
+				background-color: #e3c6e6;
+				width:360px;
+				float: right;
+				margin: 200px auto;
+				padding: 0 20px;
+			}
+
+			footer {overflow: hidden;
+				background-color: #393939;
+			}
+			.x2 ul{
+				padding: 0;
+			}
+
+			.x3 {
+				width: 350px;
+                float: left;
+			}
+			.x4 {
+				width: 750px;
+				float: right;
+			}
+			.x5 {
+				width: 750px;
+				float: right;
+			}
+		</style>
+
+	<body>
+
+		<header>
+
+			<div class="x1">
+				<h1>Gentle Wiki</h1>
+				<div class="x11"><a href="#">Login</a><a href="#">About</a> <a href="#">Contact</a></div>
+			</div>
+			<div class="x2">
+				<ul id="menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Topics</a></li>
+					<li><a href="#">Advanced Search</a></li>
+					<li><a href='#'>My Wiki</a></li>
+					<li><a href='#'>My Profile</a></li>
+				</ul>
+			</div>
+			<!-- <div class="x1">
+				<a href="#">Login</a><a href="#">About</a> <a href="#">Contact</a>
+			</div>
+			<ul id="menu">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Topics</a></li>
+				<li><a href="#">Advanced Search</a></li>
+				<li><a href='#'>My Wiki</a></li>
+				<li><a href='#'>My Profile</a></li>
+			</ul> -->
+		</header>
+		<main>
+			<div class="zuo">
+				<h2>Maecenas libero neque, volutpat sit amet</h2>
+
+				<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta
+					ipsum,
+					ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+					Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+				<h2>Nam gravida nulla non eros</h2>
+
+				<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta
+					ipsum,
+					ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+					Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+
+				<h2>Parturient montes, nascetur ridiculus mus</h2>
+
+				<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta
+					ipsum,
+					ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+					Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+
+				<h2>Nam gravida nulla non eros</h2>
+
+				<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta
+					ipsum,
+					ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+					Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+
+				<h2>Parturient montes, nascetur ridiculus mus</h2>
+
+				<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta
+					ipsum,
+					ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+					Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+			</div>
+			<div class="you">
+				<h2>About Gentle Wiki</h2>
+
+				<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta
+					ipsum,
+					ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+					Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+			</div>
+
+
+
+			<!-- <div class="x5">
+			<h2>Maecenas libero neque, volutpat sit amet</h2>
+
+			<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta ipsum,
+				ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+				Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+			<h2>Nam gravida nulla non eros</h2>
+
+			<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta ipsum,
+				ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+				Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+
+			<h2>Parturient montes, nascetur ridiculus mus</h2>
+
+			<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta ipsum,
+				ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+				Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+
+			<h2>Nam gravida nulla non eros</h2>
+
+			<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta ipsum,
+				ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+				Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+
+			<h2>Parturient montes, nascetur ridiculus mus</h2>
+
+			<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta ipsum,
+				ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+				Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+		</div>
+
+		<div class="x6">
+			<h2>About Gentle Wiki</h2>
+
+			<p>Etiam blandit ultricies nisl. Nullam dapibus, mauris id scelerisque feugiat, sapien augue porta ipsum,
+				ut blandit tellus enim vel mauris. Praesent accumsan metus vel ipsum. Maecenas aliquam blandit mi.
+				Pellentesque dolor magna, posuere vel, condimentum id, accumsan ac, diam. Phasellus vel leo.</p>
+		</div> -->
+		</main>
+		<footer>
+			<div class="x3">
+				<ul id="w1">
+					<li><a href='#'>Topics</a></li>
+					<li><a href='#'>Advanced Search</a></li>
+					<li><a href='#'>My Wiki</a></li>
+					<li><a href='#'>My Profile</a></li>
+				</ul>
+			</div>
+			<div class="x4">
+
+				<p>Aenean velit nisl, hendrerit eget, rutrum quis, lobortis nec, libero. Nulla venenatis, turpis eu
+					vestibulum tincidunt, felis diam luctus velit, facilisis cursus mi ligula vitae nunc. Curabitur
+					libero.
+					Fusce felis. Nam gravida nulla non eros. Donec non nisl. Nulla ut odio. Curabitur sollicitudin
+					nonummy
+					est. Nullam molestie lectus.</p>
+			</div>
+			<div class="x5">Design: Luka Cvrk, <a href='#'>Solucija</a></div>
+			</div>
+
+		</footer>
+
+
+	</body>
+</html>

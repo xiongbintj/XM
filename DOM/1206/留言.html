@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板块</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text"> <input type="button" value="留言" >  <input type="button" value="删除" >
+        <ul
+        ></ul>    
+    </div>
+    <script>
+        const oText = document.querySelectorAll("input")[0]//获取声明
+        const oBtn1 = document.querySelectorAll("input")[1]//获取声明
+        const oBtn2 = document.querySelectorAll("input")[2]//获取声明
+        const oUl = document.querySelector("ul")//获取声明
+        oBtn1.onclick = function(){//构建点击函数
+            let oLi = document.createElement("li")//createElement方法通过指定名称创建一个元素
+            oLi.innerHTML = oText.value
+            if(oUl.children[0]){//children 属性返回元素的子元素的集合
+                oUl.insertBefore(oLi,oUl.children[0])//insertBefore()方法在您指定的已有子节点之前插入新的子节点。
+
+
+            }else{oUl.appendChild(oLi)}//向节点添加最后一个子节点。
+       
+        oText.value = " "
+           for(let i = 0;i<oUl.children.length;i++){
+           oUl.children[i].onclick = function(){
+               this.checked = true
+               this.style.background ="red"
+           }
+        }
+    }
+    oBtn2.onclick =function(){
+        // element.removeChild
+        for(let i = 0;i < oUl.children.length;i++){
+          if (oUl.children[i] .checked) {
+        oUl.removeChild(oUl.children[i])
+    }
+}
+    }
+</script>
+</body>
+</html>

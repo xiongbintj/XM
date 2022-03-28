@@ -1,0 +1,374 @@
+* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+
+				font-family: "微软雅黑";
+			}
+
+			ul,
+			ol {
+				list-style-type: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+
+			header {
+				background-color:#fff;
+				height: 50px;
+				font-size: 0.5rem;
+				line-height: 1.4;
+			}
+
+			.daohang {
+				margin: 0 auto;
+				width: 1200px;
+
+			}
+
+			.ha1 {
+				color: #aaa;
+				overflow: hidden;
+				< !·····防溢出····· !>width: 950px;
+			}
+
+			.ha1 a {
+				float: left;
+				左浮动 display: block;
+				转为块 color: #aaa;
+				text-decoration: none;
+				< !·····去掉下划线 ····· !>height: 50px;
+				line-height: 50px;
+				text-align: center;
+				< !·····水平居中对齐····· !>margin-right: 5px;
+			}
+
+			.ha2 {
+				overflow: hidden;
+				< !·····防溢出····· !>height: 50px;
+				width: 250px;
+				position: relative;
+				< !·····相对对定位····· !>top: 100px;
+				bottom: 0px;
+				left: 950px;
+			}
+
+			.ha2 a {
+				float: left;
+				< !·····左浮动 ····· !>height: 50px;
+				line-height: 50px;
+				color: #aaa;
+				text-decoration: none;
+				< !·····去掉下划线 ····· !>margin-left: 5px;
+			}
+
+			.ha2 div {
+				width: 200px;
+				height: 100px;
+				text-align: center;
+				background-color: #ddd;
+				display: none;
+				position: absolute;
+				< !·····绝对定位····· !>top: 30px;
+				right: 0;
+			}
+
+			.ha2 ul li:hover div {
+				display: block;
+				< !·····转为块 ····· !>
+			}
+
+			.menu {
+				margin: 0 auto;
+				width: 1226px;
+				height: 150px;
+			}
+
+			.q {
+				width: 50px;
+				height: 50px;
+				padding: 0 auto;
+				margin: 0px 200px 0 0;
+				overflow: hidden;
+				float: left;
+
+			}
+
+			.ul {
+				list-style-type: none;
+			}
+
+
+			.ul1 {
+				overflow: hidden;
+				< !·····防溢出····· !>border: 1px solid black;
+				margin: 50px auto;
+			}
+
+			.ul1 li {
+				/* background-color: #00FFFF; */
+				width: 100px;
+				float: left;
+				list-style-type: none;
+				< !·····去掉标记····· !>
+			}
+
+			.ul1 li a {
+				text-decoration: none;
+				< !·····去掉下划线····· !>height: 40px;
+				line-height: 40px;
+				text-align: center;
+				< !·····水平居中对齐····· !>
+			}
+
+
+			.ul1 li:hover ul {
+				display: block;
+			}
+
+			.ul2 {display: none;
+				overflow: hidden;
+				margin: 0 auto;
+				width: 1200px;
+			}
+
+			.ul2 li {
+				width: 120px;
+				float: left;
+			}
+
+			.ul2 li a {
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				< !·····水平居中对齐····· !>
+			}
+            .box {
+            	width: 1226px;
+            	height: 450px;
+            	/* border: 2px solid black; */
+            	margin: 0 auto;
+            	position: relative;
+            	/*相对对定位*/
+            }
+            
+
+			.tu {
+				width: 1226px;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+
+			.tu .tu1 {
+				width: 4906px;
+				animation: move 10s ease infinite;
+				/*曲线 无限次重复 */
+			}
+
+			.tu .tu1 img {
+				width: 1226px;
+				float: left;
+			}
+
+			@keyframes move {
+
+				0%,
+				15% {
+					margin-left: -0px;
+					/* 左外边距 */
+				}
+
+				25%,
+				40% {
+					margin-left: -1200px;
+					/* 左外边距 */
+				}
+
+				55%,
+				70% {
+					margin-left: -2400px;
+					/* 左外边距 */
+				}
+
+				85%,
+				100% {
+					margin-left: -3600px;
+					/* 左外边距 */
+
+				}
+			}
+
+		    .level2{overflow: hidden;
+				display: none;
+			}
+
+			.level1 li:hover ul {
+				display: block;
+			}
+
+			
+
+			.level1 li ul li img {
+				margin-top: 10px;
+				width: 40px;
+
+			}
+
+			.level1 li ul li {
+				float: left;
+				width: 240px;
+				height: 80px;
+			}
+
+		
+			.menu1 {
+				width: 200px;
+				height: 460px;
+				position: absolute;
+				/*绝对定位*/
+				/* position: relative;  */
+				background-color: darkgray;
+				left: 0;
+				top: 0;
+			}
+
+			.menu1 ul li {
+				height: 45px;
+				line-height: 45px;
+				list-style-type: none;
+			}
+
+			.menu1 ul li a {
+				text-decoration: none;
+				color: #FFFFFF;
+			}
+			.entry {
+				margin: 20px auto;
+				width: 1226px;
+				height: 170px;}
+			.first{width: 200px;
+				height: 170px;
+				float: left;
+				background-color: #C6C6C6;
+				}
+				
+			.secondu  {
+				width: 1000px;
+				height: 170px;
+			}
+
+			.second ul li {
+				display: block;
+				width: 335px;
+				height: 170px;
+				float: right;
+				margin-left: 6px;
+				background-color: #F4F4F4;
+				
+			}
+
+			.second ul li img {
+				width: 335px;
+				height: 170px;
+			}
+
+			.ad {display: block;
+			    margin: 20px auto;
+				width: 1226px;
+				height: 140px;
+			}
+
+			.ad img {
+				width: 1226px;
+				height: 140px;
+				
+			}
+
+			.phone {
+				margin: 20px auto;
+				background-color: blueviolet;
+				width: 1226px;
+				height: 614px;
+				overflow: hidden;
+			}
+			.lan{margin: 0 auto;
+				width: 1226px;
+				height: 58px;
+				background-color: #fff;
+			}
+			.lan h2,a{}
+			.lan a{float:right;
+			}
+
+			.phone ul {}
+
+			.phone ul li {
+				float: left;
+				display: block;
+				width: 234px;
+				height: 300px;
+			}
+
+			.appliances {
+				margin: 20px auto;
+				background-color: #FF4400;
+				width: 1226px;
+				height: 628px;
+			}
+
+			.ai {
+				margin: 20px auto;
+				background-color: #00FFFF;
+				width: 1226px;
+				height: 628px;
+			}
+
+		
+			.digital {
+				margin: 20px auto;
+				width: 1226px;
+				height: 689px;
+				background-color: #FF4400;
+			}
+
+			.around {
+				margin: 20px auto;
+				width: 1226px;
+				height: 689px;
+				background-color: #00FFFF;
+			}
+
+
+			.videos {
+				margin: 20px auto;
+				width: 1226px;
+				height: 357px;
+				background-color: #FF4400;
+			}
+
+			.tou {
+				margin: 0 auto;
+				width: 1226px;
+				height: 80px;
+				border-bottom: 1px solid #f3f3f3;
+				background-color: #FFA500;
+			}
+
+			.zhong {
+				margin: 0 auto;
+				width: 1226px;
+				height: 250px;
+				background-color: #752B7D;
+			}
+
+			.wei {
+				margin: 0 auto;
+				width: 1226px;
+				height: 263px;
+				background-color: #A9A9A9;
+			}

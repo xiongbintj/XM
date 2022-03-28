@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			.container {
+
+				position: relative;
+			}
+
+			.container div {
+				width: 48px;
+				height: 48px;
+				border: 1px solid red;
+				background-color: #0000FF;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+
+		</div>
+
+		<script type="text/javascript">
+			var oBox = document.querySelector('.container') //获取元素.container
+			var str = '' //设置变量
+
+			for (var i = 0; i < 5; i++) {
+				oBox.innerHTML += '<div> + (i + 1) + </div>'
+			}
+			var aDiv = document.querySelectorAll("div")
+			for (var i = 0; i < 5; i++) {
+				aDiv[i].style.left = i * 50 + 'px'
+				if (i > 2) {
+					// i大于二就是向上
+					aDiv[i].style.top = i * 50 + 'px'
+				} else {
+					aDiv[i].style.top = (5 - i - 1) * 50 + 'px'
+				}
+				oBox.innerHTML = str
+			}
+		</script>
+	</body>
+
+</html>

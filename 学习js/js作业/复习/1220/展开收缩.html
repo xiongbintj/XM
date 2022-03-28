@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{margin: 0 auto;
+				width: 1000PX;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p>12月20日，李靓蕾控诉王力宏出轨、冷暴力、召J等风波进入尾声，在她的强力攻势下，王力宏公开道歉，并宣布暂停工作，把精力放在家庭上，同时会把1.1亿人民币的“吾疆”转户到李靓蕾名下。
+			李靓蕾认为，所得到的1.5亿财产（包含美国房产一半权益和一半股票），都是婚前原本的财产，不属于离婚后分割的部分。
+			王力宏认为，李靓蕾到手1.5亿是赡养费，还包括每月21万人民币的生活费。
+			此外，两人一直对现居的“吾疆”豪宅归属权有分歧，王力宏说可以给她暂居18年，最后在李靓蕾的爆料下，王力宏承诺房子归她。
+			据台媒统计，王力宏夫妇家产7个亿，现在李靓蕾共计拿到2.6亿，不到一半。
+			李靓蕾19日表示，如果王力宏3点前不道歉，就到法院起诉王爸爸诽谤，但最终还是没有现身，法院也未曾收到李靓蕾的起诉。
+			不过，对于王力宏表示要把1.1亿豪宅给李靓蕾，专家发声解答是否需要纳税的问题。
+			专家表示，如果王力宏把豪宅赠与李靓蕾，那赠与人就要交赠与税，但由于豪宅的持有者是公司法定人（王力宏妈妈），赠与税不会针对法人，所以不用纳税。
+			</p><a href="javscript:">收起</a>
+			<script type="text/javascript">
+				let oBox = document.querySelector('.box')
+				let oP = document.querySelector('p')
+				let oA = document.querySelector('a')
+				let str = oP.innerHTML
+				let on = true
+				oA.onclick = function() {
+					if (on) {
+								oP.innerHTML = str.substring(0, 100)
+								oA.innerHTML = "展开"
+								on = false
+							} else {
+								oP.innerHTML = str
+								oA.innerHTML = "收起"
+								on = true
+							}
+						}
+					</script>
+		</div>
+	</body>
+</html>

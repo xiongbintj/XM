@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标绘制方块</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			#container {
+				width: 700px;
+				height: 500px;
+				border: 1px solid #000;
+				margin: 60px auto 10px auto;
+				position: relative;
+			}
+
+			#container div {
+				border: 1px solid red;
+				position: absolute;
+			}
+
+			p {
+				text-align: center;
+				margin: 0;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container"></div>
+		<p>可以在上面的方框中任意拉出方块</p>
+	</body>
+	<script type="text/javascript">
+		let oDiv = document.querySelector('#container')
+		drag()
+
+		function drag(ele) {
+			oDiv.onmousedown = function(e) {
+				let newDiv = document.createElement('div')
+				oDiv.appendChild(newDiv)
+				let ev = e || event
+				let x = ev.clientX - oDiv.offsetLeft
+				let y = ev.clientY - oDiv.offsetTop
+
+				console.log(x, y)
+				document.onmousemove = function(ev) {
+					let x2 = ev.clientX - oDiv.offsetLeft
+					let y2 = ev.clientY - oDiv.offsetTop
+					x2 = x2 > oDiv.offsetWidth ? oDiv.offsetWidth : x2
+					x2 = x2 > 0-1 ?  x2 : 0-1
+					y2 = y2 > oDiv.offsetHeight ? oDiv.offsetHeight : y2
+					y2 = y2 > 0-1 ?  y2 : 0-1
+					newDiv.style.width = x > x2 ? (x - x2 - 3 + "px") : (x2 - x - 3 + "px")
+					newDiv.style.height = y > y2 ? (y - y2 - 3 + "px") : (y2 - y - 3 + "px")
+					newDiv.style.left = x > x2 ? (x2 + "px") : (x + "px")
+					newDiv.style.top = y > y2 ? (y2 + "px") : (y + "px")
+					console.log(x2, y2)
+				}
+				
+				document.onmouseup = function() {
+					document.onmousemove = null
+					document.onmouseup = null
+				}
+				return false
+			}
+		}
+		// onmousedown=function(){}
+		// createElement('div')
+		// container.appendChild(oDiv)
+		// onmousemove=function(){}
+
+		// onmouseup=function(){}
+		// onmousemove=null
+	</script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: #00FFFF;
+				padding: 10px;
+				border: 10px solid #5683EA;
+				margin: 10px;
+			}
+
+			main{
+				background-color: #888;
+				
+			}
+
+
+			.box2 {
+				overflow: auto; //防溢出
+			}
+
+			img {
+				width: 700px;
+				height: 450px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2">我阿到那时 撒旦撒撒旦撒 但是 是否是案发时法 我阿到那时 撒旦撒撒旦撒 但是 是否是案发时法
+		</div>
+		<script type="text/javascript">
+			let oBox1 = document.querySelector('.box1')
+			let oBox2 = document.querySelector('.box2')
+			const w1 = oBox1.offsetWidth
+			const h1 = oBox1.offsetHeight
+			console.log(w1, h1)
+			const w2 = oBox2.offsetWidth
+			const h2 = oBox2.offsetHeight
+			console.log(w2, h2)
+             
+			//offsetWidth = Width + padding + border
+			//offsetHeight = Height + padding + border
+			const w3 = oBox1.clientWidth
+			const h3 = oBox1.clientHeight
+			console.log(w3, h3)
+			const w4 = oBox2.clientWidth
+			const h4 = oBox2.clientHeight
+			console.log(w4, h4)
+
+			//clientWidth=Width + padding(只包含padding)
+			//clientHeight=Height + padding(只包含padding)
+			const w5 = oBox2.scrollWidth
+			const h5 = oBox2.scrollHeight
+			console.log(w5, h5)
+
+			//scrollWidth=Width + padding
+			//scrollHeight=Height + padding+溢出部分
+		</script>
+		<main>
+			<p><strong>检测窗口方法1(定位窗口)（offsetWidth，offsetHeight）</strong></p>
+			<p>offsetWidth 返回元素的宽度（包括元素宽度、内边距和边框，不包括外边距）</p>
+			<p>offsetHeight 返回元素的高度（包括元素高度、内边距和边框，不包括外边距）</p>
+			<p><strong>检测窗口方法2(视口窗口)(clientWidth,clientHeight)</strong></p>
+			<p>clientWidth 返回元素的宽度（包括元素宽度、内边距，不包括边框和外边距）</p>
+			<p>clientHeight 返回元素的高度（包括元素高度、内边距，不包括边框和外边距）</p>
+			<p><strong>检测窗口方法3()(scrollWidth,scrollHeight)</strong></p>
+			<p>scrollWidth 返回元素的宽度（包括元素宽度、内边距和溢出尺寸，不包括边框和外边距），无溢出的情况，与clientWidth相同</p>
+			<p>scrollHeigh 返回元素的高度（包括元素高度、内边距和溢出尺寸，不包括边框和外边距），无溢出的情况，与clientHeight相同</p>
+			<p>style.width 返回元素的宽度（包括元素宽度，不包括内边距、边框和外边距）</p>
+			<p>style.height 返回元素的高度（包括元素高度，不包括内边距、边框和外边距）</p>
+		</main>
+
+
+		<p><strong>当鼠标事件发生时（不管是onclick，还是omousemove，onmouseover等）</strong></p>
+
+		<p>clientX 鼠标相对于浏览器（这里说的是浏览器的有效区域）左上角x轴的坐标； 不随滚动条滚动而改变；</p>
+
+		<p>clientY 鼠标相对于浏览器（这里说的是浏览器的有效区域）左上角y轴的坐标； 不随滚动条滚动而改变</p>
+
+		<p>pageX 鼠标相对于浏览器（这里说的是浏览器的有效区域）左上角x轴的坐标； 随滚动条滚动而改变；</p>
+
+		<p>pageY 鼠标相对于浏览器（这里说的是浏览器的有效区域）左上角y轴的坐标； 随滚动条滚动而改变；</p>
+
+		<p>screenX 鼠标相对于显示器屏幕左上角x轴的坐标；</p>
+
+		<p>screenY 鼠标相对于显示器屏幕左上角y轴的坐标；</p>
+
+		<p>offsetX 鼠标相对于事件源左上角X轴的坐标</p>
+
+		<p>offsetY 鼠标相对于事件源左上角Y轴的坐标</p>
+		<img src="../img/20220105.png" alt="">
+	</body>
+</html>

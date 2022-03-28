@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{position: relative;padding: 10px;margin: 10px;border: 10px solid black;}
+        .box1{width: 300px;height: 300px;background: blue;}
+        .box2{width: 200px;height: 200px;background:yellow;}
+        .box3{width: 100px;height: 100px;background: red;overflow: auto;}
+    </style>
+</head>
+<body><div class="box1">
+<div class="box2">
+<div class="box3">只因天上有，人间哪有几多瞧只因天上有，人间哪有几多瞧只因天上有，人间哪有几多瞧只因天上有，人间哪有几多瞧只因天上有，人间哪有几多瞧</div></div></div>
+    <script>
+        const oBox1 = document.querySelectorAll("div")[0]
+        const oBox2 = document.querySelectorAll("div")[1]
+        const oBox3 = document.querySelectorAll("div")[2]
+        console.log(oBox3.offsetParent)//oBox3定位父级是oBox2
+        console.log(oBox3.offsetLeft)//oBox3边框到父级内边框的距离
+        console.log(oBox3.scrollTop)
+        
+        oBox3.onclick = function(){
+            console.log(oBox3.scrollTop)
+        }
+   // offsetwidth//查询元素的布局宽//width+padding+border
+   // offsetheight//查询元素布局高
+    console.log(oBox3.offsetWidth)
+   console.log(oBox3.offsetHeight)
+   // scrollwidth//查询滚动元素的宽
+   // scrollheight//查询滚动元素的高
+    console.log(oBox3.scrollWidth)
+   console.log(oBox3.scrollHeight)
+  // clientwidth//查询可视宽
+   //clientheight//查询可视高
+   console.log(oBox3.clientWidth)
+   console.log(oBox3.clientHeight)
+   
+    </script>
+</body>
+</html>

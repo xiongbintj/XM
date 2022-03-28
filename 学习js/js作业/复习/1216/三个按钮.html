@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="按钮1">
+		<input type="button" value="按钮2">
+		<input type="button" value="按钮3">
+		<script type="text/javascript">
+			let data = ['A', 'B', 'C', 'D']
+			let aBnt = document.querySelectorAll("input")
+			// let n = 0
+		
+			for (let i = 0; i < aBnt.length; i++) {
+				aBnt[i].n = 0
+				aBnt[i].onclick = function() {
+					aBnt[i].value = data[this.n]
+					this.n++
+					if (this.n == data.length) this.n = 0
+				}
+			}
+		</script>
+	</body>
+</html>

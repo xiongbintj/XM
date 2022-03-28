@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>三个数排序</title>
+		<style type="text/css">
+			#result {
+				width: 200px;
+				height: 200px;
+				background-color: #D3D3D3;
+			}
+		</style>
+	</head>
+	<body>
+		<input id="num1" type="text" value="6">
+		<input id="num2" type="text" value="3">
+		<input id="num3" type="text" value="-6">
+		<div id="result"></div>
+		<div class="result"></div>
+		<script type="text/javascript">
+			//1. 页面用表单采集用户输入的3个数值（正负均可）
+			//2. 从大到小排序3个数
+			//3. 把结果写在result里
+			let aA = document.getElementById("num1")
+			let aB = document.getElementById("num2")
+			let aC = document.getElementById("num3")
+			let oDiv = document.getElementById("result")
+			let aAo = parseInt (aA.value)
+			let aBo = parseInt (aB.value)
+			let aCo = parseInt (aC.value)
+			let fruits = [aAo,aBo,aCo]
+
+			oDiv.onclick = function() {
+				fruits.sort();
+				oDiv.innerHTML =  fruits;
+			}
+		</script>
+	</body>
+</html>

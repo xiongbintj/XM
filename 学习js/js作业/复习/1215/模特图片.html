@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			#center {
+				width: 500px;
+				height: 600px;
+				display: flex;
+				flex-wrap: wrap;
+				margin: 100px auto;
+				background-image: url(../img/p1ic.jpg);
+
+			}
+
+			#center div {
+				width: 100px;
+				height: 100px;
+				border: 1PX solid #ccc;
+				background-color: #ccc;
+				/* flex-wrap: wrap;
+				display: block; */
+
+			}
+		</style>
+
+	</head>
+	<body>
+		<div id="center">
+		</div>
+		<script type="text/javascript">
+			let oBox = document.getElementById("center")
+			let str = ""
+			for (var i = 0; i < 5; i++) {
+				for (var j = 0; j < 6; j++) {
+					str += `<div style= "left:${i*50}px;top:${j*50}px;">${i+1}</div>`
+				}
+			}
+			oBox.innerHTML = str
+			var aDiv = document.querySelectorAll('div')
+			for(var i=0;i<aDiv.length;i++){ 
+					
+				aDiv[i].onmouseover = function(){
+					this.style.backgroundColor = 'transparent'
+				}
+			}
+		</script>
+	</body>
+</html>

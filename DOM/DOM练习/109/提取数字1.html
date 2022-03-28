@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// str = "sasadsadsad2022fasdfdsfa01cdsdsfdsf08"
+			let arr = []
+			let str2 = ''
+			// let arr = str.replace(/[^\d]/g, '')
+			// arr = str.match(/\d+/g)
+			//str.replace(/[^\d]/g,'')，就是将str内非数字的值替换为空（''）
+			// console.log(arr)
+			// document.write(arr + "<p>")
+			// str1 = 'asdasdfsa3.1212fdsfsdfsdfsd79.3232dfdjgdfjgdf2324.23'
+			// let arr1 = str1.match(/\d+(.\d+)?/g, ' ')
+			// //str1.match(/\d+(.\d+)?/g, ' ')，就是将str1内非数字的值替换为空（''）
+			// console.log(arr1)
+			// document.write(arr1 + "<p>")
+			// //str="123456789".match(/\d{3,5}?/g),从123456789字符传中第 3 个位置查找,结束位置在第 5 个位置,全局匹配查找,最终会返回一个数组[123, 456, 789]
+			let str = 'aaa'
+			let re = /a+/g
+		     let str1 = str.replace(re, "aaa")
+			console.log(str1)
+	
+
+			// for (let i = 0; i < str.length; i++) {
+			// 	if (str.charAt(i) <= '9' && str.charAt(i) >= '0') {
+			// 		str2 += str.charAt(i)
+			// 	} else {
+			// 		if (str2) {
+			// 			arr.push(str2)
+			// 			str2 = ''
+			// 		}
+
+			// 		console.log("不是数字")
+			// 	}
+			// }
+			// arr.push(str2)
+			// console.log(arr)
+		</script>
+	</body>
+	<!-- 
+	一.什么是正值表达式？
+	-ECMAScript
+	     -内置对象
+		     -date
+			- RegExp是js的内置对象，这个对象用`RegExp`表示
+	     -DOM
+		 -BOM
+		 RegularExpression的缩写   Regular常规，规则性的
+		 Expression表达式
+		 正则表达式是(构成搜索模式的)字符序列
+		正则表达式就是规则表达式，搜索模式就是搜索规则
+		正则可用于文本搜索和文本替换操作(你不能用正则检索对象，数组等其他数据类型)
+	二.创建正则表达式对象(RegExp对象)的方法
+	1. 字面量
+	 let re =/t/
+	 -t 规则
+	 -/t/正则表达式（规则）对象
+	 let pattern =/a/
+	 let patt =/b/
+	 
+	2. 正则表达式的方法
+	-RegExp.test('sasadsadsad2022fasdfdsfa01cdsdsfdsf08')/RegExp.test(str)
+	-search()
+	-match()
+	-replace()
+	3.test()方法
+	-用途：使用正则表达式对象（指定的规则）检索字符串，返回trun 或false
+	 -语法规则：/pattern/.test(string)
+	 -区分大小写
+	let str = 'Hello world 世界'
+	let re = /e/
+	let str1 = re.test(str)
+	console.log(str1)
+    //////////////////////////////////////////
+	 let str = '13311w581086'
+	 let re = /\D/
+	 if(re.test(str)){
+		 console.log("不全是数字")
+	 }
+	 console.log('全是数字')
+	 //////////////////////////////////////////
+	  let str = 'Hello world3$_'
+	  let re = /\w/
+	  if(re.test(str)){
+	 	 console.log("检测到非法字符")
+	  }
+	  console.log('检测不到非法字符')
+	 [字母 数字 下划线算字符]
+	 
+	
+	4.search()方法
+	-用途：用于检索字符串中指定的子字符串，返回字符串下标。
+	如果没有找到任何匹配的子串，则返回 -1。)
+	////////////////search()/////////////////////
+	let str = 'Helegghjd'
+	let re = /e/g
+	let str1 = str.search(re)
+	console.log(str1)
+	
+	 
+	 
+	5.match()方法
+	用途：使用正则检索字符串，返回首次匹配到的字符数组或null
+	语法格式：string.match(/pattern/)
+	////////////////match()/////////////////////
+	let str = 'Hellegghjd'
+	let re = /g/g
+	let str1 = str.match(re)
+	console.log(str1)
+	//////////////////////////////////
+	let str = 'sasadsadsad2022fasdfdsfa01cdsdsfdsf08'
+	let re = /\d+/g
+	let str1 = str.match(re)
+	console.log(str1)
+	6.replace() 
+	语法格式：string.replace(/pattern/ newValue) 
+	用途：使用正则检索字符串 ,返回替换后的新数组或原数组
+	////////////////replace()/////////////////////
+	let str = 'Hellegghjd'
+	let re = /g/g
+	let str1 = str.replace(re,'b')
+	console.log(str1)
+	 
+	
+	
+	7.转义字符
+	把一个字符的含义转化成别的含义了
+	-\s:空格
+	-\S:非空格
+	-\d:数字
+	-\D:非数字
+	-\w:字符
+	-\W:非字符
+	8.修饰符
+	let re =/规则/i  执行不区分大小写的检索
+	let re =/规则/g  执行全局检测
+	let re =/规则/m  执行多行匹配
+	
+	9.量词
+	+：匹配任何包含至少一个n的字符串
+	*：匹配任何包含零个或多个n的字符串
+	?：匹配任何包含零个或一个n的字符串
+	
+	
+	#小括号的作用：
+	1.分组：当括号内的字符串当作一个整体取匹配
+	2.匹配子项
+	-arg:父级
+	-arg1:子项1
+	-arg2:子项2
+	
+	#字符类:表示一组相似的元素
+	方括号[]
+	[]只代表一个字符
+	let  re=/[A-Z]/g
+	str.replace(re,"") //去掉大写字母
+	尖括号
+	方括号里出现尖括号代表排除的意思
+	排除 否
+	 -->
+</html>

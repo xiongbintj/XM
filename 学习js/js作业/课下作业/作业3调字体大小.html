@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+		article{
+				width: 1000px;
+				border: 1px solid #0000FF;
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<article>
+			<button id="box1">大</button>
+			<button id="box2">小</button>
+			<p id="btm">特斯拉称消费者可用融资租赁模式购买
+				今日，特斯拉官网上线了全新的金融产品，消费者可以通过零首付的融资租赁模式购买车辆。按照方案规划，消费者零首付签订合同后，1-5
+				年内属于租赁期，采用每月分期支付租金的模式使用车辆，租赁期满后需依约重新取得车辆所有权。10月28日晚，中央纪委监察部官网发布消息，贵州省委常委、遵义市委书记廖少华因涉嫌严重违纪违法接受组织调查。3天后中组部宣布对其免职。廖成为十八大后中纪委一连串"打虎"行动中第十一位落马的副省部级以上高官。
+			</p>
+		</article>
+		<script type="text/javascript">
+			var obox1 = document.getElementById('box1');
+			var obox2 = document.getElementById('box2');
+			var op = document.getElementById('btm');
+			var btn = 14;
+			obox1.onclick = function() {
+				if(btn<20){
+				btn += 1
+				op.style.fontSize = btn + "px";
+			}}
+			obox2.onclick = function() {
+				if(btn>10){
+				btn -= 1
+				op.style.fontSize = btn + "px";
+			}}
+		</script>
+	</body>
+
+</html>

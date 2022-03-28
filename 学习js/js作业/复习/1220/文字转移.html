@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: darkgrey;
+			}
+
+			.container {
+				margin: 50px auto;
+				width: 800px;
+				background: #fff;
+				overflow: hidden;
+				padding: 20px;
+				border-radius: 10px;
+			}
+
+			textarea {
+				background: #EFEFD6;
+				border: none;
+				width: 320px;
+				height: 220px;
+				float: left;
+				padding: 10px;
+				font-size: 18px;
+			}
+
+			.content {
+				float: left;
+				width: 120px;
+				text-align: center;
+			}
+
+			.content a {
+				display: block;
+				color: #fff;
+				background: #F76300;
+				text-decoration: none;
+				padding: 10px;
+				margin: 0 5px;
+				font-family: '微软雅黑';
+			}
+
+			.content p {
+				width: 120px;
+				height: 100px;
+				font-size: 20px;
+				font-family: '微软雅黑';
+			}
+
+			.topbar {
+				width: 320px;
+				height: 220px;
+				background: #63EFF7;
+				float: right;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<textarea id="left"></textarea>
+			<div class="content">
+				<a href="javascript:">把文字右移</a>
+				<p><span id="current">0</span>/<span id="all">0</span></p>
+			</div>
+			<div class="topbar">
+			</div>
+		</div>
+<script type="text/javascript">
+	var oBnt = document.getElementsByTagName('a')[0],
+		oLeft = document.getElementById('left'),
+		oRight = document.querySelector('.topbar')
+		oP = document.getElementsByTagName('p')[0],
+		oCurrent = document.getElementById('current'),
+		oAll = document.getElementById('all'),
+		timer = null;
+		oBnt.onclick = function(){
+			if(oLeft.value == ''){
+				alert('请在左侧输入一些文字后再点击按钮');
+				return;
+			}
+			}
+</script>
+	</body>
+</html>

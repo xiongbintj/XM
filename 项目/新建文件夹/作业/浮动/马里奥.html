@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.sky {
+				height: 150px;
+				background-color: #00FFFF;
+			}
+
+			.Meadow {
+				height: 150px;
+				background-color: #008000;
+			}
+
+			.road {
+				height: 280px;
+				background-color: #393939;
+				position: relative;/* 相对定位 */
+			}
+
+			.line {
+				width: 100%;
+				height: 10px;
+				border-top: 5px dashed #fff;
+				position: absolute;/* 绝对定位 */
+				top: 80%;
+				left: 0;
+			}
+
+
+			#mario {
+				position: absolute;/* 绝对定位 */
+				top: 300px;
+				left: 0;
+				animation-name: example;
+				animation-duration: 3s;
+				animation-iteration-count: infinite;/* 无限次重复 */
+				animation-timing-function: linear;/* 匀速 */
+
+			}
+
+			#luigi {
+				position: absolute;
+				top: 420px;
+				left: 200px;
+				animation-name: luigi;
+				animation-duration: 5s;
+				animation-iteration-count: infinite;/* 无限次重复 */
+				animation-timing-function: linear;/* 匀速 */
+			}
+
+
+			@keyframes example {
+				from {
+					transform: translateX(-200px);
+				}
+
+				to {
+					transform: translateX(1000px);
+				}
+			}
+
+			@keyframes luigi {
+				from {
+					transform: translateX(-200px);
+				}
+
+				to {
+					transform: translateX(1000px);
+				}
+			}
+
+			#yun {
+				position: absolute;
+			}
+
+			#yun1 {
+				width: 200px;
+				height: 200px;
+				top: 120px;
+				opacity: .6;/* 透明度 */
+				animation-direction: reverse;/* 翻转反向播放 */
+				animation: y 70s linear infinite;/* 匀速 *//* 无限次重复 */
+			}
+
+			#yun2 {
+				width: 260px;
+				height: 200px;
+				top: 0;
+				animation-duration: 8s;
+				opacity: .95;/* 透明度 */
+				animation-direction: reverse;/* 翻转反向播放 */
+				animation: y 50s linear infinite;/* 匀速 *//* 无限次重复 */
+			}
+
+			@keyframes y {
+				from {
+					transform: translateX(1000px);/* 平移 */
+				}
+
+				to {
+					transform: translateX(-100px);/* 平移 */
+				}
+
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="sky"><img src="img/cloud.png" id="yun1"><img src="img/cloud.png" id="yun2"></div>
+		<div class="Meadow"></div>
+		<div class="road"></div>
+		<div class="line"></div>
+		<img src="img/mario.png" id="mario"><img src="img/luigi.png" id="luigi">
+
+	</body>
+
+</html>

@@ -1,0 +1,262 @@
+/* 重置样式 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f4f4f4;
+	color: #333333;
+}
+
+ul,
+ol {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	display: none;
+}
+
+/* img{display:block;} */
+/* 布局 */
+header {
+	border: 5px solid red;
+}
+
+main {
+	border: 5px solid red;
+}
+
+footer {
+	border: 5px solid red;
+	background-color: azure;
+}
+
+.page {
+	width: 1226px;
+	margin: 0 auto;
+	height: 600px;
+}
+
+header
+
+/* header */
+.topbar {
+	background-color: #333;
+	height: 50px;
+	font-size: 0.5rem;
+	line-height: 1.4;
+}
+
+.page-links a {
+	margin: 0px auto;
+	width: 77px;
+	color: #aaa;
+	float: left;
+	display: block;
+	text-decoration: none;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.red {
+	position: relative;
+	left: 50px;
+}
+
+.red a {
+	overflow: hidden;
+	float: left;
+	color: #aaa;
+	height: 50px;
+	line-height: 50px;
+}
+
+.page-links a:hover {
+	color: #FF0000;
+}
+
+.red a:hover {
+	color: #FF0000;
+}
+
+.red p {
+	width: 200px;
+	height: 100px;
+	text-align: center;
+	background-color: #ddd;
+	display: none;
+	position: absolute;
+	float: right;
+
+}
+
+.red p:hover {
+	display: block;
+}
+
+
+
+nav {
+	width: 850px;
+	float: left;
+	voerflow: hidden;
+	/* background-color: aqua; */
+}
+
+nav>ul {
+	width: 1000px;
+	list-style-type: none;
+	overflow: hidden;
+	padding: 0 0 0 40px;
+}
+
+nav ul>li {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin: 40px 10px;
+	position: relative;
+}
+
+nav li>a {
+	/* display: block; */
+	/* padding: 5px 10px; */
+}
+/* 
+nav>li:hover.ul12 {
+	display: block;
+} */
+
+.ul12 {
+
+	position: absolute;
+	width: 100px;
+	top: 30px;
+	left: 0px;
+	max-height: 0px;
+	overflow: hidden;
+	transition-duration: 550ms
+}
+.ul12 li{width: 100%;
+	height: 100px;
+	line-height: 100px;
+	float: left;
+	margin: 0 10px 10px 0;
+	}
+
+.ul1 li:hover .ul12 {
+	
+	display: block;
+	/* max-height: 200px; */
+}
+
+.nav {
+	overflow: hidden;
+	/* background-color: #00FF00; */
+	height: 100px;
+}
+
+.logo {
+	width: 62px;
+	float: left;
+	height: 56px;
+	padding: 22px 0;
+}
+
+.logo img {
+	width: 62px;
+	height: 62px;
+}
+
+
+.submenu {
+	display: none;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	/* background-color: #FF0000; */
+}
+
+.search {
+	width: 314px;
+	float: left;
+	height: 50px;
+	padding: 25px 0;
+	text-align: right;
+}
+
+.search input {
+	height: 50px;
+	border: none;
+	outline: none;
+}
+
+.a1 {
+	width: 1226px;
+	height: 450px;
+	border: 2px solid red;
+	margin: 100px auto;
+	position: absolute;
+	/*相对对定位*/
+}
+
+.tu {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.tu .tu1 {
+	width: 4800px;
+	animation: move 10s ease infinite;
+	/*曲线 无限次重复 */
+}
+
+.tu .tu1 img {
+	width: 1200px;
+	float: left;
+}
+
+@keyframes move {
+
+	0%,
+	15% {
+		margin-left: -0px;
+		/* 左外边距 */
+	}
+
+	25%,
+	40% {
+		margin-left: -1200px;
+		/* 左外边距 */
+	}
+
+	55%,
+	70% {
+		margin-left: -2400px;
+		/* 左外边距 */
+	}
+
+	85%,
+	100% {
+		margin-left: -3600px;
+		/* 左外边距 */
+
+	}
+}
+
+
+
+/* main */
+
+
+
+
+/* footer */

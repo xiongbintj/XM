@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<style type="text/css">
+			body {
+				position: relative;
+			}
+
+			.box {
+				position:relative;
+				margin: 0 auto;
+				width:600px;
+				height:600px;
+				background-color: #FFFF00;
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.box div {
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				/* display: none; */
+				/* display: inline-block; */
+				float: left;
+				justify-content: space-between;
+				background-color: #0000FF;
+			} 
+		</style>
+	</head>
+
+	<body>
+		<button id="an">按钮</button>
+		<section class="box">
+
+		</section>
+		<script type="text/javascript">
+			window.onload = function() {
+				var oAn = document.getElementById("an")
+				var oBox = document.querySelector('.box')
+				//var aDiv = document.querySelectorAll('div')
+				var colorArr = ['red', 'yellow', 'blue', 'green']
+				var str = ''
+				var n = 0
+				for (var i = 0; i < 10; i++) {
+					
+					str += "<div style='background:" + colorArr[0] + "'></div>"
+					// str += '<div>' + (i + 1) + '</div>'
+				}
+				oBox.innerHTML = str
+				}
+				
+			// 	var aDiv = document.querySelectorAll('div')
+			// 	for (var i = 0; i < 10; i++) {
+			// 		aDiv[i].style.left = i * 60 + 'px'
+			// 		aDiv[0].style.backgroundColor = "red"
+			// 		aDiv[1].style.backgroundColor = "green"
+			// 		aDiv[2].style.backgroundColor = "lightskyblue"
+			// 		aDiv[3].style.backgroundColor = "blue"
+			// 		aDiv[4].style.backgroundColor = "blueviolet"
+			// 		aDiv[5].style.backgroundColor = "red"
+			// 		aDiv[6].style.backgroundColor = "green"
+			// 		aDiv[7].style.backgroundColor = "lightskyblue"
+			// 		aDiv[8].style.backgroundColor = "blue"
+			// 		aDiv[9].style.backgroundColor = "blueviolet"
+			// 	}
+			// 	var on = true
+
+			// 	oAn.onclick = function() {
+			// 		if (on) {
+			// 			oBox.style.display = "none"
+			// 			on = false
+			// 		} else {
+			// 			oBox.style.display = "block"
+			// 			on = true
+			// 		}
+			// 	}
+			// }
+		</script>
+	</body>
+
+</html>

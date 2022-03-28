@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let time = null
+			function myTime(){
+			let now = new Date()
+			let str = ""
+			let theYear = now.getFullYear()//创建theyear变量存储时间对象的年份
+			let theMonth = now.getMonth()
+			let theDate = now.getDate()
+			let theDay = now.getDay()
+			let theHours = now.getHours()
+			let theMinutes = now.getMinutes()
+			let theSeconds = now.getSeconds()
+
+			if (theDay === 0) theDay = "星期日"
+			if (theDay === 1) theDay = "星期一"
+			if (theDay === 2) theDay = "星期二"
+			if (theDay === 3) theDay = "星期三"
+			if (theDay === 4) theDay = "星期四"
+			if (theDay === 5) theDay = "星期五"
+			if (theDay === 6) theDay = "星期六"
+			str = theYear + "年" + zero(theMonth) + "月" + zero(theDate) + "日 " + zero(theDay) +zero(theHours) + "时" +zero (theMinutes) + '分' + zero(theSeconds) + "秒"
+			
+			function zero(n) {
+				if (n < 10){
+					return "0" + n;
+				} else {
+					return n;
+				}
+			}
+				document.body.innerHTML = str
+				
+			}
+			// console.log(now)
+			// document.write(now)
+
+             myTime()
+			 time=setInterval(myTime, 1000);
+
+			// function zero(n) {
+			// 	if (n < 10)
+			// 	 return "0" + n;
+			// 	else return n;
+			// }
+			
+			
+			
+			
+	
+		</script>
+	</body>
+</html>

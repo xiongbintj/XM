@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text">
+		<input type="button" value="判断">
+		<p></p>
+		<script type="text/javascript">
+			let c = ['1', '2', '3']
+			let d = c
+			let n = '0123456789'
+			let m = 'abcdefghijklmnopqrstuvwxyz'
+			let r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+			console.log(n.charCodeAt(0)) //48
+			console.log(n.charCodeAt(9)) //57
+			console.log(m.charCodeAt(0)) //96
+			console.log(m.charCodeAt(25)) //122
+			console.log(r.charCodeAt(0)) //65
+			console.log(r.charCodeAt(25)) //99
+
+			c[2] = 4
+			console.log(d)
+			console.log(1 + true) //2
+			console.log(1 + false) //1
+			console.log(1 + [])
+			console.log(1 + [''])
+			console.log(1 + null)
+			console.log(1 + undefined)
+			console.log('1' + '1')
+			console.log(1 + 'abc') //1abc
+			console.log(10 - 'abc') //NAN
+			console.log(10 - '1') //9
+			console.log('10' - 1) //9
+			console.log(10 + '') //快捷键
+			console.log(10 + '')
+               console.log(￥10 +￥21 )
+            
+
+
+
+
+			console.log(typeof 1)
+			console.log(typeof 'abc')
+			console.log(typeof true)
+			console.log(typeof q)
+			console.log(typeof null)
+			console.log(typeof [1, 2, 3])
+			console.log(typeof window)
+			console.log(typeof
+				function() {})
+
+			console.log(Number(' 1'))
+			console.log(Number(true))
+			console.log(Number(false))
+			var aInput = document.querySelectorAll('input')
+			var oP = document.querySelector('P')
+			aInput[1].onclick = function() {
+				let str = aInput[0].value
+				for (let i = 0; i < 1000; i++) {
+					str2 += String.fromCharCode(str.charCodeAt(i) + 2)
+				}
+				oP.innerHTML = str2
+			}
+		</script>
+	</body>
+</html>

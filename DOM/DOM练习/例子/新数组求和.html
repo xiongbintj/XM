@@ -1,0 +1,22 @@
+<html>
+<body>
+
+<h1>JavaScript 新数组求和</h1>
+
+<p>for in , Array.push(),reduce()选择数组中的部分建立新数组求和：</p>
+
+<p id="demo"></p>
+
+<script>
+let  oP = document.getElementById("demo") 
+let strarr = [];
+const fruits = [{fname:"Bill", lname:"Gates", age:62},{fname:"Bill", lname:"Gates", age:62}];
+for (let i in fruits) {
+strarr.push(fruits[i]['age']);
+}
+oP.innerHTML = strarr.reduce(function(acc, item){ 
+	return acc + item })
+</script>
+
+</body>
+</html>

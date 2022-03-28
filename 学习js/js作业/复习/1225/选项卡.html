@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- <script src="../1224/tools.js"></script> -->
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			#news,
+			#videos {
+				width: 420px;
+			}
+
+			.tabs {
+				display: flex;
+				border: 1px solid blue;
+			}
+
+			.tabs .active {
+				background-color: gold;
+			}
+
+			.tab {
+				border: 1px solid red;
+				padding: 10px 20px;
+			}
+
+			.pannels {
+				border: 1px solid black;
+			}
+
+			.pannel {
+				display: none;
+			}
+
+			.pannel ul {
+				padding: 10px;
+			}
+
+			li {
+				height: 30px;
+				line-height: 30px;
+			}
+
+			.active {
+				display: block
+			}
+		</style>
+	</head>
+	<body>
+		<div id="news">
+			<div class="tabs">
+				<span class="tab active">图片</span>
+				<span class="tab">专栏</span>
+				<span class="tab">热点</span>
+			</div>
+			<div class="pannels">
+				<div class="pannel active">
+					<ul>
+						<li>中俄界江干流黑河段全面封冻</li>
+						<li>太极拳爱好者在纽约时报广场表演</li>
+						<li>重庆现空中行车索道桥</li>
+						<li>唐艺昕演绎温柔风范 杨洋演绎简单大男孩形象</li>
+					</ul>
+				</div>
+				<div class="pannel">
+					<ul>
+						<li>时代不需要“李逍遥” 今年爆款多了还是少了？</li>
+						<li>中国足球疯狂欠薪错在谁？ CBA招牌需球星携手维护</li>
+						<li>银行的公关危机 商汤上市遇阻，AI困局无解</li>
+						<li>欲望都市依旧带货 武书连2021中国大学综合实力排行榜</li>
+					</ul>
+
+				</div>
+				<div class="pannel">
+					<ul>
+						<li>贺岁档迎“好戏上演”多家上市公司有望获益</li>
+						<li>三星堆文物保护与修复馆开馆</li>
+						<li>短池世锦赛张雨霏夺中国首金 瓜迪奥拉核酸检测阳性</li>
+						<li>港媒称邓紫棋已分手数月 王力宏否认出轨by2妹妹</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="news">
+			<div class="tabs">
+				<span class="tab active">图片</span>
+				<span class="tab">专栏</span>
+				<span class="tab">热点</span>
+			</div>
+			<div class="pannels">
+				<div class="pannel active">
+					<ul>
+						<li>中俄界江干流黑河段全面封冻</li>
+						<li>太极拳爱好者在纽约时报广场表演</li>
+						<li>重庆现空中行车索道桥</li>
+						<li>唐艺昕演绎温柔风范 杨洋演绎简单大男孩形象</li>
+					</ul>
+				</div>
+				<div class="pannel">
+					<ul>
+						<li>时代不需要“李逍遥” 今年爆款多了还是少了？</li>
+						<li>中国足球疯狂欠薪错在谁？ CBA招牌需球星携手维护</li>
+						<li>银行的公关危机 商汤上市遇阻，AI困局无解</li>
+						<li>欲望都市依旧带货 武书连2021中国大学综合实力排行榜</li>
+					</ul>
+
+				</div>
+				<div class="pannel">
+					<ul>
+						<li>贺岁档迎“好戏上演”多家上市公司有望获益</li>
+						<li>三星堆文物保护与修复馆开馆</li>
+						<li>短池世锦赛张雨霏夺中国首金 瓜迪奥拉核酸检测阳性</li>
+						<li>港媒称邓紫棋已分手数月 王力宏否认出轨by2妹妹</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function fnTabs(ele) {
+				const oContainer = document.querySelector(ele)
+				const aBnt = document.querySelectorAll('.tab')
+				const apannel = document.querySelectorAll('.pannel')
+				let last = 0
+				for (let i = 0; i < aBnt.length; i++) {
+					aBnt[i].onclick = function() {
+						aBnt[last].classList.remove("active")
+						aBnt[i].classList.add("active")
+						apannel[last].classList.remove("active")
+						apannel[i].classList.add("active")
+						last = i
+					}
+				}
+			}
+			fnTabs()
+			
+		</script>
+	</body>
+</html>

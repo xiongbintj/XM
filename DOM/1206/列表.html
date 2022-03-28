@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;
+        padding: 0;}
+        .container{
+            width: 150px;
+            border: 1px solid red;
+            margin: 100px auto;
+        }
+        ul{list-style: none;}
+        a{height:40px;line-height: 40px; display:block;  text-align:center; border-bottom: 1px solid red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="#">列表1</a></li>
+            <li><a href="#">列表2</a></li>
+            <li><a href="#">列表3</a></li>
+            <li><a href="#">列表4</a></li>
+            <li><a href="#">列表5</a></li>
+            <li><a href="#">列表6</a></li>
+            <li><a href="#">列表7</a></li>
+            <li><a href="#">列表8</a></li>
+
+        </ul>
+    </div>
+    <script>
+        const oUl = document.querySelector("ul")
+        const aLi = document.querySelectorAll("li")
+        const first = aLi[0]
+        const last = aLi[aLi.length - 1]
+        for(let i=0; i < aLi.length; i++){
+        aLi[i].onmouseover = function(){
+        fn1(this)
+        }
+        aLi[i].onmouseout = function(){
+            fn2(this)
+        }
+    }
+  
+  
+        function fn1(ele){
+        if(ele == first){
+            ele.style.backgroundColor = "red"
+        ele.nextElementSibling.style.backgroundColor = "darkred"
+
+        }else if( ele == last){  ele.previousElementSibling.style.backgroundColor = "darkred"
+        ele.style.backgroundColor = "red"
+
+        }else{ele.previousElementSibling.style.backgroundColor = "darkred"
+        ele.style.backgroundColor = "red"
+        ele.nextElementSibling.style.backgroundColor = "darkred"
+        }
+    }
+        
+        function fn2(ele){
+        if(ele == first){
+        ele.style.backgroundColor = ""
+        ele.nextElementSibling.style.backgroundColor = ""
+
+        }else if( ele == last){  ele.previousElementSibling.style.backgroundColor = ""
+        ele.style.backgroundColor = ""
+
+        }else{ele.previousElementSibling.style.backgroundColor = ""
+        ele.style.backgroundColor = ""
+        ele.nextElementSibling.style.backgroundColor = ""
+        }
+      
+        }
+    </script>
+</body>
+</html>

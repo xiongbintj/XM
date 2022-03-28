@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		距离：<input type="text" value="Nov 29,2021 12:10:10"><!-- 创建文本框 -->
+		还有：<input type="text"><!-- 创建文本框 -->
+		<button>开始</button> <!-- 需要点击的按键 -->
+		<script type="text/javascript">
+			let aInput = document.querySelectorAll("input") //获取所有input文本框
+			let oBtn = document.querySelector("button") //获取button按键
+			let str = ""
+			let t1 = null //变量声明空对象时间点1
+			let t2 = null //变量声明空对象时间点2
+			let t //变量声明不赋予值
+			// let str = '2天20时40分钟50秒' //变量声明样式
+			let timer = null //变量声明空对象,用于定时器
+			 t2 = new Date(aInput[0].value) //用Date第一个input.value获取未来时间对象
+			oBtn.onclick = function() {//点击按键……
+				clearInterval(timer)//关闭清除
+				fn()//函数运行
+				timer = setInterval(fn, 1000)//定时器
+			}
+
+			function fn() {//创建函数
+			 t1 = new Date() //当前时间
+				t = parseInt((t2 - t1) / 1000)//运用时间差转成秒(取整)
+				str = Math.floor(t / 86400) + "天" + Math.floor(t % 86400 / 3600) + "时" + Math.floor(t % 86400 % 3600 / 60) +"分" + Math.floor(t % 60) + "秒"//运用公式换成天，时，分，秒内容赋予给str
+
+				aInput[1].value = str//str内容赋予到第二个文本框里
+			}
+			// timer = setInterval(fn, 1000)//定时器不能放在函数外面
+		</script>
+	</body>
+	第一，创建2个创建文本框，一个按键
+	第二，变量：获取所有input文本框，button按键
+	第三，开始创建函数，然后要知道str="获取字符串的样式"，再就是字符串在哪里显示出来.aInput[1].value = str
+	第四，开始计算要获取字符串，开始找到两个时间点： t2 = new Date(aInput[0].value) //用Date第一个input.value获取未来时间对象， t1 = new Date() //当前时间！然后获得两个时间点的差t = parseInt((t2 - t1) / 1000)，转成秒(取整)
+	第五，套用公式换成字符串样式将内容赋予给str
+	第六，创建点击函数，将函数放入其中
+	第七，let timer = null //变量声明空对象,用于定时器，然后将定时器timer = setInterval(fn, 1000)放在点击函数内，最后点击函数内关闭定时器
+</html>

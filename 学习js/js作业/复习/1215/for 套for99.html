@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				margin: 5px;
+				width: 50px;
+				height: 50px;
+				background-color: #0000FF;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let str = ""
+			for (var i = 0; i < 9; i++){
+				for (var j = i; j < 9; j++){
+					str += `<div style= "left:${i*50}px;top:${j*50}px;">${i+1}</div>`
+				}}
+			
+			document.body.innerHTML = str
+		
+				
+			</script>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul,
+			ol {
+				list-style: none;
+			}
+
+			.container {
+				margin: 100px auto;
+				width: 300px;
+				height: 400px;
+				/* border: 1px solid #000000; */
+				background-color: darkorange;
+			}
+
+			.title {
+				margin: 0 auto;
+				width: 280px;
+				height: 50px;
+			/* 	background-color: #0000FF; */
+				position: relative;
+			}
+
+			ul {
+				position: absolute;
+				right: 0;top: 28px;
+			}
+
+			ul li {color: white;
+				display: inline-block;
+				border: 1px solid #000000;
+				border-bottom:2px solid #000;
+				margin-bottom:-1px;
+			}
+
+			ol {
+				margin: 0 auto;
+				width: 280px;
+				height: 338px;
+				background-color: white;
+				border-top: 3px solid #000000;
+			}
+			ol li {
+				padding: 6px 5px; 
+				width: 268px;
+				height: 20px;
+				border: 1px solid #000000;
+			}
+			.active {
+				background-color: #000 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				<h2>电影排行榜</h2>
+				<ul>
+					<li>每日</li>
+					<li>每周</li>
+					<li>每月</li>
+					<li>全部</li>
+				</ul>
+			</div>
+
+			<ol>
+				<li>1.怒火攻心2：高压电147,776</li>
+				<li>2.熊出没之熊心归来165,217</li>
+				<li>3.欲罪133,196</li>
+				<li>4.疯狂试爱98,743</li>
+				<li>5.我的P.s.搭档93,836</li>
+				<li>6.天女猎妖团FTone89,643</li>
+				<li>7.赤裸女特工之夜之序曲73,620</li>
+				<li>8.撒娇女人最好命69,881</li>
+				<li>9.迷幻牛郎69,100</li>
+				<li>10.超能太监62,565</li>
+			</ol>
+			<script type="text/javascript">
+				//数据
+				let aProName = ['1.怒火攻心2：高压电147,776','2.熊出没之熊心归来165,217','3.欲罪133,196','4.疯狂试爱98,743','5.我的P.s.搭档93,836','6.天女猎妖团FTone89,643','7.赤裸女特工之夜之序曲73,620','8.撒娇女人最好命69,881','9.迷幻牛郎69,100','10.超能太监62,565']
+			
+				let oTul = document.querySelector('.title ul')
+			</script>
+	</body>
+</html>

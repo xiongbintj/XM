@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.pictuer {
+				width: 100%;
+				display: flex;   /* 弹性布局 */
+				/* flex-flow: row wrap; *//* 灵活方向拆行 */
+				justify-content: center;  /* 位于中心 */
+				flex-wrap: wrap;/* 必要时拆行 */
+				justify-content: flex-start;/* 从头开始 */
+			}
+
+			.piclist {
+				width: 20%;
+				margin-left: 5px;
+			}
+
+			.piclist img {
+				height: 681px;
+				border-radius: 15px;/* 圆角 */
+				box-shadow: 5px 5px 5px 5px #7b7b7b;/* 阴影 */
+				border: 1px solid #0000FF;
+			}
+			@media screen and (max-width:300px)
+				{
+					
+				.piclist {width:25%;
+				}
+			}
+
+			@media screen and (min-width:600px)
+				{
+				.piclist {
+					width: 40%;
+					
+				}
+			}
+	
+		</style>
+	</head>
+
+	<body>
+		<div class=" pictuer">
+			<div class="piclist"><img src="img/11.jpg" width="100%"></div>
+			<div class="piclist"><img src="img/22.jpg" width="100%"></div>
+			<div class="piclist"><img src="img/33.jpg" width="100%"></div>
+			<div class="piclist"><img src="img/44.jpg" width="100%"></div>
+			<div class="piclist"><img src="img/55.jpg" width="100%"></div>
+			<div class="piclist"><img src="img/66.jpg" width="100%"></div>
+			<div class="piclist"><img src="img/77.jpg" width="100%"></div>
+			<div class="piclist"><img src="img/99.jpg" width="100%"></div>
+		</div>
+
+
+	</body>
+
+</html>

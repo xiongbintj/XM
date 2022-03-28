@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<div id="cart">
+			<table>
+				<thead>
+					<tr>
+						<th>全选</th>
+						<th>商品</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>小计</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- <tr>
+						<td><input type="checkbox" /></td>
+						<td><img src="img/1jljj.jpg" alt=""></td>
+						<td>'家乐鸡精调味料 600g 联合利华出品'</td>
+						<td>14.90</td>
+						<td><button>-</button><input type="nuber" value="1" /><button>+</button></td>
+						<td>14.90*2</td>
+						<td>删除</td>
+					</tr> -->
+				</tbody>
+			</table>
+			<div class="toolbar">
+				<div class="left">
+					<input type="checkbox" />全选 <span>删除选中的商品</span>
+				</div>
+				<div class="right">
+					<span>已选择3件商品</span> <span>总价：￥44.70</span> <a href="">去结算</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		//数据
+			let aProName = ['家乐鸡精调味料 600g  联合利华出品', '水塔 醋 4度陈醋 2.3L 山西特产', '中盐 低钠盐 食盐 250g', '王守义十三香45g 炒菜炖肉拌菜蘸料腌制调味料 中华老字号',
+				'太太乐 鸡精 三鲜调味料 加倍提鲜 227g 雀巢出品', '海天黄豆酱340g 豆瓣酱原味调味品调料酱 甜味酱 拌饭拌面下饭酱蘸料酱炒',
+				'京糖 JINGTANG 优级绵白糖 500g 中华老字号 北京糖酒集团出品', '海天 酱油 味极鲜特级生抽 1.9L 中华老字号'
+			]
+			let aProPrice = [14.90, 15.60, 3.50, 4.50, 10.90, 8.40, 8.60, 25.90]
+			let aProThumbNail = ['img/1jljj.jpg', 'img/2stcc2.jpg', 'img/3zydny.jpg', 'img/413x.jpg',
+				'img/5ttljj.jpg', 'img/6htdbj.jpg', 'img/7bt.jpg', 'img/8htjy.jpg'
+			]
+            //获取元素
+			let oCart = document.querySelector('#cart') //购物车整体的大容器
+			let oTbody = document.querySelector('tbody') //大容器里tbody里的
+			let aTr = oTbody.getElementsByTagName('tr') //包裹购物车整体的大容器里面的tr
+			//变量
+			let str = ''
+			let len = aProName.length//获取元素长度
+			for (var i = 0; i < len; i++) {//让其循环
+				str += '<tr>'//让其tr这个标签里的元素等同于str
+				str += '<td><input type="checkbox" /></td><td><img src="' + aProThumbNail[i] + '"></td><td>' + aProName[i] +
+					'</td><td>' + aProPrice[i] +
+					'</td><td><button>-</button><input type="number" value="1" /><button>+</button></td><td>' + aProPrice[i] +'</td><td>删除</td>'//tr的一个模块
+				str += '</tr>'//
+			}
+			oTbody.innerHTML = str
+
+			function myHeji(tr) {
+				//获取元素
+				let oPriceTd = tr.querySelectorAll('td')[3] .innerHTML//单品单价
+				let oBtnMinus = tr.querySelectorAll('button')[0] //左边减号按钮
+				let oBtnplus = tr.querySelectorAll('button')[1] //右边加号按钮
+				let oQty = tr.querySelector('[type=number]') //按钮中间的数字
+				let oHejiTd = tr.querySelectorAll('td')[5] //单品总价格
+				oBtnMinus.onclick = function() { //点击左边减号按钮
+					oQty.value-- //按钮中间的数字--
+					if (oQty.value < 0) {
+						oQty.value = 0
+					} //按钮中间的数字小于0的时候就会让其等于0
+					oQty.value = oQty.value
+					oHejiTd.innerHTML = oPriceTd * oQty.value //单品单价乘以数量就是单品总价格
+				}
+				oBtnplus.onclick = function() { //点击右边加号按钮
+					oQty.value++ //按钮中间的数字++
+					oQty.value = oQty.value
+					oHejiTd.innerHTML = oPriceTd * oQty.value //单品单价乘以数量就是单品总价格
+				}
+				}
+				for(var i=0;i<len;i++){//让其点击成为一个循环
+					myHeji(aTr[i])//让其点击后单品总价格发生变化
+				}
+				
+		</script>
+	</body>
+</html>

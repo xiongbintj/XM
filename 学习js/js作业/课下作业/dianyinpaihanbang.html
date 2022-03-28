@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>函数传参-搜狐视频排行榜</title>
+		<style>
+			body {
+				background: #111;
+				font: 16px/1.5 georgia, "微软雅黑";
+			}
+
+			ul,
+			ol,
+			h2 {
+				padding: 0;
+				margin: 0;
+			}
+
+			#box {
+				width: 350px;
+				border: 1px solid #000;
+				margin: 100px auto;
+				padding: 5px;
+				background: orange;
+			}
+
+			#box div {
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 3px solid #333;
+			}
+
+			h2 {
+				float: left;
+				width: 150px;
+			}
+
+			ul {
+				float: right;
+				list-style: none;
+			}
+
+			ul li {
+				float: left;
+				color: #fff;
+				text-align: center;
+				height: 20px;
+				line-height: 20px;
+				margin: 24px 0 0 0;
+				padding: 3px 5px;
+				border-left: 1px solid #333;
+				border-top: 1px solid #333;
+			}
+
+			ul .active {
+				background: #333;
+			}
+
+			#last {
+				border-right: 1px solid #333;
+			}
+
+			ol {
+				display: none;
+			}
+
+			ol li {
+				height: 40px;
+				line-height: 40px;
+				padding: 0 0 0 10px;
+				list-style-image: ;
+				border-bottom: 1px dashed #ccc;
+			}
+
+			ol.active {
+				display: block;
+				list-style-position: inside;
+				background: #fff;
+				border: 1px solid #333;
+				border-left: 1px solid;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oDiv = document.getElementById('box');
+				var oUl = oDiv.getElementsByTagName('ul')[0];
+				var aLi = oUl.getElementsByTagName('li');
+				var aOl = oDiv.getElementsByTagName('ol');
+				
+				for (var i = 0; i < aOl.length; i++) {
+					fnTab(aLi[i], aOl[i]);
+				}
+
+				function fnTab(li, ol) {
+					li.onmouseover = function() {
+						for (var i = 0; i < aLi.length; i++) {
+							aLi[i].className = '';
+							aOl[i].className = '';
+						}
+						ol.className = 'active';
+						li.className = 'active';
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div>
+				<h2>电影排行榜</h2>
+				<ul>
+					<li class="active">每日</li>
+					<li>每周</li>
+					<li>每月</li>
+					<li id="last">全部</li>
+				</ul>
+			</div>
+			<ol class="active">
+				<li>怒火攻心2：高压电174,776</li>
+				<li>熊出没之熊心归来165,217</li>
+				<li>欲罪133,196</li>
+				<li>疯狂试爱98,743</li>
+				<li>我的P.S.搭档93,836</li>
+				<li>天女猎妖团FTone89,643</li>
+				<li>赤裸女特工之夜之序曲73,620</li>
+				<li>撒娇女人最好命69,881 </li>
+				<li>迷幻牛郎69,100 </li>
+				<li>超能太监62,565 </li>
+			</ol>
+			<ol>
+				<li>
+					欲罪
+					1,761,927</li>
+				<li>
+					熊出没之熊心归来
+					978,124 </li>
+				<li>
+					疯狂试爱
+					906,701 </li>
+				<li>
+					桃色骗局
+					666,260 </li>
+				<li>
+					初心房间
+					656,141 </li>
+				<li>
+					夜袭寡妇村
+					638,036 </li>
+				<li>
+					禁区2015
+					565,093 </li>
+				<li>
+					想爱就爱
+					511,859 </li>
+				<li>
+					怒火攻心2：高压电
+					509,030 </li>
+				<li>
+					超能太监
+					482,821 </li>
+			</ol>
+			<ol>
+				<li>
+					疯狂试爱
+					4,986,340</li>
+				<li>
+					超能太监
+					4,970,698</li>
+				<li>
+					熊出没之熊心归来
+					3,644,313</li>
+				<li>
+					欲罪
+					3,149,413</li>
+				<li>
+					美国处女
+					2,585,261</li>
+				<li>
+					头牌魔姬.觉醒
+					2,337,917 </li>
+				<li>
+					玩的就是艳遇
+					2,220,518</li>
+				<li>
+					复仇(2008)
+					2,010,375</li>
+				<li>
+					白日杀机
+					1,648,127</li>
+				<li>
+					一夜疯狂
+					1,640,542</li>
+			</ol>
+			<ol>
+				<li>
+					欲罪
+					122,696,215 </li>
+				<li>
+					我的P.S.搭档
+					107,679,255</li>
+				<li>
+					特种部队
+					91,715,182 </li>
+				<li>
+					7电影
+					81,520,701</li>
+				<li>
+					无人驾驶
+					79,988,482</li>
+				<li>
+					龙之谷：破晓奇兵
+					62,449,001</li>
+				<li>
+					西游记之大闹天宫
+					58,912,593</li>
+				<li>
+					少女
+					57,563,073</li>
+				<li>
+					疯狂试爱
+					56,887,186</li>
+				<li>
+					花漾
+					54,803,667</li>
+			</ol>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<style type="text/css">
+		.q1 {
+			width: 580px;
+			height: 300px;
+			border: 2px solid black;
+			margin: 50px auto;
+			position: relative;
+			/*相对对定位*/
+		}
+
+		p {margin: 0 auto;
+			width: 283px;
+			height: 22px;
+			/* background-color: #FFFFFF; */
+		}
+
+		.box1 {
+			position: fixed;
+			right: 648px;
+			top: 52px;
+		}
+
+		.box2 {
+			position: fixed;
+			right: 350px;
+			top: 52px;
+		}
+
+		.q1:hover .box1 {
+			transform: rotate(9deg);
+		}
+
+		.q1:hover .box2 {
+			transform: rotate(-9deg);
+		}
+	</style>
+
+	<head>
+
+	</head>
+
+	<body>
+		<div class="q1">
+			<div class="box1"><img src="img/ballade_dream.jpg" />
+				<p>紫荆花</p>
+			</div>
+			<div class="box2"><img src="img/china_pavilion.jpg" />
+				<p>北京体育馆</p>
+			</div>
+		</div>
+	</body>
+
+</html>

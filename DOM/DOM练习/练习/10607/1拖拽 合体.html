@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				background-color: red;
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index : 1;
+
+			}
+
+			.box1 {
+				background-color: yellow;
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box1"></div>
+		<script type="text/javascript">
+			let oDiv = document.querySelector('.box')
+			let oBox = document.querySelector('.box1')
+			drag(oDiv)
+			// drag(oBox)
+
+			function drag(ele) {
+				ele.onmousedown = function(e) {
+					let ev = e || event
+					let x = ev.clientX - this.offsetLeft
+					let y = ev.clientY - this.offsetTop
+					console.log(oBox.offsetLeft)
+					console.log(oBox.offsetTop)
+					
+					// console.log(x)
+					document.onmousemove = function(ev) {
+						ele.style.left = ev.clientX - x + "px"
+						ele.style.top = ev.clientY - y + "px"
+						
+						let L1 = ev.clientX - x
+						let T1 = ev.clientY - y
+						if(L1 == oBox.offsetLeft && T1==oBox.offsetTop) {
+							oBox.style.display = "none"
+							oDiv.style.backgroundColor = "green"
+							document.onmouseup = null
+							document.onmousemove = null
+						}
+						
+					}
+					document.onmouseup = function() {
+						document.onmousemove = null
+						document.onmouseup = null
+					}
+					return false
+				}
+
+				
+			}
+		</script>
+	</body>
+</html>

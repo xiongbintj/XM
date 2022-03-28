@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<div><img src="../img/normal1.png"></div>
+		<div><img src="../img/normal2.png"></div>
+		<div><img src="../img/normal3.png"></div>
+		<script type="text/javascript">
+			let da1 = ["../img/active1.png", "../img/active2.png", "../img/active3.png"]
+			let da2 = ["../img/normal1.png", "../img/normal2.png", "../img/normal3.png"]
+			let aImg = document.querySelectorAll("img")
+			// let on = true
+			for (let i = 0; i < aImg.length; i++) {
+				aImg[i].on=true
+				aImg[i].onclick = function() {
+					if (this.on) {//自定义这时的aImg[i]
+						this.src = da1[i]
+						this.on = false
+					} else {
+						this.src = da2[i]
+						this.on = true
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

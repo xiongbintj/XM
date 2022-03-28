@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+	</head>
+
+	<body>
+		<div class="container">
+			<input type="button" value="-" id="btn1" />
+			<input type="tex" value="0" id="txt" />
+			<input type="button" value="+" id="btn2" />
+		</div>
+
+
+		<script type="text/javascript">
+			var oBtn1 = document.getElementById('btn1')
+			var oTxt = document.getElementById('txt')
+			var oBtn2 = document.getElementById('btn2')
+
+			oBtn2.onclick = function() {
+				// oTxt .value = oTxt .value+1     //连字符
+				// oTxt .value+=1    //连字符
+				oTxt.value++ //自增1    5
+				if (oTxt.value >= 4) {
+					oTxt.value = 4
+
+				}
+			}
+			oBtn1.onclick = function() {
+				oTxt.value--
+				if (oTxt.value <= 0) {
+					oTxt.value = 4
+
+
+				}
+			}
+		</script>
+	</body>
+
+</html>

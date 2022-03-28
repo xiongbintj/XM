@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>判断正负</title>
+		<style type="text/css">
+			#result {
+				width: 200px;
+				height: 200px;
+				background-color: #D3D3D3;
+			}
+		</style>
+	</head>
+	<body>
+
+		<input id="num1" type="text" value="6">
+		<input id="num2" type="text" value="6">
+		<input id="num3" type="text" value="6">
+		<div id="result"></div>
+
+
+
+		<script type="text/javascript">
+			//1. 页面用表单采集用户输入的3个数值（正负均可）
+			//2. 判断3个数值的乘积是正数还是负数
+			//3. 把结果写在result里
+			let aA = document.getElementById("num1")
+			let aB = document.getElementById("num2")
+			let aC = document.getElementById("num3")
+			let oDiv = document.getElementById("result")
+		
+			oDiv.onclick = function(){
+				if (parseInt(aA.value) * parseInt(aB.value)*parseInt(aC.value)>0) {
+					oDiv.innerHTML = aA.value * aB.value*aC.value+ '是正数'
+				} else if (parseInt(aA.value) * parseInt(aB.value)*parseInt(aC.value)<0) {
+					oDiv.innerHTML = aA.value * aB.value*aC.value+ '是负数'
+				} else {
+					oDiv.innerHTML = aA.value * aB.value*aC.value+ '等于零'
+				}
+			}
+			
+			
+		
+		</script>
+	</body>
+</html>

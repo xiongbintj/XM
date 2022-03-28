@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>模拟滚动条</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			#div1 {
+				width: 28px;
+				height: 498px;
+				position: absolute;
+				border: 1px solid #000;
+				left: 100px;
+				top: 100px;
+			}
+
+			#div2 {
+				width: 28px;
+				height: 28px;
+				background: gray;
+				position: absolute;
+				top: 0;
+				left: 0;
+				overflow: auto;
+			}
+
+			#div3 {
+				position: absolute;
+				width: 498px;
+				height: 498px;
+				left: 130px;
+				border: 1px solid #000;
+				top: 100px;
+				overflow: hidden;
+
+			}
+
+			#div4 {
+				width: 480px;
+				padding: 10px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+
+			textarea {
+				position: absolute;
+				left: 98px;
+				top: 610px;
+				width: 510px;
+				height: 180px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2"></div>
+		</div>
+		<div id="div3">
+			<div id="div4">
+
+			</div>
+		</div>
+		<textarea id="txet" placeholder="请在文本框中输入足够的文字，查看上方模拟滚动条的效果。"></textarea>
+		<script type="text/javascript">
+			const oDiv1 = document.querySelector('#div1')
+			const oDiv2 = document.querySelector('#div2')
+			const oDiv3 = document.querySelector('#div3')
+			const oDiv4 = document.querySelector('#div4')
+			const oTxt = document.querySelector('#txet')
+			let theDel = {}
+			oTxt.onkeyup = function() {
+				// if (ev.keyCode == 16) {
+				oDiv4.innerHTML = oTxt.value
+				// 当内容高<=视口高
+				// oDiv2.style.height=oDiv1.clientHeight
+				// 当内容高<=视口高
+				// oDiv2.style.height=oDiv1.clientHeight*（
+				// oDiv3.clientHeight/oDiv4.offsetHeight）
+				console.log(oDiv1.clientHeight) //498
+				console.log(oDiv3.clientHeight) //498
+				console.log(oDiv4.offsetHeight) //20
+				if (oDiv3.clientHeight >= oDiv4.offsetHeight) {
+					oDiv2.style.height = oDiv1.clientHeight + "px"
+				} else {
+					oDiv2.style.height = oDiv1.clientHeight * (oDiv3.clientHeight / oDiv4.offsetHeight) + "px"
+				}
+			}
+
+
+			oDiv2.onmousedown = function(ev) {
+				let R = ev.clientY - oDiv2.offsetTop
+
+
+				document.onmousemove = function(ev) {
+					console.log(ev.clientY)
+					console.log(R)
+					let length = oDiv1.clientHeight - oDiv2.offsetHeight
+					let T = (ev.clientY - R)
+					if (T < 0) T = 0
+					if (T > length) T = length
+					oDiv2.style.top = T + "px"
+					console.log(oDiv2.style.top)
+					oDiv4.style.top = (oDiv3.clientHeight - oDiv4.offsetHeight) * (T / length) + "px"
+				}
+				document.onmouseup = function() {
+					document.onmousemove = null
+					document.onmouseup = null
+				}
+				return false
+			}
+		</script>
+	</body>
+</html>
+<!-- 梵蒂冈鬼鬼鬼鬼鬼鬼鬼鬼鬼鬼鬼鬼鬼鬼鬼鬼 分割 fdddddddddddddddddd  cvbbbbbbbbbbbbbbbbbcv去我去二队去外地 请问的访问是否为服务的服务的服务地方发多福多寿发射点发射点反对反对发射点fssd飞洒地方f书单发sdf手动阀手动阀但是撒发顺丰啊FFFFFFFA啊实打实的萨达飒飒分身乏术发发as发发是f阿法沙发沙发a法案随风倒十分的大师傅士大夫士大夫打撒大师傅士大夫a大师傅士大夫噶gsdag斯弗ass给v和法国分割就发给大家都觉得附近的肌肤机构行家 河国际规划局规划付款就尴尬方块发给客服客服看看方块方块看可可粉空格分开国库控股和空格分开发感慨非公开 -->

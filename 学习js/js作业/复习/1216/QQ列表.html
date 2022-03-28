@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: #222222;
+			}
+
+			.qq {
+				margin: 0 auto;
+				background-color: #FFFFFF;
+				width: 150px;
+			}
+
+			h2 {
+				background-color: #FCF913;
+			}
+
+			.qq h2+ul {
+				background-color: #00FFFF;
+				display: none;
+
+			}
+
+			li {
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="qq">
+			<ul>
+				<li>
+					<h2>我的好友</h2>
+					<ul>
+						<li>张宁</li>
+						<li>张宁</li>
+						<li>张宁</li>
+						<li>张宁</li>
+					</ul>
+				</li>
+				<li>
+					<h2>企业好友</h2>
+					<ul>
+						<li>罗勇</li>
+						<li>罗勇</li>
+						<li>罗勇</li>
+						<li>罗勇</li>
+					</ul>
+				</li>
+				<li>
+					<h2>黑名单</h2>
+					<ul>
+						<li>李鹏</li>
+						<li>李鹏</li>
+						<li>李鹏</li>
+						<li>李鹏</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			const oUl = document.querySelector('ul')
+			const aH2 = oUl.querySelectorAll("h2")
+			const aUl = oUl.querySelectorAll("ul")
+			let last = 0
+			for (let i = 0; i < aH2.length; i++) {
+				aH2[i].on = true
+				aH2[i].onclick = function() {
+					// for(let i=0 ; i<aH2.length;i++){
+					// 	aH2[i].style.backgroundColor = ''
+					// 	aUl[i].style.display = "none"
+					// }
+					aH2[last].style.backgroundColor = ''
+					aUl[last].style.display = "none"
+
+					aH2[i].style.backgroundColor = 'red'
+					aUl[i].style.display = "block"
+					last = i
+
+				}
+			}
+		</script>
+	</body>
+</html>

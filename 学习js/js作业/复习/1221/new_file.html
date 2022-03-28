@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<script type="text/javascript">
+		let aInput = document.querySelectorAll('input')
+		let result = Array.from(aInput)
+			// let arr = [1, 2, 3]
+			// const arr1 = []
+
+			// // arr[1] = 4 //改写：利用下标直接赋值
+			// // arr[3] = 5 //添加元素
+			// // arr = [] //清空数组
+			// arr.push(4, 5)
+			// console.log(arr.push())
+			// let Array = arr.pop()
+			// console.log(Array)
+			console.log(Array.isArray(aInput))
+			console.log(Array.isArray(result))
+			let str = 'abcdef'
+			console.log(str.slice(5,2))
+			console.log(str.substring(5,2))
+			console.log(str.substring(-2))
+			console.log(str.slice(-2))
+			
+			console.log(str.slice(0,1))
+			console.log(str.substring(0,1))
+			console.log(str.substr(1,0))
+			
+			
+		</script>
+	</body>
+</html>

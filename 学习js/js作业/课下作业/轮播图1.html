@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<style type="text/css">
+			.container {
+				width: 550px;
+				height: 400px;
+				margin: 100px auto;
+				position: relative;
+				background-color: #0000FF;
+			}
+
+			img {
+				position: absolute;
+				top: 20%;
+				transform: rotateY(50%);
+				display: block;
+			}
+
+			.links {
+				margin: 20px auto;
+				position: absolute;
+				right: 200px;
+				display: block;
+			}
+
+			#a {
+				margin: 45px auto;
+				position: absolute;
+				right: 210px;
+				display: block;
+			}
+
+			#you {
+				top: 50%;
+				right: 0;
+			}
+
+			#zuo {
+				top: 50%;
+				left: 0;
+			}
+
+			#p {
+				margin: 0 auto;
+				position: absolute;
+				top: 92%;
+				right: 240px;
+				color: #FF0000;
+			}
+
+			#sn {
+				margin: 0 auto;
+				position: absolute;
+				top: 20%;
+				right: 249px;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+
+			<div class="links">
+				<button id="box1">循环切换</button>
+				<button id="box2">顺序切换</button>
+			</div>
+			<a id="a">图片只能顺序切换</a>
+
+			<img id="on" src="img/img01.jpg" />
+			<img id="you" src="img/next.png" />
+			<img id="zuo" src="img/prev.png" />
+			<p id="p">犀牛战车</p>
+			<span id="sn">1/4</span>
+
+
+
+
+
+		</div>
+		<script type="text/javascript">
+			var oImg = document.getElementById('on')
+			var oYou = document.getElementById('you')
+			var oZou = document.getElementById('zuo')
+			var oBox1 = document.getElementById('box1')
+			var oBox2 = document.getElementById('box2')
+			var oTitles = document.querySelector("#p")
+			var oSn = document.querySelector("#sn")
+			var oA = document.querySelector("#a")
+			var imgUrls = ["img/img01.jpg", "img/img02.jpg", "img/img03.jpg", "img/img04.jpg"]
+			var imgTitles = ["犀牛战车", "双瞳探索机", "星际战甲", "宇宙飞行器"]
+			var imgSn = ["1/4", "2/4", "3/4", "4/4"]
+			var imgoA = ["图片只能顺序切换", "图片可以循环切换"]
+			var n = 0
+			var on = true
+			var manu = 1
+			oImg.src = imgUrls[0]
+			oTitles.innerHTML = imgTitles[0]
+			oSn.innerHTML = imgSn[0]
+
+			oBox1.onclick = function() { // 点击左边的按钮时候执行函数体
+				on = true //变量n是真的
+			}
+			oBox2.onclick = function() {
+				
+				on = false// 点击右边的按钮时候变量n是假的
+			}
+
+
+
+
+			oYou.onclick = function() {
+				n++
+				if(n==4){//点击右边的时候变量n等于4的时候
+					if(on){  //如果变量on为真的时候(循环)
+						n = 0 // 就让变量n等于0
+					}else { //如果变量on为假的时候(顺序)
+						n = 3 //就让变量n等于3
+					}
+				}
+				oImg.src = imgUrls[n] // oIMg的src属性等于"img/img01.jpg"
+				oTitles.innerHTML = imgTitles[n]
+				oSn.innerHTML = imgSn[n]
+			}
+
+			oZou.onclick = function() {//点击左边的时候
+				// alert(n)
+				n--
+				if(n==-1){  //点击左边的时候变量n等于-1的时候
+					if(on){//如果变量on为真的时候(循环)
+						n = 3// 就让变量n等于3
+					} else {//如果变量on为假的时候(顺序)
+						n = 0//就让变量n等于0
+					}
+				}
+				
+				
+				oImg.src = imgUrls[n]
+				oTitles.innerHTML = imgTitles[n]
+				oSn.innerHTML = imgSn[n]
+
+			}
+			
+			
+		</script>
+	</body>
+
+</html>

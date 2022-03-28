@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.qq {
+				width: 150px;
+				height: 400px;
+				background-color: #0000FF;
+				border-radius: 5px;
+				position: relative
+			}
+
+			.tou {
+				width: 50px;
+				height: 50px;
+				background-color: aqua;
+				border-radius: 50%;
+			}
+
+			.info {
+				width: 150px;
+				height: 80px;
+				background-color: pink;
+				position: absolute;
+				left: 150px;
+				border-radius: 5px;
+				display: none;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="qq">
+			<div class="tou">
+				<div class="info">
+
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var oQq=document.querySelector('.qq')
+			var oTou=document.querySelector('.tou')
+			var oInfo=document.querySelector('.info')
+			var timer = null
+		
+			function show(){
+				oInfo.style.display = 'block'
+			}
+			function hide(){
+				timer = setTimeout(function(){
+					oInfo.style.display = 'none'
+				},500)
+				
+			}
+			oTou.onmouseover = show
+			oTou.onmouseout = hide
+	     
+			
+		</script>
+	</body>
+</html>

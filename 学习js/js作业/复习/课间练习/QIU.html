@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.ball{
+				width:100px;
+				height:100px;
+				border-radius: 50%;
+				background-image: radial-gradient(yellow,red);
+				position:absolute;
+				left:100px;
+				top:100px;
+				ri
+			}
+		</style>
+		<script src="./js/hshu.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	
+	<body>`
+		<button>后退</button><button>前进</button>
+		<div class="ball"></div>
+		<script type="text/javascript">
+			let aBtn = document.querySelectorAll('button')
+			let oBall = document.querySelector('.ball')
+			oBall.timer = null //创建一个空的变量
+			
+			aBtn[0].onclick = function(){
+				doMove(oBall,'left',100,1,2)//最终的目的是用源生JS代码封装一个domove函数
+		
+			}  
+			aBtn[1].onclick = function(){
+				doMove(oBall,'left',800,+1,2)//最终的目的是用源生JS代码封装一个domove函数
+		
+			}  
+			
+			// doMove(oBall,'left',100,-1)
+			// doMove(oBall,'left',800,1)
+			
+			function doMove(obj,attr,target,step,speed){
+				clearInterval(obj.timer)
+				obj.timer = setInterval(function(){
+					let oLeft = parseInt(window.getComputedStyle(obj)[attr])
+					if(oLeft == target){oLeft = target}
+					obj.style.left = oLeft + step + 'px'
+					if(oLeft == target){ clearInterval(obj.timer) }
+				},speed)
+			}
+			
+			
+			// function backwards(){
+			// 	clearInterval(oBall.timer)
+			// 	oBall.timer = setInterval(function(){
+			// 		let oLeft = parseInt(window.getComputedStyle(oBall).left)
+			// 		//oLeft-- //+1 -1
+			// 		if(oLeft < 100){oLeft = 100}
+			// 		oBall.style.left = oLeft - 1 + 'px'
+			// 		if(oLeft < 100){ clearInterval(oBall.timer) }
+			// 	},2)
+			// }
+			// function stop(){
+			// 	clearInterval(oBall.timer)
+			// }
+			// function forwards(){
+			// 	clearInterval(oBall.timer)
+			// 	oBall.timer = setInterval(function(){
+			// 		let oLeft = parseInt(window.getComputedStyle(oBall).left)
+			// 		//oLeft++
+			// 		if(oLeft > 800){oLeft = 800}
+			// 		oBall.style.left = oLeft + 1 + 'px'
+			// 		if(oLeft > 800){ clearInterval(oBall.timer) }
+			// 	},2)
+			// }
+		</script>
+	</body>
+</html>

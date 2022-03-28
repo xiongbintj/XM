@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin:0;}
+        input:focus{
+            border:none;
+            outline: none;
+        }
+        body{
+            font:14px/1.5  Arial,"微软雅黑";
+            background-color:cadetblue;
+        }
+        .frame{
+            width:300px;
+            height:603px;
+            border:5px solid #222;
+            border-radius:20px;
+            background-color:#000;
+            padding:20px 5px;
+            position:fixed;
+            left:50%;
+            top:20px;
+            margin-left:-150px;
+            box-shadow: 0px 0px 10px 5px #316162;
+            
+        }
+        .screen{
+            height:100%;
+            background-color:#ebebeb;
+            border-radius:10px;
+        }
+        .camera{
+            width:2px;
+            height:2px;
+            border-radius:50%;
+            background-color:darkslateblue;
+            border:3px dotted #333;
+            position:absolute;
+            left:50%;
+            margin-left:-4px;
+            top:7px;
+        }
+        .info{
+            height:12px;
+            padding:3px 0;
+            background-color:#1d1d20;
+            color:#f6f6f6;
+            font-size:10px;
+            line-height: 12px;            
+        }
+        .info span{
+            float:left;
+            
+        }
+        .info span:nth-child(1){
+            padding-left:4px;
+        }
+        .info span:nth-child(2){
+            padding:0 106px 0 93px;
+        }
+        .info i{
+            width:2px;
+            
+            background-color:#fff;
+            float:left;
+            margin-left:1px;
+        }
+        .info i:nth-child(1){
+            height:2px;
+            border-top:8px solid #1d1d20;
+        }
+        .info i:nth-child(2){
+            height:4px;
+            border-top:6px solid #1d1d20;
+        }
+        .info i:nth-child(3){
+            height:6px;
+            border-top:4px solid #1d1d20;
+        }
+        .info i:nth-child(4){
+            height:8px;
+            border-top:2px solid #1d1d20;
+        }
+        .info i:nth-child(5){
+            height:10px;            
+        }
+        .bar{
+            height:20px;
+            padding:10px 0;
+            background-color:#393a3f;
+            color:#f6f6f6;
+        }
+        .bar span:nth-child(1){
+            display: inline-block;
+            height:20px;
+            width:30px;
+            text-align:center;
+            border-right:1px solid #2f2f33;
+        }
+        .bar span:nth-child(2){
+            font-size:14px;
+           
+        }
+        .box{
+            width:290px;
+            height:390px;
+            overflow:auto;
+            padding:5px;
+        }        
+        .p{
+            overflow: hidden;
+            margin-bottom:10px;
+            width: 290px;            
+        }
+        .p img{
+            width:35px;            
+        }
+        .p1 img{
+            float:left;            
+        }
+        .p2 img{
+            float:right;            
+        }
+        .p span{
+            position:relative;
+            border-radius: 3px;
+            padding:5px; 
+            max-width:205px;
+        }
+        .p1 span{
+            float:left;
+            margin-left:10px;
+            background-color:#fff;
+        }
+        .p2 span{
+            float:right;
+            margin-right:10px;
+            background-color:#a2e563;
+        }
+        .p i{
+            position:absolute;
+            width:0px;height:0px;            
+            top:10px;
+            border-top:5px solid #ebebeb;
+            border-bottom:5px solid #ebebeb;            
+        }
+
+        .p1 i{
+            position:absolute;
+            width:0px;height:0px;
+            left:-5px;
+            border-right:5px solid #fff;
+            border-top:5px solid #ebebeb;
+            border-bottom:5px solid #ebebeb;            
+        }
+        .p2 i{
+            position:absolute;
+            width:0px;height:0px;
+            right:-5px;
+            border-left:5px solid #a2e563;
+            border-top:5px solid #ebebeb;
+            border-bottom:5px solid #ebebeb;            
+        }
+
+        .pannel{
+            background-color:#f4f4f4;
+            height:34px;
+            border-radius: 0 0 10px 10px;
+            border-top:1px solid #dcdcdc;
+            padding:3px 3px 0 3px;
+        }
+        .touxiang img{
+            display: block;
+            width:30px;
+            height:30px;
+            border:1px solid #999;
+            border-radius:50%;
+        }
+        .pannel span,.pannel input{
+            float:left;
+            border:none;            
+        }
+        .pannel input:nth-child(2){
+            width:170px;
+            padding:0 5px;
+            height:28px;
+            margin: 0 8px;            
+            border-bottom:1px solid #65c10e; /* #a2e563 */
+            background-color:transparent;
+        }        
+        .pannel input:nth-child(3){
+            width:60px;
+            height:28px;
+            background-color:#65c10e;
+            color:#fff;            
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="camera"></div>
+        <div class="screen">
+            <div class="info">
+                <span>中国电信</span>
+                <span>3:24 PM</span>
+                <span>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>                
+            </div>
+            <div class="bar">
+                <span><i>←</i></span>
+                <span>小张</span>
+            </div>
+            <div class="box">
+                
+            </div>
+            <div class="pannel">
+                <span  class="touxiang"><img class="img" src="../img/girl.png" alt=""></span>
+                <input class="input" type="text">
+                <input class="btn" type="submit" value="发送">
+            </div>
+        </div>
+    </div>
+    
+<!-------------JS代码----------------->
+<script>
+    //定义变量
+   var oPortrait = document.querySelector('.img'),
+       oInput = document.querySelector('.input'),
+       oBtn = document.querySelector('.btn'),
+       oBox = document.querySelector('.box');
+    var on = true,
+        oP = 'p1';
+
+    //点击图片，切换角色
+    oPortrait.onclick = function(){        
+        on ? oPortrait.src = '../img/boy.png' : oPortrait.src = '../img/girl.png';
+        on = !on;
+        oP = on ? 'p1' : 'p2';
+    }
+    
+     //点击按钮，发送文字
+    oBtn.onclick = function(){       
+         oBox.innerHTML = oBox.innerHTML + '<p class="p '+ oP +'"><img src="'+ oPortrait.src +'"><span>'+ oInput.value + '<i></i></span></p>';
+    }
+    
+</script>
+
+</body>
+</html>
+

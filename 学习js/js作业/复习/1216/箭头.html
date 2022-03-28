@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: #000000;
+			}
+
+			.container {
+				width: 250PX;
+				height: 250PX;
+				background-color: #FFF;
+				position: relative;
+			}
+
+			.scene {}
+
+			.scene div {
+				width: 50px;
+				height: 50px;
+				background: red;
+				position: absolute;/* 定位 */
+				left: calc(50% - 25px);/* 对于定位父级水平具中 */
+				top: calc(50% - 25px);/* 对于定位父级垂直具中 */
+				transition: 300ms;
+			}
+
+			.pannle {
+				width: 50px;
+				background-color: red;
+				position: absolute;
+				right: -50px;
+				top: 0
+			}
+
+			.pannle button {
+				width: 50px;
+				height: 25px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="scene">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="pannle">
+				<button>上</button>
+				<button>右</button>
+				<button>下</button>
+				<button>左</button>
+				<button>重置</button>
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+			let oDiv = document.querySelectorAll('.scene div')
+			let aBnt = document.querySelectorAll('.pannle button')
+			let len = 5
+			aBnt[0].onclick=function(){
+				for(let i=0;i<len;i++){
+					if (i < len / 2) {
+						oDiv[i].style.left=`${i*50}px`
+						oDiv[i].style.top=`${i*50}px`
+					} else {
+						oDiv[i].style.left=`${i*50}px`
+						oDiv[i].style.top=`${(5-i-1)*50}px`
+					}
+				}
+			}
+			aBnt[1].onclick=function(){
+				for(let i=0;i<len;i++){
+					if (i < len / 2) {
+						oDiv[i].style.left=`${(5-i-1)*50}px`
+						oDiv[i].style.top=`${i*50}px`
+					} else {
+						oDiv[i].style.left=`${i*50}px`
+						oDiv[i].style.top=`${i*50}px`
+					}
+				}
+			}
+			aBnt[2].onclick=function(){
+				for(let i=0;i<len;i++){
+					if (i < len / 2) {
+						oDiv[i].style.left=`${i*50}px`
+						oDiv[i].style.top=`${(5-i-1)*50}px`
+					} else {
+						oDiv[i].style.left=`${i*50}px`
+						oDiv[i].style.top=`${i*50}px`
+					}
+				}
+			}
+			aBnt[3].onclick=function(){
+				for(let i=0;i<len;i++){
+					if (i < len / 2) {
+						oDiv[i].style.left=`${i*50}px`
+						oDiv[i].style.top=`${i*50}px`
+					} else {
+						oDiv[i].style.left=`${(5-i-1)*50}px`
+						oDiv[i].style.top=`${i*50}px`
+					}
+				}
+			}
+			aBnt[4].onclick=function(){
+				for(let i=0;i<len;i++){
+					if (i < len / 2) {
+						oDiv[i].style.left=``
+						oDiv[i].style.top=``
+					} else {
+						oDiv[i].style.left=``
+						oDiv[i].style.top=``
+						
+					}
+				}
+			}
+		</script>
+
+
+	</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title></title>
+
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0
+			}
+
+			ul,
+			li {
+				list-style: none;
+			}
+
+			.wrap {
+				width: 300px;
+				margin: 50px auto;
+				padding: 10px;
+				border: 1px solid #eee;
+			}
+
+			.wrap ul {
+				display: block;
+				overflow: hidden;
+				clear: both;
+			}
+
+			.wrap ul li {
+				display: block;
+				width: 100%;
+				float: left;
+				height: 40px;
+				line-height: 40px;
+				overflow: hidden;
+				clear: both;
+			}
+
+			.wrap ul li.on {
+				background: #222 !important;
+				color: #fff;
+			}
+
+			#all {
+				border-top: 1px solid #eee;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="wrap">
+
+			<ul id="box">
+
+				<li><input type="checkbox">认真的雪</li>
+
+				<li><input type="checkbox">再见</li>
+
+				<li><input type="checkbox">大约在冬季</li>
+
+				<li><input type="checkbox">蜗牛</li>
+
+				<li><input type="checkbox">光辉岁月</li>
+
+			</ul>
+
+			<div id="all">
+
+				<input type="checkbox">全选
+
+			</div>
+
+		</div>
+
+		<script type="text/javascript">
+			window.onload = function() {
+
+				var box = document.getElementById('box')
+
+				var lis = box.getElementsByTagName('li');
+
+				var cklist = box.getElementsByTagName('input');
+
+				var allbtn = document.getElementById('all').getElementsByTagName('input')[0];
+
+				allbtn.onoff = true; //设置开关 用于多次点击时的状态判断
+
+				var colorArr = ['orange', 'pink'];
+
+				var num; //大总管变量，记录鼠标移入时的下标,用于设置鼠标离开时的颜色
+
+				var allnum = 0; // 每选中一行就自增1  取消选中就自减1
+
+				for (var i = 0; i < lis.length; i++) {
+
+					// 给每一行加下标
+
+					lis[i].index = i;
+
+					// 给每一行加开关
+
+					lis[i].onoff = true;
+
+					// js实现隔行换色
+
+					lis[i].style.background = colorArr[i % colorArr.length];
+
+					// 鼠标移入行
+
+					lis[i].onmouseover = function() {
+
+						num = this.index;
+
+						this.style.background = '#ccc';
+
+					}
+
+					// 鼠标移出行
+
+					lis[i].onmouseout = function() {
+
+						this.style.background = colorArr[num % colorArr.length];
+
+					}
+
+					// 鼠标点击
+
+					lis[i].onclick = function() {
+
+						//判断该li上的开关，如果为true则添加选中状态，否则就去除选中状态
+
+						if (this.onoff) {
+
+							//设置当前为选中状态，当前行上的checkbox为选中状态，变量自增1
+
+							this.className = 'on';
+
+							cklist[this.index].checked = 'checked';
+
+							allnum++;
+
+						} else {
+
+							//设置当前为默认状态，当前行上的checkbox为非选中状态，变量自减1
+
+							this.className = '';
+
+							cklist[this.index].checked = '';
+
+							allnum--;
+
+						}
+
+						//更改当前行上的开关属性
+
+						this.onoff = !this.onoff;
+
+						// 根据allnum变量判断 全选按钮是否应该选中
+
+						if (allnum == cklist.length) {
+
+							allbtn.checked = 'checked'
+
+						} else {
+
+							allbtn.checked = ''
+
+						}
+
+					}
+
+				};
+
+				allbtn.onclick = function() {
+
+					if (allbtn.onoff) {
+
+						for (var i = 0; i < lis.length; i++) {
+
+							lis[i].className = 'on';
+
+							cklist[i].checked = 'checked';
+
+							lis[i].onoff = false;
+
+						}
+
+					} else {
+
+						for (var i = 0; i < lis.length; i++) {
+
+							lis[i].className = '';
+
+							cklist[i].checked = '';
+
+							lis[i].onoff = true;
+
+						}
+
+					}
+
+					allbtn.onoff = !allbtn.onoff;
+
+				}
+
+			}
+		</script>
+
+	</body>
+
+</html>

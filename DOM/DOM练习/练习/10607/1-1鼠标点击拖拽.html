@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				background-color: red;
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				top: 40px;
+				left: 0;
+			}
+
+			button {
+				width: 80px;
+				height: 40px;
+				background-color: yellow;
+				color: white;
+				font-size: 30px;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<button>回放</button>
+		<div class="box"></div>
+	</body>
+	<script type="text/javascript">
+		let oDiv = document.querySelector('.box')
+		let oBnt = document.querySelector("button")
+		let arrx = []
+		let arry = []
+		let timer = null
+		oDiv.onmousedown = function(ev) {
+			// ev.clientX- div.offsetLeft
+			// ev.clientY- div.offsetTOP
+			let x = ev.clientX - this.offsetLeft
+			let y = ev.clientY - this.offsetTop
+			document.onmousemove = function(ev) {
+				arrx.unshift(ev.clientX - x)
+				arry.unshift(ev.clientY - y)
+				oDiv.style.left = ev.clientX - x + "px"
+				oDiv.style.top = ev.clientY - y + "px"
+			}
+
+			document.onmouseup = function() {
+				document.onmousemove = null
+				document.onmouseup = null
+			}
+			return false
+		}
+
+		oBnt.onclick = function() {
+			let n = 0
+			oBnt.timer = setInterval(function() {
+				oDiv.style.left = arrx[n] + "px"
+				oDiv.style.top = arry[n] + "px"
+				n++
+				if (n == arrx.length) {
+					clearInterval(oBnt.timer)
+					arrx = []
+					arry = []
+				}
+			}, 10)
+		}
+	</script>
+</html>
+<!-- 
+ 与拖拽有关的三个事件
+ on + mousedown 光标按下
+ on + mousemove 光标移动
+ on + mouseup    光标抬起
+ let oDiv = document.querySelector('.box')
+ oDiv.onmousedown = function(ev) {
+ 	// ev.clientX- div.offsetLeft
+ 	// ev.clientY- div.offsetTOP
+ 	let x = ev.clientX - this.offsetLeft
+ 	let y = ev.clientY - this.offsetTop
+ 	document.onmousemove = function(ev) {
+ 		oDiv.style.left = ev.clientX - x + "px"
+ 		oDiv.style.top = ev.clientY - y + "px"
+ 	}
+ 
+ 	document.onmouseup = function() {
+ 		document.onmousemove = null
+ 		document.onmouseup = null
+ 	}
+ 	// return false
+ -->

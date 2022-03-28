@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.box {
+				background-color: red;
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+
+		<script type="text/javascript">
+			let oDiv = document.querySelector('.box')
+			let timer = null
+
+			function movefn(target) {
+				timer = setInterval(function() {
+					let step =(target-oDiv.offsetLeft) / 30
+					if (oDiv.offsetLeft >= target) {
+						clearInterval(timer)
+					} else {
+						oDiv.style.left = oDiv.offsetLeft + step + "px"
+					}
+				}, 20)
+
+			}
+		</script>
+	</body>
+</html>

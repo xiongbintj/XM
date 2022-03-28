@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+
+    </table>
+    <script>
+        const students = [{id:1,sName:"张三",age:18,gender:"男",location:"湖南"},//声明
+        {id:2,sName:"张丽丽",age:18,gender:"女",location:"湖南"},
+        {id:3,sName:"王二猛",age:18,gender:"男",location:"湖北"},
+        {id:4,sName:"牛萌萌",age:18,gender:"女",location:"湖南"},
+        {id:5,sName:"李梅",age:18,gender:"女",location:"广西"},
+        {id:6,sName:"周海淘",age:18,gender:"男",location:"山东"}]
+        const student = {id:1,sName:"张三",age:18,gender:"男",location:"湖南"}
+        let text = "";
+        for(let i = 0;i< students.length;i++){//for 语句循环
+            text += '<tr>'
+             for(let x in students[i]){//for in 语句循环遍历对象的属性：for in 循环遍历 students 对象//每次迭代返回一个键 (x)
+                 text += '<td>' + students[i][x] + '</td>';//键用于访问键的值//键的值为students[x]
+             }
+           text += '</tr>'
+        }
+        document.querySelector('table').innerHTML = text   //将文本内容赋予给文档table的文本内容 
+        </script>
+    
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://www.w3school.com.cn/css/index.asp -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="./CSS 教程_files/f.txt"></script><script src="./CSS 教程_files/osd.js"></script><script src="./CSS 教程_files/f(1).txt"></script><script src="./CSS 教程_files/f(2).txt" id="google_shimpl"></script><script type="text/javascript" async="" src="./CSS 教程_files/analytics.js"></script><script async="" src="./CSS 教程_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-878633-1');
+</script>
+
+
+<meta name="robots" content="all">
+<meta name="author" content="w3school.com.cn">
+
+<link rel="stylesheet" type="text/css" href="./CSS 教程_files/c8.css">
+
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.w3school.com.cn/ui2019/logo-16-red.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.w3school.com.cn/ui2019/logo-32-red.png">
+<link rel="icon" type="image/png" sizes="48x48" href="https://www.w3school.com.cn/ui2019/logo-48-red.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://www.w3school.com.cn/ui2019/logo-96-red.png">
+<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://www.w3school.com.cn/ui2019/logo-180.png">
+
+
+<title>CSS 教程</title>
+
+<input type="hidden" id="_w_tusk"><script type="text/javascript" src="chrome-extension://dbjbempljhcmhlfpfacalomonjpalpko/scripts/inspector.js"></script><meta http-equiv="origin-trial" content="A88otRz1Fd3Nt567e2IYshC18LL3KGVXpVJW9oTCId4RYaygt23pbb4JqrbdIO/bwZPWEmRjBIRBu/bZbDR7Pg4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A0gCLbXCcL0R1Oc8tFPDs0G4Elz17w3zHp+Zst66+D17veE2o7fUcPsA114QtSTRqfVJLMeTSdeWOom0CcyCsgYAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9RQ+LxFazAousxUwSCzaihJjHLO1UyjQp0teZKHl7WdbVjPDfHSKMd6D/ZI5MTjqClFycbl70EFd7cBJWXqKQEAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6WKeWsdn1Ct+ZPqS9NCxxaiBoQ7wdTkK2/gE69Yu0gfBKJfo1gOvgkGmf5/xaIajT/RUb9AbnF1FsSZ47cCcQcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A04ZCu7yjrHgwQJK5ISHhH1DSg0qqowEay3n70KO6wV3D2Mj+OX3Kw20aSMitzgdG1xfrN7sOJV/dZIk+RvCzA4AAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjM0MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A2YAd4xOntTGygIDjApOTtXOgVI3IWsd5OnOGq3RbRkIQwyqYWNl1JGRAcvtm6VOHDj4n07T/J19VqLuJn3MmQ8AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A2c5Ux+hivdkLh/KbZUGr6f7SCR0mZrBVfPJ+/OuDVHNwiYv+Lo83b9z5qL8sod78bQl0pSLtbvRWURo+xRl7AIAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="AzNJ4sd3tVurolpdvWYZ4cmP9Po7RJhEHSqmC3pgxW9fFVZvchhtcMUgHAs97npxMD1jhXHO8s6q6Wy1MMLxKgEAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A88otRz1Fd3Nt567e2IYshC18LL3KGVXpVJW9oTCId4RYaygt23pbb4JqrbdIO/bwZPWEmRjBIRBu/bZbDR7Pg4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A0gCLbXCcL0R1Oc8tFPDs0G4Elz17w3zHp+Zst66+D17veE2o7fUcPsA114QtSTRqfVJLMeTSdeWOom0CcyCsgYAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9RQ+LxFazAousxUwSCzaihJjHLO1UyjQp0teZKHl7WdbVjPDfHSKMd6D/ZI5MTjqClFycbl70EFd7cBJWXqKQEAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A6WKeWsdn1Ct+ZPqS9NCxxaiBoQ7wdTkK2/gE69Yu0gfBKJfo1gOvgkGmf5/xaIajT/RUb9AbnF1FsSZ47cCcQcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MzQwODMxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A04ZCu7yjrHgwQJK5ISHhH1DSg0qqowEay3n70KO6wV3D2Mj+OX3Kw20aSMitzgdG1xfrN7sOJV/dZIk+RvCzA4AAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjM0MDgzMTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A2YAd4xOntTGygIDjApOTtXOgVI3IWsd5OnOGq3RbRkIQwyqYWNl1JGRAcvtm6VOHDj4n07T/J19VqLuJn3MmQ8AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A2c5Ux+hivdkLh/KbZUGr6f7SCR0mZrBVfPJ+/OuDVHNwiYv+Lo83b9z5qL8sod78bQl0pSLtbvRWURo+xRl7AIAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="AzNJ4sd3tVurolpdvWYZ4cmP9Po7RJhEHSqmC3pgxW9fFVZvchhtcMUgHAs97npxMD1jhXHO8s6q6Wy1MMLxKgEAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><link rel="preload" href="./CSS 教程_files/f(3).txt" as="script"><script type="text/javascript" src="./CSS 教程_files/f(3).txt"></script><link rel="preload" href="./CSS 教程_files/f(3).txt" as="script"><script type="text/javascript" src="./CSS 教程_files/f(3).txt"></script></head>
+
+<body class="html" aria-hidden="false">
+
+<div id="wrapper">
+
+<div id="header">
+<a id="logo" href="https://www.w3school.com.cn/index.html" title="w3school 在线教程" style="float:left;">w3school 在线教程</a>
+<div id="header_gg">
+<script async="" src="./CSS 教程_files/f(4).txt"></script>
+<!-- W3 页眉 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3381531532877742" data-ad-slot="7423315034" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_0_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_0_anchor" style="border: none; height: 90px; width: 728px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="728" height="90" frameborder="0" src="./CSS 教程_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-google-query-id="CMOvmMD_ovMCFXQYtwAd4A0HvA" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+
+<div id="navfirst">
+<ul id="menu">
+<li id="h"><a href="https://www.w3school.com.cn/h.asp" title="HTML 系列教程">HTML 系列教程</a></li>
+<li id="b"><a href="https://www.w3school.com.cn/b.asp" title="浏览器脚本教程">浏览器脚本</a></li>
+<li id="s"><a href="https://www.w3school.com.cn/s.asp" title="服务器脚本教程">服务器脚本</a></li>
+<li id="p"><a href="https://www.w3school.com.cn/p.asp" title="编程教程">编程教程</a></li>
+<li id="x"><a href="https://www.w3school.com.cn/x.asp" title="XML 系列教程">XML 系列教程</a></li>
+<li id="w"><a href="https://www.w3school.com.cn/w.asp" title="建站手册">建站手册</a></li>
+<li id="r"><a href="https://www.w3school.com.cn/r.asp" title="参考手册">参考手册</a></li>
+</ul>
+</div>
+
+<div id="navsecond">
+
+<div id="course"><h2>CSS 基础教程</h2>
+<ul>
+<li class="currentLink"><a href="https://www.w3school.com.cn/css/index.asp" title="CSS 教程">CSS 教程</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_jianjie.asp" title="CSS 简介">CSS 简介</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_syntax.asp" title="CSS 语法">CSS 语法</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_selectors.asp" title="CSS 选择器">CSS 选择器</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_shiyong.asp" title="CSS 使用">CSS 使用</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_comments.asp" title="CSS 注释">CSS 注释</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_colors.asp" title="CSS 颜色">CSS 颜色</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_colors_rgb.asp" title="CSS RGB 颜色">CSS RGB 颜色</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_colors_hex.asp" title="CSS HEX 颜色">CSS HEX 颜色</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_colors_hsl.asp" title="CSS HSL 颜色">CSS HSL 颜色</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_background.asp" title="CSS 背景">CSS 背景</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_background_image.asp" title="CSS 背景图像">CSS 背景图像</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_background_repeat.asp" title="CSS 背景重复">CSS 背景重复</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_background_attachment.asp" title="CSS 背景附着">CSS 背景附着</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_background_shorthand.asp" title="CSS 简写背景属性">CSS 简写背景属性</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_border.asp" title="CSS 边框">CSS 边框</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_border_width.asp" title="CSS 边框宽度">CSS 边框宽度</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_border_color.asp" title="CSS 边框颜色">CSS 边框颜色</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_border_sides.asp" title="CSS 边框各边">CSS 边框各边</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_border_shorthand.asp" title="CSS 简写边框属性">CSS 简写边框属性</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_border_rounded.asp" title="CSS 圆角边框">CSS 圆角边框</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_margin.asp" title="CSS 外边距">CSS 外边距</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_margin_collapse.asp" title="CSS 外边距合并">CSS 外边距合并</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_padding.asp" title="CSS 内边距">CSS 内边距</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_dimension.asp" title="CSS 高度和宽度">CSS 高度/宽度</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_boxmodel.asp" title="CSS 框模型">CSS 框模型</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_outline.asp" title="CSS 轮廓">CSS 轮廓</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_outline_width.asp" title="CSS 轮廓宽度">CSS 轮廓宽度</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_outline_color.asp" title="CSS 轮廓颜色">CSS 轮廓颜色</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_outline_shorthand.asp" title="CSS 简写轮廓属性">CSS 简写轮廓属性</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_outline_offset.asp" title="CSS 轮廓偏移">CSS 轮廓偏移</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_text.asp" title="CSS 文本">CSS 文本</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_text_align.asp" title="CSS 文本对齐">CSS 文本对齐</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_text_decoration.asp" title="CSS 文本装饰">CSS 文本装饰</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_text_transformation.asp" title="CSS 文本转换">CSS 文本转换</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_text_spacing.asp" title="CSS 文字间距">CSS 文字间距</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_text_shadow.asp" title="CSS 文本阴影">CSS 文本阴影</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_font.asp" title="CSS 字体">CSS 字体</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_font_style.asp" title="CSS 字体样式">CSS 字体样式</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_font_size.asp" title="CSS 字体大小">CSS 字体大小</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_font_google.asp" title="CSS 谷歌字体">CSS 谷歌字体</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_font_shorthand.asp" title="CSS 简写字体属性">CSS 简写字体属性</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_icons.asp" title="CSS 图标">CSS 图标</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_link.asp" title="CSS 链接">CSS 链接</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_list.asp" title="CSS 列表">CSS 列表</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_table.asp" title="CSS 表格">CSS 表格</a></li>
+</ul>
+<h2>CSS 中级教程</h2>
+<ul>
+<li><a href="https://www.w3school.com.cn/css/css_display_visibility.asp" title="CSS 布局 - display 属性">CSS Display</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_max-width.asp" title="CSS 布局 - width 和 max-width">CSS max-width</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_positioning.asp" title="CSS 布局 - position 属性">CSS 定位</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_overflow.asp" title="CSS 布局 - 溢出">CSS 溢出</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_float.asp" title="CSS 布局 - 浮动和清除">CSS 浮动</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_float_clear.asp" title="CSS 布局 - clear 和 clearfix">CSS 清除浮动</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_float_examples.asp" title="CSS 布局 - 浮动实例">CSS 布局 - 浮动实例</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_inline-block.asp" title="CSS 布局 - display: inline-block">CSS inline-block</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_align.asp" title="CSS 布局 - 水平和垂直对齐">CSS 对齐</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_combinators.asp" title="CSS 选择器">CSS 组合器</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_pseudo_classes.asp" title="CSS 伪类">CSS 伪类</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_pseudo_elements.asp" title="CSS 伪元素">CSS 伪元素</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_image_transparency.asp" title="CSS 不透明度">CSS 不透明度</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_navbar.asp" title="CSS 导航栏">CSS 导航栏</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_navbar_vertical.asp" title="CSS 垂直导航栏">CSS 垂直导航栏</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_navbar_horizontal.asp" title="CSS 水平导航栏">CSS 水平导航栏</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_dropdowns.asp" title="CSS 下拉菜单">CSS 下拉菜单</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_image_gallery.asp" title="CSS 图片库">CSS 图片库</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_image_sprites.asp" title="CSS 图像精灵">CSS 图像精灵</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_attribute_selectors.asp" title="CSS 属性选择器">CSS 属性选择器</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_form.asp" title="CSS 表单">CSS 表单</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_counters.asp" title="CSS 计数器">CSS 计数器</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_website_layout.asp" title="CSS 网站布局">CSS 网站布局</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_units.asp" title="CSS 单位">CSS 单位</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_specificity.asp" title="CSS 特异性">CSS 特异性</a></li>
+</ul>
+<h2>CSS3 高级教程</h2>
+<ul>
+<li><a href="https://www.w3school.com.cn/css/css3_borders.asp" title="CSS 圆角">CSS 圆角</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_border_images.asp" title="CSS 边框图像">CSS 边框图像</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_backgrounds.asp" title="CSS 背景">CSS 背景</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_colors.asp" title="CSS 颜色">CSS 颜色</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_gradients.asp" title="CSS 渐变">CSS 渐变</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_gradients_radial.asp" title="CSS 径向渐变">CSS 径向渐变</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_shadows.asp" title="CSS 阴影">CSS 阴影</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_shadows_box.asp" title="CSS box-shadow">CSS box-shadow</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_text_effects.asp" title="CSS 文本效果">CSS 文本效果</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_fonts.asp" title="CSS 网络字体">CSS 网络字体</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_2dtransforms.asp" title="CSS 2D 转换">CSS 2D 转换</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_3dtransforms.asp" title="CSS 3D 转换">CSS 3D 转换</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_transitions.asp" title="CSS 过渡">CSS 过渡</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_animations.asp" title="CSS 动画">CSS 动画</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_tooltip.asp" title="CSS 工具提示">CSS 工具提示</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_images.asp" title="CSS 图像样式">CSS 图像样式</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_object-fit.asp" title="CSS object-fit">CSS object-fit</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_buttons.asp" title="CSS 按钮">CSS 按钮</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_pagination.asp" title="CSS 分页">CSS 分页</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_multiple_columns.asp" title="CSS 多列">CSS 多列</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_user_interface.asp" title="CSS 用户界面">CSS 用户界面</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_variables.asp" title="CSS 变量">CSS 变量</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_variables_overriding.asp" title="CSS 覆盖变量">CSS 覆盖变量</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_variables_javascript.asp" title="CSS 使用 JavaScript 更改变量">CSS 变量 - JavaScript</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_variables_mediaqueries.asp" title="CSS 在媒体查询中使用变量">CSS 变量 - 媒体查询</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_box-sizing.asp" title="CSS Box Sizing">CSS Box Sizing</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_flexbox.asp" title="CSS Flexbox">CSS Flexbox</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_mediaqueries.asp" title="CSS 媒体查询">CSS 媒体查询</a></li>
+<li><a href="https://www.w3school.com.cn/css/css3_mediaqueries_ex.asp" title="CSS 媒体查询实例">CSS 媒体查询实例</a></li>
+</ul>
+<h2>CSS 响应式设计</h2>
+<ul>
+<li><a href="https://www.w3school.com.cn/css/css_rwd_intro.asp" title="响应式网站设计 - 简介">RWD 简介</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_rwd_viewport.asp" title="响应式网页设计 - 视口">RWD 视口</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_rwd_grid.asp" title="响应式网页设计 - Grid-View">RWD 网格视图</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_rwd_mediaqueries.asp" title="响应式网页设计 - 媒体查询">RWD 媒体查询</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_rwd_images.asp" title="响应式网页设计 - 图像">RWD 图像</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_rwd_videos.asp" title="响应式网页设计 - 视频">RWD 视频</a></li>
+</ul>
+<h2>CSS 网格教程</h2>
+<ul>
+<li><a href="https://www.w3school.com.cn/css/css_grid.asp" title="CSS 网格布局模块">CSS 网格布局模块</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_grid_container.asp" title="CSS 网格容器">CSS 网格容器</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_grid_item.asp" title="CSS 网格项目">CSS 网格项目</a></li>
+</ul>
+<h2>CSS 实例</h2>
+<ul>
+<li><a href="https://www.w3school.com.cn/css/css_examples.asp" title="CSS 实例">CSS 实例</a></li>
+</ul>
+<h2>CSS 测验</h2>
+<ul>
+<li><a href="https://www.w3school.com.cn/css/css_quiz.asp" title="CSS 测验">CSS 测验</a></li>
+</ul>
+<h2>CSS 参考手册</h2>
+<ul>
+<li><a href="https://www.w3school.com.cn/cssref/index.asp" title="CSS 参考手册">CSS 参考手册</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css3_browsersupport.asp" title="CSS 浏览器支持">CSS 浏览器支持</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_selectors.asp" title="CSS 选择器">CSS 选择器</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_functions.asp" title="CSS 函数">CSS 函数</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_units.asp" title="CSS 单位">CSS 单位</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_ref_aural.asp" title="CSS 听觉">CSS 听觉</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_websafe_fonts.asp" title="CSS 网络安全字体">CSS 网络安全字体</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_animatable.asp" title="CSS 可动画制作">CSS 可动画制作</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_units.asp" title="CSS 单位">CSS 单位</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_colors.asp" title="CSS 颜色">CSS 颜色</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_colors_legal.asp" title="CSS 颜色值">CSS 颜色值</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_default_values.asp" title="CSS 默认值">CSS 默认值</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_entities.asp" title="CSS 实体">CSS 实体</a></li>
+</ul>
+</div><div id="selected">
+<h2>建站手册</h2>
+<ul>
+<li><a href="https://www.w3school.com.cn/site/index.asp" title="网站构建">网站构建</a></li>
+<li><a href="https://www.w3school.com.cn/w3c/index.asp" title="万维网联盟 (W3C)">万维网联盟 (W3C)</a></li>
+<li><a href="https://www.w3school.com.cn/browsers/index.asp" title="浏览器信息">浏览器信息</a></li>
+<li><a href="https://www.w3school.com.cn/quality/index.asp" title="网站品质">网站品质</a></li>
+<li><a href="https://www.w3school.com.cn/semweb/index.asp" title="语义网">语义网</a></li>
+<li><a href="https://www.w3school.com.cn/careers/index.asp" title="职业规划">职业规划</a></li>
+<li><a href="https://www.w3school.com.cn/hosting/index.asp" title="网站主机">网站主机</a></li>
+</ul>
+
+<h2 id="link_about"><a href="https://www.w3school.com.cn/about/index.asp" title="关于 W3School" target="_blank">关于 W3School</a></h2>
+<h2 id="link_help"><a href="https://www.w3school.com.cn/about/about_helping.asp" title="帮助 W3School" target="_blank">帮助 W3School</a></h2>
+
+</div>
+
+</div>
+
+<div id="maincontent">
+
+<h1>CSS 教程</h1>
+
+<div id="tpn">
+<ul class="prenext">
+<li class="pre"><a href="https://www.w3school.com.cn/css/index.asp" title="CSS 教程">CSS 教程</a></li>
+<li class="next"><a href="https://www.w3school.com.cn/css/css_jianjie.asp" title="CSS 简介">CSS 简介</a></li>
+</ul>
+</div>
+
+
+
+<div id="intro">
+<p>CSS 是一种描述 HTML 文档样式的语言。</p>
+
+<p>CSS 描述应该如何显示 HTML 元素。</p>
+
+<p>本教程将从零起点的基础教程开始，一直到 CSS3 高级教程，为您提供全面系统地讲解。</p>
+</div>
+
+
+
+<div>
+<h2>每一章中的实例</h2>
+
+<p>本 CSS 教程包含数百个 CSS 实例。</p>
+
+<p>通过使用我们的在线编辑器（W3Schoo TIY），您可以编辑 CSS，然后单击运行按钮来查看结果。</p>
+
+<h3>CSS 实例</h3>
+
+<pre>body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+</pre>
+
+<p class="tiy"><a target="_blank" href="https://www.w3school.com.cn/tiy/t.asp?f=css_index">亲自试一试</a></p>
+
+<p>请点击“亲自试一试”按钮来查看它如何运行。</p>
+
+</div>
+
+
+
+<div>
+<h2>CSS 实例</h2>
+
+<p>从 300 多个实例中学习！使用我们的在线编辑器，您可以编辑 CSS，然后单击运行按钮来查看结果。</p>
+
+<p><a class="btn-blue" href="https://www.w3school.com.cn/css/css_examples.asp">访问 CSS 实例！</a></p>
+</div>
+
+
+
+<div>
+<h2>CSS 习题和测验</h2>
+
+<p>在 W3School 测试您的 CSS 技能！</p>
+
+<p><a class="btn-blue" href="https://www.w3school.com.cn/quiz/quiz.asp?f=css">开始 CSS 测验！</a></p>
+</div>
+
+
+
+<div>
+<h2>CSS 参考手册</h2>
+
+<p>在 W3School，您将找到所有属性和选择器的完整 CSS 参考手册，包括语法、示例、浏览器支持等。</p>
+
+<ul>
+<li><a href="https://www.w3school.com.cn/cssref/index.asp" title="CSS 参考手册">CSS 参考手册</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_browsersupport.asp" title="CSS 浏览器支持参考手册">CSS 浏览器支持参考手册</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_selectors.asp" title="CSS 选择器参考手册">CSS 选择器参考手册</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_functions.asp" title="CSS 函数参考手册">CSS 函数参考手册</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_animatable.asp" title="CSS 动画相关属性">CSS 动画相关属性</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_websafe_fonts.asp" title="CSS 网络安全字体">CSS 网络安全字体</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_fonts_fallbacks.asp" title="CSS 字体回退">CSS 字体回退</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_units.asp" title="CSS 单位">CSS 单位</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_colors.asp" title="CSS 颜色">CSS 颜色</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_colors_legal.asp" title="CSS 颜色值">CSS 颜色值</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_default_values.asp" title="CSS 默认值">CSS 默认值</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_entities.asp" title="CSS 实体">CSS 实体</a></li>
+<li><a href="https://www.w3school.com.cn/cssref/css_ref_aural.asp" title="CSS 听觉参考手册">CSS 听觉参考手册</a></li>
+</ul>
+</div>
+
+
+
+<div id="bpn">
+<ul class="prenext">
+<li class="pre"><a href="https://www.w3school.com.cn/css/index.asp" title="CSS 教程">CSS 教程</a></li>
+<li class="next"><a href="https://www.w3school.com.cn/css/css_jianjie.asp" title="CSS 简介">CSS 简介</a></li>
+</ul>
+</div>
+
+
+<div style="background-color:#fcfdf8; padding:0;">
+<script async="" src="./CSS 教程_files/f(4).txt"></script>
+<!-- W3School ���Ĺ�� -->
+<ins class="adsbygoogle" style="display:inline-block;width:800px;height:250px" data-ad-client="ca-pub-3381531532877742" data-ad-slot="2086924285" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_1_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 250px; width: 800px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_1_anchor" style="border: none; height: 250px; width: 800px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:800px;height:250px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="800" height="250" frameborder="0" src="./CSS 教程_files/ads(1).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-google-query-id="CJOMmcD_ovMCFbATtwAdVKkDxg" data-load-complete="true"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+<!-- maincontent end -->
+
+<div id="sidebar">
+
+<div id="tools">
+<h5 id="tools_reference"><a href="https://www.w3school.com.cn/cssref/index.asp">CSS 参考手册</a></h5>
+<h5 id="tools_example"><a href="https://www.w3school.com.cn/css/css_examples.asp">CSS 实例</a></h5>
+<h5 id="tools_quiz"><a href="https://www.w3school.com.cn/css/css_quiz.asp">CSS 测验</a></h5>
+<h5 id="tools_professional"><a href="https://www.w3school.com.cn/css/index_pro.asp">CSS 课外书</a></h5>
+</div>
+
+<div id="sidebar_zzs">
+
+<div id="sbtg">
+<a id="sbtg_link" href="https://t.1yb.co/ydl6" target="_blank"></a>
+</div>
+
+</div>
+
+</div>
+
+<div id="footer">
+<p id="p1">
+W3School 简体中文版提供的内容仅用于培训和测试，不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。版权所有，保留一切权利。
+</p>
+
+<p id="p2">
+
+<a href="https://www.w3school.com.cn/about/about_use.asp" title="关于使用">使用条款</a>
+<a href="https://www.w3school.com.cn/about/about_privacy.asp" title="关于隐私">隐私条款</a>
+<a target="_blank" href="https://www.ykinvestment.com/">技术支持：赢科</a>
+<a target="_blank" href="http://www.beian.miit.gov.cn/">蒙ICP备06004630号</a>
+</p>
+</div>
+
+
+</div>
+<!-- wrapper end -->
+
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><ins id="aswift_2_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_2_anchor" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="./CSS 教程_files/ads(2).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!3" data-load-complete="true"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_5373111689923" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./CSS 教程_files/saved_resource.html"></iframe><iframe src="./CSS 教程_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./CSS 教程_files/zrt_lookup.html" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important; width: 100vw !important; height: 100vh !important; bottom: auto !important; clear: none !important; float: none !important; left: 0px !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; right: auto !important; top: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background: transparent !important;" aria-hidden="true" data-ad-status="filled" data-vignette-loaded="true"><ins id="aswift_3_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-table !important; bottom: auto !important; clear: none !important; float: none !important; left: auto !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; right: auto !important; top: auto !important; vertical-align: baseline !important; z-index: auto !important;"><ins id="aswift_3_anchor" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: block !important; bottom: auto !important; clear: none !important; float: none !important; left: auto !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; right: auto !important; top: auto !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_3" name="" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="" height="" frameborder="0" src="./CSS 教程_files/zrt_lookup(1).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" style="width: 100vw !important; height: 100vh !important; left: 0px !important; position: absolute !important; top: 0px !important; bottom: auto !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; right: auto !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" data-google-container-id="a!4" data-google-query-id="CLPBm8D_ovMCFVJKfAodL3AKgg" data-load-complete="true"></iframe></ins></ins></ins></html>

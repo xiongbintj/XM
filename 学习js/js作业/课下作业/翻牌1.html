@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			main {
+				margin: 0 auto;
+				width: 520px;
+				height: 520px;
+				background-color: darkgreen;
+			}
+
+			img {
+				width: 100px;
+				height: 150px;
+				border-radius: 5px;
+
+			}
+
+			ul {
+				overflow: hidden;
+				list-style: none;
+			}
+
+			li {
+				margin: 5px 5px;
+				float: left;
+				width: 100px;
+				height: 200px;
+				position: relative;
+	
+			}
+
+			h2 {
+				font-family: '微软雅黑';
+				font-size: 16px;
+				/* 	font-weight: bold; */
+				color: #00518D;
+				text-align: center;
+				background: #f1f1f1;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				border-radius: 5px;
+			}
+
+			.box {
+				height: 45PX;
+				background-color: #00FFFF;
+				text-align: center;
+			}
+			button{margin: 10px auto;
+			height: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<!-- <div class="box"> -->
+				<button>从小到大</button><button>打乱顺序</button>
+			<!-- </div> -->
+			<ul class="colul">
+
+				<li>
+					<img src="img/66.jpg" class="zheng">
+					<h2>5-红心J</h2>
+
+				</li>
+				<li>
+					<img src="img/55.jpg" class="zheng">
+					<h2>1-红心伍</h2>
+				</li>
+				<li>
+					<img src="img/11.jpg" class="zheng">
+					<h2>4-方块拾</h2>
+				</li>
+				<li>
+					<img src="img/22.jpg" class="zheng">
+					<h2>8-梅花A</h2>
+				</li>
+				<li>
+					<img src="img/33.jpg" class="zheng">
+					<h2>7-梅花K</h2>
+				</li>
+				<li>
+					<img src="img/44.jpg" class="zheng">
+					<h2>6-方块Q</h2>
+				</li>
+				<li>
+					<img src="img/77.jpg" class="zheng">
+					<h2>2-红心柒</h2>
+				</li>
+				<li>
+					<img src="img/88.jfif" class="zheng">
+					<h2>3-红心玖</h2>
+				</li>
+          
+			</ul>
+
+		</main>
+		<script type="text/javascript">
+			let oMain = document.querySelector( 'main')
+			let oBtn = document.querySelectorAll('button')
+			let oColul = document.getElementById('colul')
+			let oLi = document.querySelectorAll('li')
+			let aDiv = document.querySelectorAll('div')
+			let str = ""
+			let arr = []
+			for(var i=0; i<oLi.length; i++){
+				// arr.push(oLi[i]);
+				arr[i] = oLi[i]
+			}
+			// console.log(arr.push(oLi[i]))
+			console.log(arr)
+		</script>
+	</body>
+</html>

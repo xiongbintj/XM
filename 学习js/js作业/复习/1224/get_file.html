@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./tools.js"></script>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box" style="width: 100px;height: 100px;background-color: #0000FF;"></div>
+		<script type="text/javascript">
+			let oBox = e('.box')
+			console.log(oBox.style.backgroundColor)
+			console.log(getComputedStyle(oBox).backgroundColor)
+			function getStyle(ele,attr){
+				if(ele.currentStyle){
+					return ele.currentStyle()[attr]
+				}else{
+					return	getComputedStyle(ele)[attr]
+				}
+			}
+			// console.log(getStyle(oBox,'width'))
+			// ele.currentStyle()[attr]
+		</script>
+	</body>
+</html>

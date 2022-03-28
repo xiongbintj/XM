@@ -1,0 +1,30 @@
+body {
+  background-color: #00FFFF;
+}
+header {
+  width: 1000px;
+  height: 260px;
+  color: #fff;
+}
+header .navigation {
+  font-size: 12px;
+}
+header .logo {
+  width: 300px;
+}
+.topbar {
+  color: #fff;
+}
+.page {
+  background-color: pink;
+}
+h1 {
+  color: #000;
+}
+h2 {
+  color: red;
+}
+table {
+  background-color: pink;
+  color: #fff;
+}

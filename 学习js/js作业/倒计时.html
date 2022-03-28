@@ -1,0 +1,36 @@
+<body>
+		距离：<input type="text" value="Nov 29,2022 12:10:10"><!-- 文本框 -->
+		还有：<input type="text"><!-- 文本框 -->
+		<button>开始</button><!-- 按钮 -->
+		<script type="text/javascript">
+		let aInput = document.querySelectorAll('input')//获取所有文本框元素
+		let oBtn = document.querySelector('button')//获取按钮
+		let t1 = null//声明指空对象
+		let t2 = null//声明指空对象
+		let t   //声明未赋予值     也可以不用声明
+		let str = '2天20时40分钟50秒'//声明数字串样式
+		let timer = null//定时器用
+		
+		t1 = new Date(aInput[0].value) //未来时间对象
+		oBtn.onclick = function(){ //创建点击函数
+			clearInterval(timer)//用将定时器停止
+			fn()//运行函数一次
+			function fn(){//构建函数
+				t2 = new Date() //当前时间
+				t = (t1 - t2)/1000//两个时间差除以1000得到总秒数
+				if(t>=0){  //条件语句
+				str = Math.floor(t/86400) +'天'+Math.floor(t%86400/3600)+'时'+ Math.floor(t%86400%3600/60)+'分'+ Math.floor(t%60)+'秒'//套用公式让其得出天，时，分，秒
+				//floor 对一个数进行下取整。
+				aInput[1].value = str  // 文本框显示字符串
+				}else{
+					clearInterval(timer)//用将定时器停止
+				}
+			}
+			timer = setInterval(fn,1000)//定时器一秒运行一次函数
+		}
+		//1.建立2个文本框，一个按钮
+		//2.获取所需要的元素
+		//3.理清思路，首先构建一个函数去获得时间差，运用new Date()方法可获得最新系统时间和未来时间，然后用时间差套用公式等到天，时，分，秒样式，然后构建点击函数，用定时器去运行
+		</script>
+	</body>
+</html>

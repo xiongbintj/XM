@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				width: 150px;
+				border: 1px solid red;
+				margin: 100px auto;
+			}
+
+			ul {
+				list-style: none;
+			}
+
+			a {
+				height: 40px;
+				line-height: 40px;
+				display: block;
+				text-align: center;
+				border-bottom: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li><a href="#">列表1</a></li>
+				<li><a href="#">列表2</a></li>
+				<li><a href="#">列表3</a></li>
+				<li><a href="#">列表4</a></li>
+				<li><a href="#">列表5</a></li>
+				<li><a href="#">列表6</a></li>
+				<li><a href="#">列表7</a></li>
+				<li><a href="#">列表8</a></li>
+
+			</ul>
+			</div>
+			
+		<script>
+			const oUl = document.querySelector("ul") //获取元素
+			const aLi = document.querySelectorAll("li") //获取元素
+			const first = aLi[0] //变量声明第一个li
+			const last = aLi[aLi.length - 1] //变量声明最后一个li
+			for (let i = 0; i < aLi.length; i++) { //for循环
+				aLi[i].onmouseover = function() { //当鼠标悬停在li的时候
+					fn1(this) //这时候运行函数 fn1
+				}
+				aLi[i].onmouseout = function() { //当鼠标离开li的时候
+					fn2(this) ////这时候运行函数 fn2
+				}
+			}
+
+
+			function fn1(ele) {
+				if (ele == first) { //条件语句当是第一个元素的时候
+					ele.style.backgroundColor = "red" //指定元素的变化
+					ele.nextElementSibling.style.backgroundColor = "darkred" //返回指定元素之后的下一个兄弟元素变化
+				} else if (ele == last) //条件语句当是最后一个元素的时候
+				{
+					ele.previousElementSibling.style.backgroundColor = "darkred" //返回指定元素之后的上一个兄弟元素变化
+					ele.style.backgroundColor = "red" //指定元素的变化
+				} else {
+					ele.previousElementSibling.style.backgroundColor = "darkred" //返回指定元素之后的上一个兄弟元素变化
+					ele.style.backgroundColor = "red"
+					ele.nextElementSibling.style.backgroundColor = "darkred" //返回指定元素之后的下一个兄弟元素变化
+				}
+			}
+
+			function fn2(ele) {
+				if (ele == first) { //条件语句当是第一个元素的时候
+					ele.style.backgroundColor = "" //指定元素的变化
+					ele.nextElementSibling.style.backgroundColor = "" //返回指定元素之后的下一个兄弟元素变化
+				} else if (ele == last) //条件语句当是最后一个元素的时候
+				{
+					ele.previousElementSibling.style.backgroundColor = "" //返回指定元素之后的上一个兄弟元素变化
+					ele.style.backgroundColor = "" //指定元素的变化
+				} else {
+					ele.previousElementSibling.style.backgroundColor = "" / 返回指定元素之后的上一个兄弟元素变化
+					ele.style.backgroundColor = "" //指定元素的变化
+					ele.nextElementSibling.style.backgroundColor = "" //返回指定元素之后的下一个兄弟元素变化
+				}
+			}
+
+			//1.理清思路，做好css,然后获取所需要的元素和声明变量
+			//2.创建两个函数，一个是悬停状态时候需要发生的事情，一个是离开状态发生的事情
+			//特别注意的事情是又条件语句，有三种小情况。
+			//3.创建for循环，两种情况下发生的事件（函数）
+			document.documentElement
+			window.onresize
+			console.log(1)
+			setTimeout(() => {
+				console.log(2)
+			})
+			setTimeout(() => {
+				console.log(3)
+			}, 100)
+			setTimeout(() => {
+				console.log(4)
+			}, 0)
+			console.log(5)
+		</script>
+	</body>
+</html>

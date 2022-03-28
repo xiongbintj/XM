@@ -1,0 +1,170 @@
+/* 重置游览器的默认样式 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+ul {
+	list-style: none;
+}
+
+
+/* yetou */
+header {
+	width: 100%;
+	overflow: hidden;
+	background-color: #752B7D;
+}
+
+.yetou {
+	width: 800px;
+	margin: 0 auto;
+}
+
+h1 {
+	width: 500px;
+	height: 60px;
+	line-height: 60px;
+	float: left;
+	color: #fff;
+}
+
+.b2 {
+	width: 300px;
+	height: 60px;
+	line-height: 60px;
+	color: #fff;
+	float: right;
+	padding: 0 auto;
+	margin: 0 auto;
+}
+
+.b2 ul {
+	overflow: hidden;
+}
+
+.b2 ul li {
+	width: 100px;
+	float: left;
+}
+
+.b3 {
+	width: 800px;
+	height: 40px;
+}
+
+#menu li {
+	background-color: #612168;
+	width: 160px;
+	height: 20px;
+	float: left;
+	margin: 0px auto;
+	padding: 10px 0 10px 0;
+}
+
+#menu li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*zhuti  */
+main {
+	width: 100%;
+	background-color: #e4cae6;
+
+}
+
+.a3 {
+	margin: 0 auto;
+	padding: 0 auto;
+	width: 800px;
+	overflow: hidden;
+}
+
+h2 {
+	color: #752B7D;
+}
+
+.zuo {
+	background-color: #E3C6E6;
+	width: 460px;
+	float: left;
+	margin: 20px auto;
+
+}
+
+
+.you {
+	background-color: #E3C6E6;
+	width: 260px;
+	float: right;
+	margin: 300px auto;
+
+
+}
+
+
+
+
+
+/*yewei  */
+footer {
+	width: 100%;
+	background-color: #393939;
+	margin:0 auto;
+	padding:0 auto;
+	overflow: hidden;
+}
+
+.yejiao {margin: 0 auto;
+	padding: 0 auto;
+	width: 800px;
+	background-color: #393939;
+	overflow: hidden;}
+
+#menu1 li {
+	
+	width: 250px;
+	height: 20px;
+	
+	margin: 0px auto;
+	padding: 5px 0 5px 0;
+}
+.a4{margin: 0 auto;
+	padding: 0 auto;}
+.b6 {
+	color: #752B7D;
+	width: 250px;
+	float: left;
+	
+}
+
+.b7 {
+	color: #FFFFFF;
+	width: 550px;
+	float: right;
+}
+
+.b8 {
+	color: #FFFFFF;
+	width: 550px;
+	float: right;
+}

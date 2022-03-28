@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.container {
+				width: 500px;
+				height: 500px;
+				border: 10px solid black;
+				margin: 100px auto;
+				position: relative;
+			}
+			
+			.container div {
+				width: 48px;
+				height: 48px;
+				border: 1px solid red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		
+		</div>
+		<script type="text/javascript">
+			var oBox = document.querySelector('.container') 
+			var oDiv = document.querySelectorAll('.container div')
+			var colorArr = ['red', 'yellow', 'blue', 'green']
+			var str = '' //设置变量
+			var n = 0
+			
+			for (var i = 0; i < 10; i++){
+				for (var j = 0; j < 10; j++){
+					str += `<div style= "left:${i*50}px;top:${j*50}px;">${i+1}</div>`
+				}
+				}
+			
+			 oBox.innerHTML = str
+		</script>
+	</body>
+</html>

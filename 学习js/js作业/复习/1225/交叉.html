@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p {
+				text-align: center;
+			}
+
+			p .active {
+				border: 2px solid #667ca1;
+				color: #667ca1;
+			}
+
+			input {
+				font-size: 26px;
+				color: gray;
+				padding: 20px;
+				box-shadow: 3px 3px 13px rgba(0, 0, 0, 0.3);
+			}
+
+			#box {
+				margin: 0 auto;
+				width: 800px;
+				height: 300px;
+				border: 1px solid #0000FF;
+			}
+
+			#box ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				float: left;
+				width: 200px;
+			}
+
+			#box li {
+				height: 99px;
+				border-bottom: 1px solid #999;
+				background: #f1f1f1;
+				text-align: center;
+				cursor: pointer;
+				font: 40px/99px 'arial';
+			}
+
+			#box img {
+				float: left;
+				width: 400px;
+				height: 300px;
+			}
+
+			#box .active {
+				background: #667ca1;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<input type="button" value="下一张" />
+			<input class="active" type="button" value="交叉走" />
+			<input type="button" value="同步走" />
+		</p>
+		<div id="box">
+			<ul>
+				<li class="active">0</li>
+				<li>1</li>
+				<li>2</li>
+			</ul>
+			<img src="../img/r1.jpg" />
+			<ul>
+				<li>3</li>
+				<li>4</li>
+				<li class="active">5</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			let aBnt = document.getElementsByTagName('input')
+			let aLi = document.getElementsByTagName('li');
+			let oImg = document.getElementsByTagName('img')[0];
+			let arr = ['../img/r1.jpg', '../img/r2.jpg', '../img/r3.jpg'];
+			let n = 0;
+			let onOff = true;
+			let arr = [1, 3, 2]
+			// function clearClass() {
+			// 	for (var i=0; i<aLi.length; i++) {
+			// 		aLi[i].className = '';
+			// 	}
+			// }
+		arguements
+		</script>
+	</body>
+</html>

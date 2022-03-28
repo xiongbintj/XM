@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			ul,
+			li {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none
+			}
+
+			h2 {
+				margin-bottom: 2rem;
+				text-align: center;//文字水平具中
+			}
+
+			.links {
+				width: 1100px;
+				margin: 0 auto;
+				border: 1px solid dimgrey;
+				border-left: 0;
+				border-right: 0;
+				border-top: 0;
+			}
+
+			.links a {
+				margin: 0 20px;
+			}
+
+			.content {
+				width: 1100px;
+				height: 600px;
+				margin: 20px auto;
+				position: relative;/* 定位 */
+			}
+/*  */
+			.content ul {
+				display: none;
+				grid-template-columns: 1fr 1fr 1fr 1fr;//属性规定网格布局中的列数
+				grid-gap: 30px 27px;//网格布局中的间隙
+				padding: 3px 0;
+				position: absolute;/* 定位 */
+				top: 0;
+				left: 0;
+			}
+
+			#ul1 {
+				
+				z-index: 6;
+				display: grid;
+			}
+
+			#ul2 {
+				display: none;
+			}
+
+			#ul3 {
+				display: none;
+			}
+
+			#ul4 {
+				display: none;
+			}
+
+			#ul5 {
+				display: none;
+			}
+
+			.active {
+				color: lightseagreen;
+				border: 1px solid dimgrey;
+				border-bottom: 2px solid white;
+				margin-bottom: -1px;
+				border-radius: 4px 4px 0 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="topbar">
+			<h2>作品</h2>
+			<div class="links">
+				<a href="#" id="a1" class="active">UI设计</a>
+				<a href="#" id="a2" class="bcc">网页设计</a>
+				<a href="#" id="a3" class="bcc">海报设计</a>
+				<a href="#" id="a4" class="bcc">标志设计</a>
+				<a href="#" id="a5" class="bcc">字体设计</a>
+			</div>
+			<div class="content">
+				<ul id="ul1">
+					<li><img src="img/w1.png" /></li>
+					<li><img src="img/w2.png" /></li>
+					<li><img src="img/w3.png" /></li>
+					<li><img src="img/w4.png" /></li>
+					<li><img src="img/w5.png" /></li>
+					<li><img src="img/w6.png" /></li>
+					<li><img src="img/w7.png" /></li>
+					<li><img src="img/w8.png" /></li>
+				</ul>
+				<ul id="ul2">
+					<li><img src="img/w9.png" /></li>
+					<li><img src="img/w10.png" /></li>
+					<li><img src="img/w11.png" /></li>
+					<li><img src="img/w12.png" /></li>
+					<li><img src="img/w13.png" /></li>
+					<li><img src="img/w14.png" /></li>
+					<li><img src="img/w15.png" /></li>
+					<li><img src="img/w16.png" /></li>
+				</ul>
+				<ul id="ul3">
+					<li><img src="img/w17.png" /></li>
+					<li><img src="img/w18.png" /></li>
+					<li><img src="img/w19.png" /></li>
+					<li><img src="img/w20.png" /></li>
+					<li><img src="img/w21.png" /></li>
+					<li><img src="img/w22.png" /></li>
+					<li><img src="img/w23.png" /></li>
+					<li><img src="img/w24.png" /></li>
+				</ul>
+				<ul id="ul4">
+					<li><img src="img/w25.png" /></li>
+					<li><img src="img/w26.png" /></li>
+					<li><img src="img/w27.png" /></li>
+					<li><img src="img/w28.png" /></li>
+					<li><img src="img/w29.png" /></li>
+					<li><img src="img/w30.png" /></li>
+					<li><img src="img/w31.png" /></li>
+					<li><img src="img/w32.png" /></li>
+				</ul>
+				<ul id="ul5">
+					<li><img src="img/w33.png" /></li>
+					<li><img src="img/w34.png" /></li>
+					<li><img src="img/w35.png" /></li>
+					<li><img src="img/w36.png" /></li>
+					<li><img src="img/w37.png" /></li>
+					<li><img src="img/w38.png" /></li>
+					<li><img src="img/w39.png" /></li>
+					<li><img src="img/w40.png" /></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			document.getElementById('a1').onclick=function() {
+				document.getElementById('a1').className='active'
+				document.getElementById('a2').className=''
+				document.getElementById('a3').className=''
+				document.getElementById('a4').className=''
+				document.getElementById('a5').className=''
+				document.getElementById('ul1').style.display='grid'
+				document.getElementById('ul2').style.display='none'
+				document.getElementById('ul3').style.display='none'
+				document.getElementById('ul4').style.display='none'
+				document.getElementById('ul5').style.display='none'
+			}
+
+			document.getElementById('a2').onclick=function() {
+				document.getElementById('a1').className=''
+				document.getElementById('a2').className='active'
+				document.getElementById('a3').className=''
+				document.getElementById('a4').className=''
+				document.getElementById('a5').className=''
+				document.getElementById('ul1').style.display='none'
+				document.getElementById('ul2').style.display='grid'
+				document.getElementById('ul3').style.display='none'
+				document.getElementById('ul4').style.display='none'
+				document.getElementById('ul5').style.display='none'
+			}
+			document.getElementById('a3').onclick=function() {
+				document.getElementById('a1').className=''
+				document.getElementById('a3').className='active'
+				document.getElementById('a2').className=''
+				document.getElementById('a4').className=''
+				document.getElementById('a5').className=''
+				document.getElementById('ul2').style.display='none'
+				document.getElementById('ul3').style.display='grid'
+				document.getElementById('ul1').style.display='none'
+				document.getElementById('ul4').style.display='none'
+				document.getElementById('ul5').style.display='none'
+			}
+			document.getElementById('a4').onclick=function() {
+				document.getElementById('a1').className=''
+				document.getElementById('a4').className='active'
+				document.getElementById('a3').className=''
+				document.getElementById('a2').className=''
+				document.getElementById('a5').className=''
+				document.getElementById('ul1').style.display='none'
+				document.getElementById('ul4').style.display='grid'
+				document.getElementById('ul3').style.display='none'
+				document.getElementById('ul2').style.display='none'
+				document.getElementById('ul5').style.display='none'
+			}
+			document.getElementById('a5').onclick=function() {
+				document.getElementById('a1').className=''
+				document.getElementById('a5').className='active'
+				document.getElementById('a3').className=''
+				document.getElementById('a4').className=''
+				document.getElementById('a2').className=''
+				document.getElementById('ul1').style.display='none'
+				document.getElementById('ul5').style.display='grid'
+				document.getElementById('ul3').style.display='none'
+				document.getElementById('ul4').style.display='none'
+				document.getElementById('ul2').style.display='none'
+			}
+
+
+			</script>></body></html>

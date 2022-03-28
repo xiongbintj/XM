@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// let str = 'I\'m' a student'
+			
+		 // let str = "How are you doing today?"
+		 // console.log(str.split(''))
+		 // 					oTotalCost.innerHTML = parseFloat(aSubTotal[0].value)+parseFloat(aSubTotal[1].value)+parseFloat(aSubTotal[2].value)+parseFloat(aSubTotal[3].value)+parseFloat(aSubTotal[4].value)
+			// 				oTotalQuantity.innerHTML = parseInt(aQuantity[0].value) + parseInt(aQuantity[1].value) + parseInt(aQuantity[2].value) + parseInt(aQuantity[3].value) + parseInt(aQuantity[4].value)
+			// 				aInputReplace[2].onclick = function() {
+			// 				if (aInputReplace[0].value == "") {
+			// 									alert('不能为空')
+			// 								} else if (str.indexOf(aInputReplace[0].value) == -1) {
+			// 									alert('不能找到')
+			// 								} else {
+			// 									if (!aInputReplace[1].value) {
+			// 										if(!confirm('您确定要删除输入的内容吗？')){
+			// 											aInputReplace[0].value = '';
+			// 											return;
+			// 										}
+			// 							}
+
+			var arr = new Array(9,2,6,3,8,1);
+			
+			document.write(arr.toString());// toString()方法，此方法表示把数组转化为字符串并返回结果
+			document.write(arr.join(" "));//join()方法，该方法把数组的所有元素放入一个字符串
+			document.write(arr.slice(0));//slice()方法，这个方法表示从某个已有的数组返回选定的元素
+			arr.sort();
+			document.write(arr);//sort()方法，该方法表明对数组的元素进行排序，一般是升序排列
+			document.write(arr+ "<br />");
+			document.write(arr.reverse());//reverse()方法，这个方法表示颠倒数组中元素的顺序
+		</script>
+	</body>
+</html>

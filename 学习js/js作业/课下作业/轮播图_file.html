@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			.container {
+				width: 500px;
+				height: 310px;
+				margin: 100px auto;
+				position: relative;
+			}
+
+			img {
+				position: absolute;
+				top: 50%;
+				transform: rotateY(50%);
+				display: block;
+			}
+
+			#you {
+				top: 95%;
+				right: -50px;
+			}
+
+			#zuo {
+				top: 95%;
+				left: 0;
+			}
+
+			#p {
+				margin: 0 auto;
+				position: absolute;
+				top: 50%;
+				transform: rotateY(50%);
+				color: #FF0000;
+			}
+			#sn{margin: 0 auto;
+				position: absolute;
+				top: 50%;
+				transform: rotateY(50%);
+				right: -50px;
+				color:#fff;
+				
+				}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<img id="on" src="img/img01.jpg" />
+			<img id="you" src="img/next.png" />
+			<img id="zuo" src="img/prev.png" />
+			<p id="p"></p>
+			<span id="sn"></span>
+		</div>
+
+		<script type="text/javascript">
+			// 	var oImg = document.getElementById('on')
+			// 	var oYou = document.getElementById('you')
+			// 	var oZou = document.getElementById('zuo')
+			// 	var manu = 1
+
+			// oYou.onclick = function() {
+			// 	manu++
+			// 	if (manu <=4) {
+			// 		oImg.src = "img/img0" + manu + ".jpg"
+			// 	}
+			// 	}
+			// 	oZou.onclick = function() {
+			// 		manu--
+			// 		if (manu <=4) {
+			// 			oImg.src = "img/img0" + manu + ".jpg"
+			// 		}
+			// 	}
+
+			var ophoto = document.querySelector("#on")
+			var opyuo = document.querySelector("#you")
+			var opzuo = document.querySelector("#zuo")
+			var oTitles = document.querySelector("#p")
+			var oSn = document.querySelector("#sn")
+			var imgUrls = ["img/img01.jpg", "img/img02.jpg", "img/img03.jpg", "img/img04.jpg"]
+			var imgTitles = ["犀牛战车", "双瞳探索机", "星际战甲", "宇宙飞行器"]
+			var imgSn =["1/4", "2/4", "3/4", "4/4"]
+			var n = 0
+
+			// 初始化
+			ophoto.src = imgUrls[0]
+			oTitles.innerHTML = imgTitles[0]
+			oSn.innerHTML =imgSn[0]
+			// 点击右键
+			opyuo.onclick = function() {
+				n++
+				if (n == 4) {
+					n = 0
+				}
+				ophoto.src = imgUrls[n]
+				oTitles.innerHTML = imgTitles[n]
+				oSn.innerHTML =imgSn[n]
+			}
+			// 点击左键
+			opzuo.onclick = function() {
+				n--
+				if (n < 0) {
+					n = +3
+				}
+				ophoto.src = imgUrls[n]
+				oTitles.innerHTML = imgTitles[n]
+				oSn.innerHTML =imgSn[n]
+			}
+
+
+			// alert(myArr[myarr.length-1])
+		</script>
+	</body>
+
+</html>

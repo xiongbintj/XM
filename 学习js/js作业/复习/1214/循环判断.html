@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="bnt1">-</button><input id="text"><button id="bnt2">+</button>
+		<script type="text/javascript">
+			let oBnt1 = document.getElementById("bnt1")
+			let oBnt2 = document.getElementById("bnt2")
+			let oText = document.getElementById("text")
+			// let n = oText.value
+			oBnt1.onclick = function() {
+				//  oText.value--
+				// if ( oText.value>0){ oText.value=4}
+				oText.value > 0 ? oText.value-- : oText.value = 4
+			}
+			oBnt2.onclick = function() {
+				//  oText.value++
+				// if ( oText.value>4){ oText.value=0}
+				oText.value < 4 ? oText.value++ : oText.value = 0
+			}
+		</script>
+	</body>
+</html>
+

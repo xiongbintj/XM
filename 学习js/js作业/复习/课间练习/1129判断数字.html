@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text"><!-- 文本框 -->
+		<input type="button" value="判断"><!-- 文本框按钮 -->
+		<p>请输入数字</p><!-- 文字段落p -->
+		<script type="text/javascript">
+			let aInput = document.querySelectorAll('input')//获取所有文本框元素
+			let oP = document.querySelector('p')//获取元素段落P
+			aInput[1].onclick = function() {//构建点击文本框2按钮的函数
+				$char = aInput[0].value
+				if (isNum($char)) {//条件语句：假如charAt()=$char指定位置的字符是数字
+					oP.innerHTML = "是数字"
+					//段落p文本显示
+					oP.style.color = '#20B2AA'//段落p文本颜色
+				} else {
+					//度过不是数字
+					oP.innerHTML = "不是数字"//段落p文本显示
+					oP.style.color = 'red'//段落p文本颜色
+				}
+			}
+
+			function isNum(str) { //构建函数//str是对象——字符串
+				let n = 0//声明变量
+				for (let i = 0; i < str.length; i++) { //循环
+					n = str.charCodeAt(i)
+					//charCodeAt() 方法可返回指定位置的字符的 Unicode 编码
+					if (n < 48 || n > 57) return false
+					//条件语句——用编码对应的数字，return 语句会终止函数的执行并返回函数的值
+				}
+				return true
+              
+			}
+			//1.建立2个文本框(一个是按钮)，一个段落P
+			//2.获取所需要的元素
+			//3.理清思路，首先构建一个函数去判断是不是数字，运用charCodeAt()方法可返回字符串str的字符的 Unicode 编码，然后用数字的编码用条件语句去判断是不是数字
+			//4.然后去构建点击函数，运用charAt()=$char方法去构建条件语句去判断指定位置的字符是不是数字，再去再段落p文本去显示不同
+			
+		</script>
+	</body>
+</html>
+

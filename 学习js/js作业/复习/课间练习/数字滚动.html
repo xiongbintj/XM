@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1></h1>
+		<script type="text/javascript">
+			// for (var i = 0; i < 100; i++) {
+			// 	document.body.innerHTML = '<h1>' + i + '</h1>'
+			// }
+			let n = 0//声明变量
+			let timer = null//定时器用
+			
+
+			function fn1() {//构建函数
+				n++
+				if (n == 100) {//条件语句假如n等于100毫秒
+					clearInterval(timer)//关闭
+				}
+				document.body.innerHTML = '<h1>' + n + '</h1>'//n内容创建在h1里面body的文件内容
+			}
+			// fn1()//直接调用
+			// document.onclick = fn1//
+			timer = setInterval(fn1,100)//定时器运行函数
+			//1.声明变量，准备启用定时器
+			//2.构建函数运用N++模式
+			//3.条件语句当N等于100毫秒时停止，n内容显示在body中
+			//4.然后定时器运行函数
+		</script>
+	</body>
+</html>

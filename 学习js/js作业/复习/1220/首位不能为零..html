@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p{ color: red;}
+		</style>
+		
+	</head>
+	<body>
+		<input type="text" />
+		<input type="button" value="判断" />
+		<p></p>
+		<script type="text/javascript">
+			let oText = document.querySelector('[type=text]')
+			let oBnt = document.querySelector('[type=button]')
+			let oP = document.querySelector('p')
+			oBnt.onclick = function() {
+				if (oText.value.charAt(0) == '0') {
+					oP.innerHTML = '首位不能为零.'
+				}
+			}
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul class="ul1">
+			<li>苹果</li>
+			<li id="aaa">香蕉</li>
+			<li>火龙果</li>
+		</ul>
+		<!-- <P class="box"></P> -->
+		<button type="button">删除</button>
+		<ul class="ul2"></ul>
+	</body>
+	<script type="text/javascript">
+		const oBtn = document.querySelector('button')
+		const oUl1 = document.querySelector('.ul1')
+		const oUl2 = document.querySelector('.ul2')
+		// let oP = document.querySelector('.box')
+		oBtn.onclick = function() {
+			let theDel = oUl1.removeChild(oUl1.children[0])
+			oUl2.appendChild(theDel)
+		}
+	</script>
+</html>

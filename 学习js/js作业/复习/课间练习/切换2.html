@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<img src="img/boy.png" id="img1">
+
+
+		<script type="text/javascript">
+			var oImg = document.getElementById("img1")
+			var on = true
+			oImg.onclick = function() {
+				if (on) {
+					oImg.src = "img/girl.png"
+					on = false
+				} else {
+					oImg.src = "img/boy.png"
+					on = true
+				}
+			}
+		
+		</script>
+	</body>
+
+</html>

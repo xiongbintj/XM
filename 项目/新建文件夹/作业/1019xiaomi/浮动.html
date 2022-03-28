@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" >
+		<style type="text/css">
+		ul {
+			list-style-type: none;
+		}
+		.entry {
+			margin: 20px auto;
+			width: 1226px;
+			height: 170px;
+			background-color: #00FFFF;
+		}
+		.first {
+			width: 200px;
+			height: 170px;
+			float: left;
+			background-color: #C6C6C6;
+		}
+		.first ul{overflow: hidden;
+		padding: 0px 2px;
+		}
+		.first ul li{
+			float: left;
+			width: 55px;
+			height: 20px;
+		    text-align:center;
+			padding: 7px 5px;
+			font-size: 0.5rem;
+			line-height: 1.4;
+			background-color: cyan;
+			border-radius: 25px;
+			margin:25px auto;
+		}
+		
+		.first ul li:hover{
+		background-color: aliceblue;
+		color: red;}
+		.second ul li {
+			display: block;
+			width: 335px;
+			height: 170px;
+			float: right;
+			margin-left: 18px;
+			/* background-color: #F4F4F4; */
+		}
+		
+		.second ul li img {
+			width: 335px;
+			height: 170px;
+		}
+		@media screen and (max-width:1000px){
+			body{background-color: aliceblue;}
+		}
+		@media screen and (max-width:768px){
+			body{background-color: red;
+			.second ul li {
+				display: block;
+				width: 335px;
+				height: 170px;
+				margin-left: 18px;
+				/* background-color: #F4F4F4; */
+			}
+			.second ul li img {
+				width: 335px;
+				height: 170px;
+			}
+		}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="enentry">
+		<div class="first">
+			<ul>
+				<li><a href="">保障服务</a></li>
+				<li><a href="">企业团购</a></li>
+				<li><a href="">F码通道</a></li>
+				<li><a href="">米粉卡</a></li>
+				<li><a href="">以旧换新</a></li>
+				<li><a href="">话费充值</a></li>
+			</ul>
+		</div><!-- first -->
+		<div class="second">
+			<ul>
+				<li><img src="img/ia_100000001595.jpg" class="ad-mix"></li>
+				<li><img src="img/ia_100000001596.jpg" class="ad-mix"></li>
+				<li><img src="img/ia_100000001592.png" class="ad-mix"></li>
+			</ul>
+		</div><!-- second -->
+		</div>
+	</body>
+
+</html>

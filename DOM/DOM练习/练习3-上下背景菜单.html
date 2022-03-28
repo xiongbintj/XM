@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin:0}
+        .container{width:150px;border:1px solid black;margin:100px auto;}
+        ul{list-style:none;}
+        li{}
+        a{display: block;text-decoration: none;height:30px;line-height:30px;text-indent:1rem;border-top:1px solid #555;border-bottom:1px solid #000;background-color: #333;color:#ccc;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="#">菜单项1</a></li>
+            <li><a href="#">菜单项2</a></li>
+            <li><a href="#">菜单项3</a></li>
+            <li><a href="#">菜单项4</a></li>
+            <li><a href="#">菜单项5</a></li>
+            <li><a href="#">菜单项6</a></li>
+            <li><a href="#">菜单项7</a></li>
+            <li><a href="#">菜单项8</a></li>
+        </ul>
+    </div>
+
+<script type="text/javascript">
+
+	const oDiv = document.querySelector('.container')
+	const aLi = oDiv.querySelectorAll('li')
+	const first = aLi[0],last = aLi[aLi.length - 1]
+	
+	for (let i = 0; i < aLi.length; i++) {
+		const oA = aLi[i].querySelector('a')
+		oA.onmouseover = function() {
+			if (aLi[i] == first) {
+				oA.style.backgroundColor = 'red'
+				oA.parentElement.nextElementSibling.children[0].style.backgroundColor = 'darkred'
+			} else if (aLi[i] == last) {
+				oA.style.backgroundColor = 'red'
+				oA.parentElement.previousElementSibling.children[0].style.backgroundColor = 'darkred'
+			} else {
+				oA.parentElement.previousElementSibling.children[0].style.backgroundColor = 'darkred'
+				oA.style.backgroundColor = 'red'
+				oA.parentElement.nextElementSibling.children[0].style.backgroundColor = 'darkred'
+			}
+		}
+		oA.onmouseout = function() {
+			if (aLi[i] == first) {
+				//oA.parentElement.previousElementSibling.children[0].style.backgroundColor = ''
+				oA.style.backgroundColor = ''
+				oA.parentElement.nextElementSibling.children[0].style.backgroundColor = ''
+			} else if (aLi[i] == last) {
+				oA.parentElement.previousElementSibling.children[0].style.backgroundColor = ''
+				oA.style.backgroundColor = ''
+				//oA.parentElement.nextElementSibling.children[0].style.backgroundColor = ''
+			} else {
+				oA.parentElement.previousElementSibling.children[0].style.backgroundColor = ''
+				oA.style.backgroundColor = ''
+				oA.parentElement.nextElementSibling.children[0].style.backgroundColor = ''
+			}
+		}
+	}
+	
+</script>
+</body>
+</html>

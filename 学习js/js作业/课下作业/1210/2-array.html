@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const orders = [{
+					orderId: '123',//	订单编号
+					customerId: '123',//客户编号
+					deliveryDate: '01-01-2020',
+					delivered: true,
+					items: [{
+							productId: '123',
+							price: 55
+						},
+						{
+							productId: '234',
+							price: 30
+						},
+					]
+				},
+				{
+					orderId: '234',
+					customerId: '234',
+					deliveryDate: '01-02-2020',
+					delivered: false,
+					items: [{
+						productId: '234',
+						price: 30
+					}, ]
+				},
+				{
+					orderId: '345',
+					customerId: '234',
+					deliveryDate: '05-01-2020',
+					delivered: true,
+					items: [{
+							productId: '567',
+							price: 30
+						},
+						{
+							productId: '678',
+							price: 80
+						},
+					]
+				},
+				{
+					orderId: '456',
+					customerId: '345',
+					deliveryDate: '12-01-2020',
+					delivered: true,
+					items: [{
+							productId: '789',
+							price: 12
+						},
+						{
+							productId: '890',
+							price: 90
+						},
+					]
+				},
+				{
+					orderId: '578',
+					customerId: '456',
+					deliveryDate: '12-01-2020',
+					delivered: true,
+					items: [{
+							productId: '901',
+							price: 43
+						},
+						{
+							productId: '123',
+							price: 55
+						},
+					]
+				},
+			];
+
+			// 1)在没有发货的订单中查找customerId为234的所有订单(delivered:已发货)
+			result = orders.filter(function(i) {
+				return i.customerId == "234" && i.delivered
+			})
+			console.log(result)
+
+			//2）在orders数组的每个元素上添加一个新属性orderTotal:存储订购项items的总金额
+			result1 = orders.map(function(v) {
+				return v.orderIdTobal == v.items.reduce(function(acc, i) {
+					return acc + i.price
+				}, 0)
+			})
+			console.log(result1)
+			console.log(orders)
+
+
+			// 3)查询所有的订单是否已发货
+			result2 = orders.every(function(v) {
+				return v.delivered
+			})
+			console.log(result1)
+
+			// 4) 查询是否有customerId为123的订单？
+			result3 = orders.some(function(v) {
+				return v.customerId == '123'
+			})
+			console.log(result3)
+
+
+			// 5) 查询是否有productId为123的订单？
+			result4 = orders.some(function(v) {
+				return v.productId == '123'
+			})
+			console.log(result4)
+			
+		</script>
+	</body>
+</html>

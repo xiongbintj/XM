@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text">
+		<input type="button" value="判断字符串">
+
+		<script type="text/javascript">
+		const  aInput = document.querySelectorAll("input")
+		 aInput[1].onclick = function(){
+		 	if(isNaN(aInput[0].value)){
+		 		console.log('不是数字')
+		 	} else {
+		 		console.log('是数字')
+		 	}
+		 }
+		 console.log(isNaN('12'))
+		 //isNaN不喜欢数字 所以数字就是false
+		// 缺点：空和空格都是false
+		</script>
+			
+	</body>
+	
+</html>

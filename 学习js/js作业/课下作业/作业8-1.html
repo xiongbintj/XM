@@ -1,0 +1,41 @@
+<!doctype html>
+
+
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: #333333;
+				margin: 10px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button">显示</button>
+		<section></section>
+		<script type="text/javascript">
+			var str = '' //string:表示创建一个字符串变量
+			var colorArr = ['red', 'yellow', 'blue', 'green']
+			var oBtn = document.querySelector('button')
+			var oSection = document.querySelector('section')
+			var n = 0;
+
+			for (var i = 0; i < 10; i++) {
+				if (n == 4) {
+					n = 0
+				}
+				str += "<div style='background:" + colorArr[n] + "'></div>"
+				n++
+			}
+			oBtn.onclick = function() {
+				oSection.innerHTML = str
+			}
+		</script>
+	</body>
+</html>

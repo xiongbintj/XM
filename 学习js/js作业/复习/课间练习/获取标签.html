@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>getEl</title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="box"></div>
+		<script type="text/javascript">
+			var oBox = document.querySelector(".box")
+			var oBox2=document.getElementById("box")
+			var str = ""
+			for (var i = 0; i < 5; i++) {
+				str = '<input id="a+i+"type="button" value="按钮">'
+			}
+			oBox.innerHTML = str
+		</script>
+	</body>
+
+</html>

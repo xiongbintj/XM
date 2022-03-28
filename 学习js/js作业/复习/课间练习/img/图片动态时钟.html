@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.container {
+				margin: 100px 0 0 0;
+			}
+
+			ul {
+				list-style: none;
+				display: flex;
+			}
+
+			li {
+				height: 70px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			li:nth-child(odd) {
+				width: 50px;
+				border: 10px solid #00FFFF;
+			}
+
+			li:nth-child(even) {
+				width: 50px;
+				border: 10px solid gold;
+			}
+
+			.container {
+				border: 10px solid #0000FF;
+				height: 90px;
+			}
+
+			img {
+				width: 46px;
+				height: 70px;
+				display: block;
+			}
+
+			div {
+				height: 140px;
+				border: 2px solid red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script src="../js/hshu.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li>
+					<div><img src="./0.JPG" alt=""><img src="./0.JPG" alt=""></div>
+				</li>
+				<li>
+					<div><img src="./0.JPG" alt=""><img src="./0.JPG" alt=""></div>
+				</li>
+				<li>
+					<div><img src="./11.JPG" alt=""><img src="./12.JPG" alt=""></div>
+				</li>
+				<li>
+					<div><img src="./0.JPG" alt=""><img src="./0.JPG" alt=""></div>
+				</li>
+				<li>
+					<div><img src="./0.JPG" alt=""><img src="./0.JPG" alt=""></div>
+				</li>
+				<li>
+					<div><img src="./11.JPG" alt=""><img src="./12.JPG" alt=""></div>
+				</li>
+				<li>
+					<div><img src="./0.JPG" alt=""><img src="./0.JPG" alt=""></div>
+				</li>
+				<li>
+					<div><img src="./0.JPG" alt=""><img src="./0.JPG" alt=""></div>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			//获取当前系统时间
+			let arrImg = ['./0.JPG', './1.JPG', './2.JPG', './3.JPG', './4.JPG', './5.JPG', './6.JPG', './7.JPG', './8.JPG','./9.JPG','./11.JPG','./12.jpg'
+			] //获取所有图片的src
+			let timer = null
+			let oBox = document.querySelector(".container") //获取元素container
+			let aLi = document.querySelectorAll("li") //获取元素li
+			// myClock(aLi[7],7)
+			for (let i = 0; i < aLi.length; i++) {
+				myClock(aLi[i], i)
+			}
+
+			function myClock(obj, $id) {
+				let oDiv = obj.querySelector("div") //获取元素第8个li的div
+				let aImg = obj.querySelectorAll("img") //获取元素第8个li的img
+				let last = arrImg[0]
+				// clearInterval(timer)
+				timer = setInterval(fn1, 1000)
+				fn1()
+
+				function fn1() {
+					let t = new Date() //获取现在系统时间
+					let str = toTwo(t.getHours()) + ":" + toTwo(t.getMinutes()) + ":" + toTwo(t.getSeconds())
+					
+					// timer = setInterval(fn1, 500)
+					if (str.charAt($id) == ':'){
+						aImg[0].src = arrImg[11]
+						setTimeout(function(){aImg[0].src = arrImg[10]},500)
+					} else {
+						aImg[1].src = arrImg[str.charAt($id)]
+						if(aImg[0].src != aImg[1].src){
+						domove(oDiv, "top", -70, 2, 20, function() {
+							aImg[0].src = aImg[1].src
+							oDiv.style.top = 0 //拉回第一张图片
+						})}
+						
+					}
+					//让图片动起来
+				}//clearInterval(timer)
+			}
+			
+		</script>
+	</body>
+</html>

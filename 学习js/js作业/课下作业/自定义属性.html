@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+	</head>
+
+	<body>
+		<input type="button" value="按钮">
+		<input type="button" value="按钮">
+		<input type="button" value="按钮">
+
+		<script type="text/javascript">
+			var myArray = ["A", "B", "C", "D"] //变量
+			var aInput = document.querySelectorAll('input') //选择所有的input变量
+			for (var i = 0; i < aInput.length; i++) {
+				aInput[i].num = 0 //自定义
+				aInput[i].onclick = function() {//点击input发生的
+					this.value = myArray[this.num]//自定义的value=input的自定义num值
+					this.num++
+					if (this.num == myArray.length) {//如果自定义num值=input的长度
+						this.num = 0
+					}
+				
+					// aInput.value = myArray[0]
+				}
+				
+			}
+		</script>
+	</body>
+
+</html>

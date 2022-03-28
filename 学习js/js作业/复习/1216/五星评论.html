@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>7-1 五星评论</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#box {
+				width: 500px;
+				height: 30px;
+				border: 1px solid #ccc;
+				margin: 100px auto;
+				padding: 10px;
+				line-height: 30px;
+			}
+
+			dl,
+			p,
+			dt,
+			dd {
+				float: left;
+			}
+
+			dl {
+				width: 260px;
+				height: 30px;
+			}
+
+			dt {
+				padding: 0 10px 0 0;
+			}
+
+			dd {
+				margin: 0 5px 0 0;
+			}
+
+			dl img {
+				width: 30px;
+				vertical-align: middle;
+			}
+
+			p {
+				width: 200px;
+				height: 25px;
+				line-height: 25px;
+				margin: 4px 0;
+				padding: 0 5px;
+				background: hsla(60, 100%, 50%, 1);
+				border: 1px solid hsla(45, 100%, 50%, 1);
+			}
+
+			p.active {
+				width: 40px;
+				float: left;
+				color: orange;
+				background: none;
+				border: none;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div id="box">
+			<dl>
+				<dt>总体评价</dt>
+				<dd><img src="../img/line-star.png" /></dd>
+				<dd><img src="../img/line-star.png" /></dd>
+				<dd><img src="../img/line-star.png" /></dd>
+				<dd><img src="../img/line-star.png" /></dd>
+				<dd><img src="../img/line-star.png" /></dd>
+			</dl>
+			<p>提示：请点击星星打分！</p>
+		</div>
+		<script type="text/javascript">
+			let aImg = document.querySelectorAll('img')
+			let len = aImg.length
+			for (let i = 0; i < len; i++) {
+				aImg[i].index = i + 1
+				aImg[i].onmouseover = function() {
+					if (this.index < 3) {
+						for (let i = 0; i < this.index; i++) {
+							aImg[i].src = "../img/2.png"
+						}
+					} else {
+						for (let i = 0; i < this.index; i++) {
+							aImg[i].src = "../img/3.png"
+						}
+					}
+				}
+				aImg[i].onmouseout = function() {
+					if (i < 3 && this.checked) {
+						for (i = 0; i < this.index; i++) {
+							aImg[i].src = "../img/2.png"
+						}
+					} else if (this.checked) {
+						for (i = 0; i < this.index; i++) {
+							aImg[i].src = "../img/3.png"
+						}
+					} else {
+						aImg[i].src = "../img/line-star.png"
+					}
+				}
+				aImg[i].onclick = function() {
+					for (i = 0; i < this.index; i++) {
+						aImg[i].checked = true
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

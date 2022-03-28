@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.center {
+				display: flex;
+				width: 600px;
+				margin: 0 auto;
+				border: 1px solid #F4F4F4;
+				align-items: center;
+			}
+
+			dl {
+				display: flex;
+				align-items: center;
+
+			}
+
+			dt {
+				/* background-color: gold; */
+			}
+
+			dd {
+				/* background-color: #20B2AA; */
+				margin: 0;
+
+			}
+
+			img {
+				vertical-align: bottom;
+				width: 50px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="center">
+			<dl>
+				<dt>总体评分</dt>
+				<dd><img src="img/1.png" alt=""></dd>
+				<dd><img src="img/1.png" alt=""></dd>
+				<dd><img src="img/1.png" alt=""></dd>
+				<dd><img src="img/1.png" alt=""></dd>
+				<dd><img src="img/1.png" alt=""></dd>
+			</dl>
+			<p>提示：请点击星星打分!</p>
+		</div>
+	</body>
+	<script>
+		var aImg = document.querySelectorAll('img')
+		var len = aImg.length
+		for (var i = 0; i < len; i++) {
+			aImg[i].index = i + 1
+			aImg[i].onmouseenter = function() {
+
+				if (this.index < 3) {
+					for (var i = 0; i < this.index; i++) {
+						aImg[i].src = "img/2.png"
+					}
+				} else {
+					for (var i = 0; i < this.index; i++) {
+
+						aImg[i].src = "img/3.png"
+					}
+				}
+			}
+
+		aImg[i].onmouseleave = function() {
+
+			if (this.index < 3) {
+				for (var i = 0; i < this.index; i++) {
+					aImg[i].src = "img/2.png"
+				}
+			} else {
+				for (var i = 0; i < this.index; i++) {
+
+					aImg[i].src = "img/3.png"
+				}
+			}
+		}
+				}
+	</script>
+</html>

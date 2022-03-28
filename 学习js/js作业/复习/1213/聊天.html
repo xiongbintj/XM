@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#div {
+				width: 300px;
+				height: 300px;
+				border: 1px solid #000000;
+				background-color: #D3D3D3;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div"></div>
+		<p><a id="a">张三：</a>
+			<input id="txt" type="text" />
+			<input id="bnt" type="button" value="提交" />
+		</p>
+		<script type="text/javascript">
+			let oDiv = document.getElementById("div")
+			let oA = document.getElementById("a")
+			let oText = document.getElementById("txt")
+			let oBnt = document.getElementById("bnt")
+			oBnt.onclick = function() {
+				if(oText.value!=""){oDiv.innerHTML += oA.innerHTML + oText.value + '<br/>';
+				oText.value=""//运行函数要清空
+				}else{alert("请输入内容")}
+				// oDiv.innerHTML += oA.innerHTML + oText.value + '<br/>';
+				// oText.value=""//运行函数要清空
+			}
+		</script>
+	</body>
+</html>

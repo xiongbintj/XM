@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+
+		<style type="text/css">
+			body {
+				font-size: 14px;
+				font-family: "Lantinghei SC Extralight", Arial;
+			}
+
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			img {
+				vertical-align: top;
+			}
+
+			#wrap {
+				width: 760px;
+				margin: 0px auto;
+				padding: 145px 120px 95px;
+
+			}
+
+			#section {
+				width: 760px;
+				height: 260px;
+				-moz-box-shadow: 0px 0px 4px rgba(0, 0, 0, .2);
+				box-shadow: 0px 0px 4px rgba(0, 0, 0, .2);
+			}
+
+			#choose {
+				width: 760px;
+				height: 50px;
+				margin: 0 auto;
+				line-height: 50px;
+				text-indent: 21px;
+				overflow: hidden;
+			}
+
+			#type {
+				width: 100%;
+				height: 210px;
+
+				padding: 17px 0 16px 28px;
+			}
+
+			#type li {
+				height: 44px;
+				color: #8a8a8a;
+				line-height: 44px;
+			}
+
+			#type a {
+				margin: 0 12px 0 11px;
+				color: #000;
+			}
+
+			#choose mark {
+				position: relative;
+				display: inline-block;
+				height: 24px;
+				line-height: 24px;
+				border: 1px solid #28a5c4;
+				color: #28a5c4;
+				margin: 12px 5px 0;
+				background: none;
+				padding: 0 30px 0 6px;
+				text-indent: 0;
+			}
+
+			#choose span {
+				float: left;
+			}
+
+			#choose div {
+				float: left;
+			}
+
+			#choose mark a {
+				position: absolute;
+				top: 3px;
+				right: 2px;
+				display: inline-block;
+				width: 18px;
+				height: 18px;
+				background: #28a5c4;
+				color: #fff;
+				line-height: 18px;
+				font-size: 16px;
+				text-align: center;
+			}
+
+			.shop-list {
+				height: 3000px;
+
+				background: url(./img/type_bg.png) repeat-y 0 0;
+			}
+
+			.filter-nav {
+				height: 30px;
+				margin-top: 30px;
+				background: url(./img/nav_bg.png) no-repeat 0 0;
+
+			}
+
+			.filter-nav span {
+				font-size: 14px;
+				color: #999;
+				line-height: 30px;
+				padding: 0px 20px;
+				text-align: center;
+				cursor: pointer;
+			}
+
+			.filter-nav .nav-color {
+				color: #5683EA;
+			}
+
+			.shop-list pre {
+				font-size: 20px;
+			}
+
+			.shop-list img {
+				width: 150px;
+				height: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<section id="section">
+				<nav id="choose">
+					<span>你的选择:</span>
+					<div>
+						<!-- <mark>魅族<a href="javascript:;">x</a></mark>
+					<mark>魅族<a href="javascript:;">x</a></mark> -->
+					</div>
+
+				</nav>
+				<ul id="type">
+					<!-- <li>
+					<span>品牌：</span>
+					<a href="javascript:;">苹果</a>
+					<a href="javascript:;">小米</a>
+					<a href="javascript:;">锤子</a>
+					<a href="javascript:;">魅族</a>
+					<a href="javascript:;">华为</a>
+					<a href="javascript:;">三星</a>
+					<a href="javascript:;">OPPO</a>
+					<a href="javascript:;">vivo</a>
+					<a href="javascript:;">乐视</a>
+					<a href="javascript:;">360</a>
+					<a href="javascript:;">中兴</a>
+					<a href="javascript:;">索尼</a>
+				</li>
+				<li>
+					<span>尺寸：</span>
+					<a href="javascript:;">3.0英寸以下</a>
+					<a href="javascript:;">3.0-3.9英寸</a>
+					<a href="javascript:;">4.0-4.5英寸</a>
+					<a href="javascript:;">4.6-4.9英寸</a>
+					<a href="javascript:;">5.0-5.5英寸</a>
+					<a href="javascript:;">6.0英寸以上</a>
+				</li>
+				<li>
+					<span>系统：</span>
+					<a href="javascript:;">安卓 ( Android )</a>
+					<a href="javascript:;">苹果 ( IOS )</a>
+					<a href="javascript:;">微软 ( WindowsPhone )</a>
+					<a href="javascript:;">无</a>
+					<a href="javascript:;">其他</a>
+				</li>
+				<li>
+					<span>网络：</span>
+					<a href="javascript:;">联通3G</a>
+					<a href="javascript:;">双卡单4G</a>
+					<a href="javascript:;">双卡双4G</a>
+					<a href="javascript:;">联通4G</a>
+					<a href="javascript:;">电信4G</a>
+					<a href="javascript:;">移动4G</a>
+				</li> -->
+				</ul>
+			</section>
+			<nav class="filter-nav">
+				<span class="nav-color">综合排序</span>
+				<span>销量排序</span>
+				<span>价格低到高</span>
+				<span>价格高到低</span>
+			</nav>
+			<section class="shop-list">
+				<!-- 	<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul> -->
+
+			</section>
+		</div>
+		<script src="./shoplist.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var crumbData = [{
+					"title": "品牌",
+					"data": ["苹果", "小米", "锤子", "魅族", "华为", "三星", "OPPO", "vivo", "乐视"]
+				},
+				{
+					"title": "尺寸",
+					"data": ["4.0-4.5英寸", "4.6-4.9英寸", "5.0-5.5英寸", "6.0英寸以上"]
+				},
+				{
+					"title": "系统",
+					"data": ["android", "ios", "window phone", "无", "其他"]
+				},
+				{
+					"title": "网络",
+					"data": ["联通3G", "双卡单4G", "双卡双4G", "联通4G"]
+				}
+			]
+			// var shopsList = [{
+			// 		imgUrl: 'img/m1.jpg',
+			// 		size: '4.0-4.5英寸',
+			// 		system: 'ios',
+			// 		network: '联通3G',
+			// 		brand: '苹果',
+			// 		volume: 100000,
+			// 		price: 5000
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m2.jpg',
+			// 		size: '4.0-4.5英寸',
+			// 		system: 'ios',
+			// 		network: '双卡单4G',
+			// 		brand: '锤子',
+			// 		volume: 100,
+			// 		price: 50000
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m3.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'ios',
+			// 		network: '双卡单4G',
+			// 		brand: '小米',
+			// 		volume: 30,
+			// 		price: 50080
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m4.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '联通3G',
+			// 		brand: '魅族',
+			// 		volume: 1020,
+			// 		price: 50400
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m5.jpg',
+			// 		size: '4.0-4.5英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: '华为',
+			// 		volume: 1040,
+			// 		price: 54000
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m6.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: '三星',
+			// 		volume: 1004,
+			// 		price: 50040
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m7.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: 'OPPO',
+			// 		volume: 1004,
+			// 		price: 50040
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m8.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: 'vivo',
+			// 		volume: 1004,
+			// 		price: 50040
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m9.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: '乐视',
+			// 		volume: 1004,
+			// 		price: 50040
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m10.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: '小米',
+			// 		volume: 1004,
+			// 		price: 50040
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m11.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: '小米',
+			// 		volume: 1004,
+			// 		price: 50040
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m12.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: '小米',
+			// 		volume: 1004,
+			// 		price: 50040
+			// 	},
+			// 	{
+			// 		imgUrl: 'img/m13.jpg',
+			// 		size: '4.6-4.9英寸',
+			// 		system: 'android',
+			// 		network: '双卡单4G',
+			// 		brand: '小米',
+			// 		volume: 1004,
+			// 		price: 50040
+			// 	}
+			// ]
+			// 渲染数据  
+			const oDivData = document.querySelector("#type")
+			let str = ""
+			let newLi = null
+			let oDivwrap = document.querySelector('.shop-list')
+			let filtereArr = ['brand', 'size', 'system', 'network']
+			let filteredObj = {}
+			let returnArr = []
+			render(shopsList)
+
+			function render(AARRR) {
+				let html = ''
+				AARRR.forEach(function(item) {
+					html += `<ul>
+						<li><img src ="${item.imgUrl}"</li>
+						<li>${item.size}</li>
+						<li>${item.system}</li>
+						<li>${item.network}</li>
+						<li>${item.brand}</li>
+						<li>${item.volume}</li>
+						<li>${item.price}</li>
+					</ul>`
+				})
+				oDivwrap.innerHTML = html
+			}
+
+			for (let i = 0; i < crumbData.length; i++) {
+				newLi = document.createElement('li')
+				newSpan = document.createElement('span')
+				newSpan.innerHTML = crumbData[i].title
+				newLi.appendChild(newSpan)
+				for (let j = 0; j < crumbData[i].data.length; j++) {
+					newA = document.createElement('a')
+					newA.href = "javascript:"
+					newA.innerHTML = crumbData[i].data[j]
+					newLi.appendChild(newA)
+				}
+				oDivData.appendChild(newLi)
+			}
+			//批量为A标签添加事件，事件函数
+			const aLi = oDivData.children;
+			let brand = ''
+			let size = ''
+			let systen = ''
+			let networt = ''
+			let oDivSelected = document.querySelector('#choose div')
+			// let last = null //为每一个点击的a标签父级元素添加自定义属性last，last表示上一个点击对象
+			for (let i = 0; i < aLi.length; i++) {
+				aLi[i].last = null
+				aLi[i].index = i //索引值
+				let aA = aLi[i].querySelectorAll('a')
+				for (let j = 0; j < aA.length; j++) {
+					aA[j].onclick = function() {
+
+						if (this.parentNode.index == 0) {
+							brand = `<mark>${this.innerHTML}<a data-index="0" href="javascript:;">x</a></mark>`
+						} else if (this.parentNode.index == 1) {
+							size = `<mark>${this.innerHTML}<a data-index='1'href="javascript:;">x</a></mark>`
+						} else if (this.parentNode.index == 2) {
+							systen = `<mark>${this.innerHTML}<a data-index='2'href="javascript:;">x</a></mark>`
+						} else {
+							networt = `<mark>${this.innerHTML}<a data-index='3'href="javascript:;">x</a></mark>`
+						}
+						oDivSelected.innerHTML = `${brand} ${size} ${systen} ${networt}`
+
+						if (aLi[i].last) {
+							aLi[i].last.style.color = ""
+						}
+						this.style.color = "red"
+						aLi[i].last = this
+						//创建一个对象保存筛选条件（最多四个条件）
+						filteredObj[filtereArr[this.parentNode.index]] = this.innerHTML
+						//筛选数据：最终目标：拿到一个过滤后的数组
+						returnArr = shopsList
+						for (let attr in filteredObj) {
+							returnArr = returnArr.filter(function(obj) {
+								return obj[attr] == filteredObj[attr]
+							})
+						}
+						render(returnArr)
+
+						// filterObj[filtereArr[this.parentNode.index]] = this.innerHTM
+						// 		for (let attr in filterObj) {
+						// 			returnArr = shopsList.filter(function(obj) {
+						// 				return obj[attr] = filterObj[attr]
+						// 			})
+						// 		}
+						// 		render(returnArr)
+
+						let aSelwcted = oDivSelected.querySelectorAll('a')
+						for (let i = 0; i < aSelwcted.length; i++) {
+							aSelwcted[i].onclick = function() {
+								this.parentNode.remove()
+								if (this.dataset.index == 0) brand = ''
+								if (this.dataset.index == 1) size = ''
+								if (this.dataset.index == 2) systen = ''
+								if (this.dataset.index == 3) networt = ''
+							}
+
+						}
+					}
+				}
+			}
+			//筛选数据：最终目标：
+
+			// 	for(let attr in filterObj){
+			// 	returnArr = shopsList.filter(function(obj) {
+			// 		return obj[attr] = filterObj[attr]
+			// 		})
+			// 	}
+			// 	render(returnArr)
+		</script>
+	</body>
+</html>

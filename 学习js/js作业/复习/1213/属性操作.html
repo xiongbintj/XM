@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input id="txt" type="text">
+		<select id="select1"><!-- select 元素可创建单选或多选菜单。 -->
+			<option value="北京">北京</option>
+			<option value="上海">上海</option>
+			<option value="杭州">杭州</option>
+		</select>
+		<input id="bnt" type="button" value="按钮">
+		<script type="text/javascript">
+			window.onload = function() {//onload 事件在对象被加载后发生,页面加载立即执行
+				let oText = document.getElementById("txt")
+				let oSelect = document.getElementById("select1")
+				let oBnt = document.getElementById("bnt")
+				oBnt.onclick = function() {
+					alert(oText.value + "在" + oSelect.value)
+				}
+			}
+		</script>
+	</body>
+</html>

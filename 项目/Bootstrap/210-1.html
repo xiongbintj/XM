@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// const getData = (api, callback) => {
+			const getData = (api) => {
+				return new Promise((resolve, reject) => {
+					const url = api
+					const request = new XMLHttpRequest()
+					request.open('Get', url)
+					request.addEventListener('readystatechange', () => {
+						if (request.readyState == 4 && request.status == 200) {
+							// console.log(request.responseText)
+							//callback(undefined, request.responseText) //(callback)是回调函数
+							const data = request.responseText
+							resolve(data)
+						} else if (request.readyState == 4) {
+							//callback('请求数据失败', undefined)
+							reject('请求数据失败')
+						}
+					})
+					request.send()
+				})
+		
+			}
+			getData('data/1.json')
+			.then((data)=>{
+				console.log(data)
+				return getData('data/2.json')
+			})
+			.then((data)=>{
+				console.log(data)
+				return getData('data/3.json')
+			})
+			.then((data)=>{
+				console.log(data)
+				
+			})
+			.catch((err)=>{
+				console.log(err)
+			})
+			
+			
+
+				
+			</script>
+	</body>
+</html>

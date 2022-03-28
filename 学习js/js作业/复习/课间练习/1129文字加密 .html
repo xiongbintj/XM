@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p {
+				width: 200px;
+				height: 200px;
+				background-color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text">
+		<input type="button" value="判断">
+		<p></p>
+
+		<script type="text/javascript">
+			// var str = ""
+			// for (var i = 0; i > 2000; i++) {
+			// 	String.fromCharCode(i)
+			// }
+			// str = body.innerHTML
+			var aInput = document.querySelectorAll('input')
+			var oP = document.querySelector('P')
+			let str1 = ""
+			let str2 = ""
+
+			// aInput[1].onclick = function() {
+			// 	str1 = aInput[0].value
+			// 	for (let i = 0; i < str1.length; i++) {
+			// 		str2 += String.fromCharCode(str1.charCodeAt(i)+12)
+			// 	}
+			// 	oP.innerHTML = str2
+
+			// }
+			aInput[1].onclick = function() {
+				let str = aInput[0].value
+				for (let i = 0; i < str.length; i++) {
+					str2 += String.fromCharCode(str.charCodeAt(i) + 2)
+				}oP.innerHTML = str2
+			}
+		</script>
+	</body>
+</html>

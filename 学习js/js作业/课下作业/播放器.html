@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			html,
+			body {
+				background-image: linear-gradient(red, orange);
+				height: 100%;
+				/*知识点1*/
+			}
+
+			.player {
+				width: calc(100% - 200px);
+				/*知识点2*/
+				height: calc(90% - 100px);
+				border: 1px solid black;
+				position: absolute;//知识点3让其水平垂直具中
+				/*知识点3*/
+				left: 0;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				/*知识点3*/
+				margin: auto;
+				/*知识点3*/
+
+			}
+
+			.song-lists {
+				height: calc(100% - 40px);
+				background-color: #fff;
+			}
+
+			table {
+				height: 100%;
+				width: 100%;
+				border-collapse: collapse;//如果可能，边框会合并为一个单一的边框。
+			}
+
+			table tr {
+				height: 40px;
+				vertical-align: middle;
+				text-align: center;
+			}
+
+			.selected {
+				background-color: black !important;
+				color: white;
+			}
+
+			tr:nth-child(odd) {
+				background-color: #FFC0CB;
+			}
+
+			.panel {
+				position: absolute;
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				left: 0;
+				bottom: 0;
+				background-color: #f4f4f4;
+				display: flex;
+				justify-content: space-between;//项目位于各行之间留有空白的容器内。
+			}
+
+			.panel label {
+				text-align: center;
+				/* background-color: #20B2AA; */
+				flex: 1;
+			}
+
+			.panel span {
+				/* background-color: red; */
+				flex: 1;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="player">
+			<div class="song-lists">
+				<table>
+
+				</table>
+			</div>
+			<div class="panel">
+				<label><input type="checkbox" />全选</label>
+				<!--知识点4:标签 -->
+				<span>收藏</span>
+				<span>添加</span>
+				<span>删除</span>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//获取元素
+			var song = ['稻花香', '私奔', '我爱北京天安门', '青苹果乐园', '流星雨', '老中医', 'You are my Sunshine', 'Country Road', '再回首', '一场游戏一场梦']
+			var singer = ['周杰伦', '易烊千玺', '谭咏麟', '张国荣', '林子祥', '叶倩文', '梅艳芳', '小虎队', '迈克尔杰克逊', '邓丽君']
+			var len = song.length
+			var listBox = document.querySelector('.player table')
+			var str = ''
+
+			//动态创建歌单结构
+			for (var i = 0; i < len; i++) {
+				str += '<tr>'
+				str += '<td><input type="checkbox"></td><td>' + song[i] + '</td><td>' + singer[i] + '</td>'
+				str += '</tr>'
+			}
+			listBox.innerHTML = str;
+			var aTr = listBox.querySelectorAll('tr')//变量获取所有的tr
+			var aCheckBox = listBox.querySelectorAll('input')//变量获取所有的input
+			//var on = true
+			for (var i = 0; i < len; i++) {
+				aTr[i].index = i  //索引位置
+				aTr[i].on = true//在所有的tr上设置开关
+				aTr[i].onclick = function() { //点击tr发生事件
+					if (this.on) { //假如点击开的时候开关是真的
+						this.className = 'selected' //tr的属性名变成……
+						aCheckBox[this.index].checked = true //aCheckBox真的
+						this.on = false//点击之后就是假的了
+					} else {  否则再次点击
+						this.className = ''//tr的属性名变成空
+						aCheckBox[this.index].checked = false//aCheckBox假的
+						this.on = true//点击之后就是只真的了
+					}
+
+				}
+			}
+		</script>
+	</body>
+</html>

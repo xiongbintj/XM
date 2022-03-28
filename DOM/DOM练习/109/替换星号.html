@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<P>他妈的你有病啊 你妈妈的，龟儿子日你妈逼 </P>
+		<textarea rows="10" cols="70"></textarea>
+		<button type="button">发送</button>
+		<script type="text/javascript">
+			let oP = document.querySelector('p')
+			let oText = document.querySelector('textarea')
+			let oBnt = document.querySelector('button')
+			let re = /妈|妈妈|龟|逼|日/g
+			oBnt.onclick = function() {
+				oP.innerHTML = oText.value.replace(re, function(arg) {
+					let str = ""
+					for (let i = 0; i < arg.length; i++) {
+						str += "*"
+					}
+					return str
+				})
+
+
+			}
+		</script>
+	</body>
+</html>

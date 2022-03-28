@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.qq {
+				width: 150px;
+				margin: 0 auto;
+			}
+
+			ul {
+				list-style: none;
+				width: 150px;
+			}
+
+			ul ul {
+				background-color: #20B2AA;
+				display: none;
+			}
+
+			h2 {
+				background: yellow url(img/ico1.gif) no-repeat 0 50%;
+				padding: 0 0 0 20px;
+			}
+
+			.active {
+				background: red url(img/ico2.gif) no-repeat 0 50%;
+				padding: 0 0 0 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="qq">
+			<ul>
+				<li>
+					<h2>我的好友</h2>
+					<ul>
+						<li>张宁</li>
+						<li>张宁</li>
+						<li>张宁</li>
+						<li>张宁</li>
+					</ul>
+				</li>
+				<li>
+					<h2>企业好友</h2>
+					<ul>
+						<li>罗勇</li>
+						<li>罗勇</li>
+						<li>罗勇</li>
+						<li>罗勇</li>
+					</ul>
+				</li>
+				<li>
+					<h2>黑名单</h2>
+					<ul>
+						<li>李鹏</li>
+						<li>李鹏</li>
+						<li>李鹏</li>
+						<li>李鹏</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var aH2 = document.querySelectorAll("h2")
+			var aUl = document.querySelectorAll("ul ul")
+			var len = aH2.length
+			var last = 0
+			//var index=0
+			//添加点击事件
+			for (var i = 0; i < len; i++) { //循环
+				aH2[i].index = i
+				aH2[i].onclick = function() { //点击h2的时候
+                      aH2[last].className = "" //h2的名字是空的时候
+                      aUl[last].style.display = 'none' //AUI的不显示
+
+					if (this.className == "") { //假如h2的名字是空的时候加入要两个等号
+						this.className = "active" //自定义h2换成另一种模式
+						aUl[this.index].style.display = 'block' //AUI的显示
+					} else {
+						this.className = "" //h2的名字是空的时候
+						aUl[this.index].style.display = 'none' //AUI的不显示
+					}
+                  // last=aH2[this].className 
+				//   last=this.className 
+				    last= this.index
+				
+				
+				}
+			}
+			// console.log(1)
+			// setTimeout(()=>{console.log(2)},300)
+			// setTimeout(()=>{console.log(3)},200)
+			// setTimeout(()=>{console.log(4)},100)
+			// setTimeout(()=>{console.log(5)},0)
+			// setTimeout(()=>{console.log(6)},100)
+		
+		</script>
+	</body>
+
+</html>

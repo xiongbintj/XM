@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>文字搬运工</title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				background: #C0C0C0;
+			}
+
+			#wrapper {
+				margin: 50px auto;
+				width: 800px;
+				background: #fff;
+				overflow: hidden;
+				padding: 20px;
+				border-radius: 10px;
+			}
+
+			textarea {
+				background: #EFEFD6;
+				border: none;
+				width: 320px;
+				height: 220px;
+				float: left;
+				padding: 10px;
+				font-size: 18px;
+			}
+
+			#right {
+				width: 320px;
+				height: 220px;
+				background: #63EFF7;
+				float: right;
+				padding: 10px;
+			}
+
+			#center {
+				float: left;
+				width: 120px;
+				text-align: center;
+			}
+
+			#center a {
+				display: block;
+				color: #fff;
+				background: #F76300;
+				text-decoration: none;
+				padding: 10px;
+				margin: 0 5px;
+				font-family: '微软雅黑';
+			}
+
+			#center p {
+				font-size: 20px;
+				font-family: '微软雅黑';
+			}
+
+			#center ul {
+				margin: 0;
+				padding: 0;
+				font-size: 0;
+				opacity: 0;
+			}
+
+			li {
+				list-style: none;
+				display: inline-block;
+				width: 8px;
+				height: 10px;
+				background: #E7A521;
+				margin: 2px;
+			}
+		</style>
+		<!-- <script src="myfn.js"></script> -->
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<textarea id="left"></textarea>
+			<div id="center">
+				<a href="javascript:">把文字右移</a>
+				<p><span id="current">0</span>/<span id="all">0</span></p>
+				<ul id="progress">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div id="right"></div>
+		</div>
+		<script type="text/javascript">
+			let oBtn = document.querySelector('#center a')
+			let oLeft = document.querySelector('#left')
+			let oRinght = document.querySelector('#right')
+			let str = ""
+
+
+
+			oBtn.onclick = function() { //点击按钮
+				str = oLeft.value //拿到oLeft的value值
+				oLeft.value = str.substr(1) //substr(1)提取字符串
+				oRinght.innerHTML += str.slice(0, 1) //然后用slice(0, 1)一个一个写入oRinght文本中
+
+			}
+		
+		</script>
+	</body>
+</html>

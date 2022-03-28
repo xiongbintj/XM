@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				border-radius: 100px;
+				background-color: #FF0000;
+
+			}
+
+			#input {}
+		</style>
+
+	</head>
+
+	<body>
+
+
+
+		<input type="button" value="隐藏" id="input1" />
+		<div id="box" style="background-color: red;"></div>
+
+		<script type="text/javascript">
+			var oInput = document.getElementById('input1')
+			var oBox = document.getElementById('box')
+			// oInput.onclick = function() {
+			// 	if (oBox.style.display == "block") {
+			// 		oBox.style.display = "none"
+			// 		oInput.value = "显示"
+			// 	} else {
+			// 		oBox.style.display = "block"
+			// 		oInput.value = "隐藏"
+			// 	}
+			// }
+			// oInput.onclick = function() {
+			// 	//alert(oBox.style.backgroundColor)
+			// 	if (oBox.style.backgroundColor == "red") {
+			// 		oBox.style.backgroundColor = "#fff"
+			// 		oInput.value = "显示"
+			// 	} else {
+			// 		oBox.style.backgroundColor = "red"
+			// 		oInput.value = "隐藏"
+			// 	}
+			// }
+			var on = true
+			oInput.onclick = function() {
+				if (on) {
+					// oBox.style.display = "none"
+					oBox.style.backgroundColor = "#fff"
+					oInput.value = "显示"
+					on = false
+				} else {
+					// oBox.style.display = "block"
+					oBox.style.backgroundColor = "red"
+					oInput.value = "隐藏"
+					on = true
+				}
+			}
+
+
+
+			// document.getElementById('input1').onclick = function(){
+			// document.getElementById('box').style.backgroundColor = "#fff"
+			// document.getElementById('input1').value = "显示"
+			// 	}
+		</script>
+	</body>
+
+</html>

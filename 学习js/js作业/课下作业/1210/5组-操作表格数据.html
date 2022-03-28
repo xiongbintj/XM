@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style type="text/css">
+body,
+h1 {
+	margin: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+input {
+	outline: none;
+}
+table {
+	border-collapse: collapse;
+	border: #bbb;
+}
+body {
+	width: 100%;
+	height: 100%;
+	/*background: url(img/2.jpg) no-repeat;*/
+/*    background-color:#333;*/
+}
+.tBody {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 30px;
+	padding: 20px 30px 40px;
+	background-color: rgba(255,255,255,.6);
+}
+.title {
+	text-align: center;
+	color: #fca113;
+	text-shadow: 0 0 2px #fcf913;
+	line-height: 50px;
+}
+table {
+	background-color: #fff;
+}
+th {
+	background-color: #ddd;
+}
+tr {
+	height: 30px;
+}
+ul {
+	padding: 5px 0;
+	width: 600px;
+	text-align: center;
+}
+td{
+	text-align: center;
+}
+td input {
+	margin: 0 2px;
+}
+li {
+	padding: 5px 0;
+	overflow: hidden;
+}
+label {
+	display: inline-block;
+}
+input[type="text"] {
+	border: 1px solid #ccc;
+	width: 80px;
+	height: 20px;
+}
+/*.active {
+	background-color: #f7cb75;
+}*/
+/*#tab tbody tr:hover {
+	background-color: #f7cb75;
+}*/
+</style>
+</head>
+<body>
+<section class="tBody">
+	<h1 class="title"></h1>
+	<ul id="header">
+		<li class="addPre">
+			<label>名字： <input type="text" id="name" /></label>
+			<label>年龄： <input type="text" id="age" /></label>
+			<input type="button" value="添加" id="add" />
+		</li>
+		<li>
+<!--
+			<span>排序</span>
+			<select id="s1">
+				<option value="price">年龄</option>
+				<option value="id">编号</option>
+			</select>
+			<select id="s2">
+				<option value="2">从高到底</option>
+				<option value="1">从低到高</option>
+			</select>
+			<input type="button" value="提交" id="stBtn"/>
+-->
+			<input type="button" value="批量删除" id="rm" />
+		</li>
+	</ul>
+	<table id="tab" width="600" align="center" border="1">
+		<thead>
+			<th>全选<input type="checkbox" id="checkAll"  ></th>
+			<th index="id">编号▽△</th>
+			<th>商品</th>
+			<th index="price">年龄▽△</th>
+			<th>操作</th>
+		</thead>
+		<tbody>
+			<!-- <tr>
+				<td><input type="checkbox"></td>
+				<td>1</td>
+				<td>露露</td>
+				<td>12</td>
+				<td>
+					<input type="button" value="删除"/>
+					<input type="button" value="上移">
+					<input type="button" value="下移">
+				</td>
+			</tr> -->
+			
+		</tbody>
+	</table>	
+</section>
+</body>
+<script>
+
+/*
+	1.渲染数据
+	2.添加内容
+	3.排序
+	4.选中
+	5.上移下移
+	6.删除
+	7.批量删除
+*/
+var data = [
+    {
+        'id' : 1,
+        'name' : 'momo',
+		'price' : 36,
+		'checked':false
+    },
+    {
+        'id' : 2,
+        'name' : '小恋',
+		'price' : 40,
+		'checked':false
+    },
+    {
+        'id' : 3,
+        'name' : 'yaya',
+		'price' : 20,
+		'checked':false
+    },
+    {
+        'id' : 4,
+        'name' : 'feifei',
+		'price' : 10,
+		'checked':false
+    },
+    {
+        'id' : 5,
+        'name' : 'hhehe',
+		'price' : 35,
+		'checked':false
+    },
+    {
+        'id' : 6,
+        'name' : 'momo',
+		'price' : 36,
+		'checked':false
+    },
+    {
+        'id' : 7,
+        'name' : '小恋',
+		'price' : 40,
+		'checked':false
+    },
+    {
+        'id' : 8,
+        'name' : 'yaya',
+		'price' : 20,
+		'checked':false
+    },
+    {
+        'id' : 9,
+        'name' : 'feifei',
+		'price' : 10,
+		'checked':false
+    },
+    {
+        'id' : 10,
+        'name' : 'hhehe',
+		'price' : 35,
+		'checked':false
+    },
+    {
+        'id' : 11,
+        'name' : 'hhehe',
+		'price' : 35,
+		'checked':false
+    },
+    {
+        'id' : 12,
+        'name' : 'hhehe',
+		'price' : 35,
+		'checked':false
+    },
+    {
+        'id' : 13,
+        'name' : 'hhehe',
+		'price' : 35,
+		'checked':false
+    }
+];
+    //获取元素
+    let wrap = document.querySelector('.tBody'),
+        tBody = wrap.querySelector('#tab').tBodies[0],
+        addBtn = wrap.querySelector('#add'),
+        rmMulBtn = wrap.querySelector('#rm'),
+        sortBtn1 = wrap.querySelector('#id'),
+        sortBtn2 = wrap.querySelector('#price')
+        
+    //定义变量
+    let selected = false,
+        reversedId = false,
+        reversedPrice = false
+    
+    //初始化
+    render(data)
+    function render(ARRAY){
+        let html = ''
+        ARRAY.forEach(e => {//①e.checked
+            html += `<tr>
+                        <td><input type="checkbox" ${e.checked ? 'checked' : ''}></td> 
+                        <td>${e.id}</td>
+                        <td>${e.name}</td>
+                        <td>${e.price}</td>
+                        <td><input type="button" value="删除"/><input type="button" value="上移"><input type="button" value="下移"></td>
+                    </tr>`
+        })
+        tBody.innerHTML = html
+    }
+    
+    wrap.addEventListener('click',handler,false)
+    function handler(ev){
+        ev = ev || window.event
+        if(ev.target != ev.currentTarget){
+            if(ev.target === addBtn) addData()
+            if(ev.target.type === 'checkbox' && ev.target.id === 'checkAll') selectAll()
+            if(ev.target.type === 'checkbox' && ev.target.id != 'checkAll') checkBox()
+            if(ev.target.value === '上移') moveUp()
+            if(ev.target.value === '下移') moveDown()
+            if(ev.target.value === '删除') rmOneData()
+            if(ev.target === rmMulBtn) rmMulData()
+            if(ev.target.getAttribute('index') === 'id') sortById()
+            if(ev.target.getAttribute('index') === 'price') sortByPrice()
+            
+            //添加数据
+            function addData(){
+                let theName = document.querySelector('#name').value,
+                    theAge = document.querySelector('#age').value*1
+                let person = new Object()
+                person.id = data[data.length-1].id*1+1
+                person.name = theName
+                person.price = theAge
+                person.checked = 'false'
+                data.push(person)
+            }
+            
+            //选择要删除的元素
+            function checkBox(){
+                let thisId = ev.target.parentElement.parentElement.cells[1].innerHTML*1
+                let clickObj = data.find(e => e.id === thisId)
+                clickObj.checked = true
+            }
+            
+            //全选
+            function selectAll(){
+                if(!selected){
+                    data.map(e => e.checked = true)// data = data.map(e => e.checked = true)
+                }else{
+                    data.map(e => e.checked = false)
+                }
+                selected = !selected
+            }
+            
+            //删除单条数据
+            function rmOneData(){
+                let thisId = ev.target.parentElement.parentElement.cells[1].innerHTML*1
+                let inputIsChecked = ev.target.parentElement.parentElement.cells[0].firstElementChild.checked
+                let rmId = data.findIndex(e =>e.id === thisId)
+                if(inputIsChecked == true) data.splice(rmId,1)
+                if(inputIsChecked == false) alert("请选择删除元素") 
+            }
+            
+            //删除多条数据
+            function rmMulData(){
+//                data = data.filter(e => {return e.checked === false})//如果是函数必须指定return
+                data = data.filter(e => e.checked === false)//如果是单一表达式，则自身即为返回值
+            } 
+            
+            //上移
+            function moveUp(){
+                let thisId = ev.target.parentElement.parentElement.cells[1].innerHTML*1
+                let thisObj = data.find(e => e.id === thisId)
+                let thisIndex = data.findIndex(e => e.id === thisId)
+                let prevObj = data.find((e,i) => i === thisIndex-1)
+                let prevIndex = data.findIndex((e,i) => i === thisIndex-1)
+                thisIndex === 0 ? data.push(data.shift()) : data.splice(prevIndex,2,thisObj,prevObj)
+            }
+            
+            //下移
+            function moveDown(){
+                let thisId = ev.target.parentElement.parentElement.cells[1].innerHTML*1
+                let thisObj = data.find(e => e.id === thisId)
+                let thisIndex = data.findIndex(e => e.id === thisId)
+                let nextObj = data.find((e,i) => i === thisIndex + 1)
+                let nextIndex = data.findIndex((e,i) => i === thisIndex + 1)
+                thisIndex === data.length-1 ? data.unshift(data.pop()) : data.splice(thisIndex,2,nextObj,thisObj)
+            }
+            
+            //排序
+            function sortById(){
+                data = data.sort((a,b) => {return !reversedId ?  b.id - a.id : a.id - b.id})
+                reversedId = !reversedId
+            }
+            function sortByPrice(){
+                data = data.sort((a,b) => {return !reversedPrice ?  b.price - a.price : a.price - b.price})
+                reversedPrice = !reversedPrice
+            }
+            
+            render(data)
+        }
+        ev.stopPropagation()
+    }//handler
+    
+
+    
+</script>
+</html>
+
+
+
+

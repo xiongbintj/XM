@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		    .menu{
+			      animation:mymove 1000ms linear infinite;}
+			@keyframes mymove{
+			     from {transform: rotate(0 deg)}
+				 to {transform: rotate(360deg)}
+			}
+		    
+			.yuan1 {
+				width: 400px;
+				height: 400px;
+				background-color: #FF0000;
+				margin: 50px auto;
+				overflow: hidden;
+				border-radius: 200px 200px;
+				position: relative;
+			}
+
+			.yuan1>div {
+				height: 200px;
+			}
+
+			.up {
+				background-color: white;
+			}
+
+			.down {
+				background-color: #333333;
+			}
+
+			.yuan2 {
+				background-color: white;
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			.UP .yuan2 {
+				left: 0;
+			}
+
+			.down .yuan2 {
+				background-color: #333333;
+				right: 0;
+			}
+			.yuan3{background-color: #333333;
+				width: 66px;
+				height: 66px;
+				border-radius:50%;
+				position: absolute;
+			}
+			.up .yuan2 .yuan3{
+				left: 50%;
+				top:50%;
+				transform: translate(-50%,-50%);
+			}
+			.down .yuan2 .yuan3{
+				background-color: white;
+				right: 50%;
+				top:50%;
+				transform: translate(50%,-50%);
+			}
+			
+		</style>
+
+
+	</head>
+
+	<body>
+		<div class="menu">
+		<div class="yuan1">
+			<div class="up">
+				<div class="yuan2">
+					<div class="yuan3"></div>
+				</div>
+			</div>
+			<div class="down">
+				<div class="yuan2">
+					<div class="yuan3"></div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+
+</html>

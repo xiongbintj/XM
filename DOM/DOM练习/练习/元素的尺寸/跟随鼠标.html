@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>跟随鼠标</title>
+		<style type="text/css">
+			div {
+				background-color: red;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				position: absolute;
+				left: 0;
+				top: 0
+			}
+			.box {
+				background-color: red;
+			}
+			.box1 {
+				background-color: yellow;
+			}
+			.box2 {
+				background-color: darkmagenta;
+			}
+			.box3 {
+				background-color: blue;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+
+
+
+
+		<script type="text/javascript">
+			let oDiv = document.querySelector('.box')
+			let oDiv1 = document.querySelector('.box1')
+			let oDiv2 = document.querySelector('.box2')
+			let oDiv3 = document.querySelector('.box3')
+
+			document.addEventListener('mousemove', fn)
+			document.addEventListener('mousemove', fn1)
+			document.addEventListener('mousemove', fn2)
+			document.addEventListener('mousemove', fn3)
+			let x = y = 0
+
+			function fn(ev) {
+				x = ev.clientX
+				y = ev.clientY
+				oDiv.style.left = x + "px"
+				oDiv.style.top = y + "px"
+			}
+
+			function fn1(ev) {
+				setTimeout(function() {
+					x = ev.clientX
+					y = ev.clientY
+					oDiv1.style.left = x + "px"
+					oDiv1.style.top = y + "px"
+
+				}, 50)
+			}
+
+			function fn2(ev) {
+				setTimeout(function() {
+					x = ev.clientX
+					y = ev.clientY
+					oDiv2.style.left = x + "px"
+					oDiv2.style.top = y + "px"
+
+				}, 70)
+			}
+
+			function fn3(ev) {
+				setTimeout(function() {
+					x = ev.clientX
+					y = ev.clientY
+					oDiv3.style.left = x + "px"
+					oDiv3.style.top = y + "px"
+
+				}, 90)
+			}
+
+
+			// 事件对象
+
+			//滚动条事件
+
+			//事件是游览器通知JS发生了什么
+			//事件的名称，小写字符串，标识是什么事件
+			// - click
+			// -mousemove
+			// - mouseover
+			// - mouserout
+			// 事件对象
+			// 事件发生时会产生一个事件对象，
+		</script>
+	</body>
+</html>

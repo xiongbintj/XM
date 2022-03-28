@@ -1,0 +1,23 @@
+*{
+	margin:0;
+	padding:0;
+}
+img{
+	display: block;
+}
+table{
+	border-collapse: collapse;
+	width:100%;
+}
+td{
+	border:1px solid #ccc;
+}
+
+#cart{/* background-color: #0000FF; */
+	width:990px;
+	margin:0 auto;
+}
+#cart img{
+	width:80px;
+	height:80px;
+}
