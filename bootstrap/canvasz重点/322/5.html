@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+
+			}
+
+			#Canvas {
+				box-shadow: 0px 0px 30px black;
+				background-color: #F4F4F4;
+
+			}
+		</style>
+		<script src="../Packaging/ball.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<canvas id="Canvas"></canvas>
+		<script>
+			var canvas = document.querySelector("#Canvas");
+			var ctx = canvas.getContext("2d"); //引入绘图环境2d
+			let W = canvas.width = 600
+			let H = canvas.height = 400
+
+			let balls = []
+			for (let i = 0; i < 10; i++){
+				balls.push(new Ball({
+					x: Math.random() * W,
+					y: Math.random() * H,
+					r: Math.random() * 20 + 30,
+					fillStyle: `#${(Math.ceil(Math.random()*16777215)).toString(16)}`,
+					vx: (Math.random() - 0.5) * 5,
+					vy: (Math.random() - 0.5) *5,
+				}))
+			}
+
+			function ballmove(ball) {
+				ball.x += ball.vx
+				ball.y += ball.vy
+				if (ball.x - ball.r >= W || ball.x + ball.r <= 0 || ball.y - ball.r >= H || ball.y + ball.r <= 0) {
+					balls.splice(index, 1)
+				}
+				ball.render(ctx)
+			}
+			;(function move() {
+				window.requestAnimationFrame(move)
+				ctx.clearRect(0, 0, W, H)
+				let i =balls.length
+				// for (let i = 0; i < 10; i++) {
+				// 	ballmove(balls[i], i)
+				// }
+             while(i--){
+				 ballmove(balls[i], i)
+			 }
+			})()
+		</script>
+	</body>
+</html>

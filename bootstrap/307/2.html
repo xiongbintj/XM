@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#box1 {
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000000;
+			}
+
+			#box2 {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000000;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2" draggable="true"></div>
+		<script type="text/javascript">
+			//获取元素
+			const box1 = document.querySelector('#box1')
+			const box2 = document.querySelector('#box2')
+			let box1PosT, box1PosB, box1PosL, box1PosR;
+			let box2PosT, box2PosB, box2PosL, box2PosR;
+			let x, y, ele;
+
+
+			//添加触摸事件
+			document.addEventListener('touchstart', fn1); //拖拽开始时
+			document.addEventListener('touchmove', fn2); //处理拖拽
+			document.addEventListener('touchend', fn3); //释放拖拽
+
+
+			function fn1(ev) { //touchstart
+				//获取触点坐标
+				x = ev.changedTouches[0].clientX - ev.target.offsetLeft//获取触点的x坐标
+				y = ev.changedTouches[0].clientY - ev.target.offsetTop//获取触点的y坐标
+				console.log(x, y)
+				console.log(ev)
+				//判断目标是否可以拖动
+				ele = ev.target
+				// console.log(ev.target.getAttribute('id'))
+            console.log(ele)
+			}
+
+			function fn2(ev) {
+
+				if (ele.getAttribute('draggable') == "true") {//draggable 属性规定元素是否可拖动
+					ele.style.position = "absolute"//绝对定位根据left和top属性来规定绝对定位元素的位置。
+					ele.style.left = ev.changedTouches[0].clientX - x + "px"
+					ele.style.top = ev.changedTouches[0].clientY - y + "px"
+					console.log(ele.style.left)
+					console.log(ele.style.top)
+				}
+				box2Pos = ele.getBoundingClientRect()//getBoundingClientRect获取元素位置
+				console.log(box2Pos)
+				box2PosT = box2Pos.top
+				box2PosB = box2Pos.bottom
+				box2PosL = box2Pos.left
+				box2PosR = box2Pos.right
+
+			}
+
+
+
+
+			function fn3(ev) {
+				ele = ev.target
+				box1Pos = box1.getBoundingClientRect()//getBoundingClientRect获取元素位置
+				box1PosT = box1Pos.top
+				box1PosB = box1Pos.bottom
+				box1PosL = box1Pos.left
+				box1PosR = box1Pos.right
+
+				if (box1PosT < box2PosT && box1PosB > box2PosB && box1PosL < box2PosL && box1PosR > box2PosR) {
+					box1.appendChild(ele)
+					// ele.style.position = "static" //默认布局
+					// ele.setAttribute("draggable", 'false')
+				}
+
+			}
+		</script>
+	</body>
+</html>

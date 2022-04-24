@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: #00FFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+		<script type="text/javascript">
+			const c = document.querySelector("#canvas")
+			const ctx = c.getContext('2d')
+			// c.width = c.innerWidth
+			// c.height = c.innerHeight
+			const ball = {
+				x: 100,
+				y: 100,
+				r: 30,
+				dx: 8,//运动距离
+				dy: 3
+			}
+
+			function back() { //制作球的样子
+				ctx.beginPath()
+				ctx.arc(ball.x, ball.y, ball.r, 0, 2 * Math.PI)
+				ctx.fillStyle = "red"
+				ctx.fill()
+			}
+
+			function callback() {
+				ctx.clearRect(0, 0, c.width, c.height)//clearRect() 方法清空指定矩形内的像素
+				back()
+				ball.x += ball.dx
+				// //如果球的x坐标+球的半径>canvas的宽度
+				if (ball.x + ball.r > c.width || ball.x - ball.r < 0) {
+					ball.dx = ball.dx * -1
+				}
+				console.log(ball.x)
+				ball.y += ball.dy
+				if (ball.y + ball.r > c.height || ball.y - ball.r < 0) {
+					ball.dy = ball.dy * -1
+				}
+				requestAnimationFrame(callback)
+			}
+			callback()
+		</script>
+
+	</body>
+</html>

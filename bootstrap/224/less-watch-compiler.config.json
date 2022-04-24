@@ -1,0 +1,3 @@
+"watchFolder": "less",
+"outputFolder": "css",
+"mainFolder": "./less/styles.less"

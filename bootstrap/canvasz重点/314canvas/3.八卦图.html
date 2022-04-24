@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				background-color: #000000;
+			}
+
+			#myCanvas {
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="400" height="400"></canvas>
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d"); //引入绘图环境
+			console.log(ctx) //CanvasRenderingContext2D 2D绘图环境
+
+			// ctx.beginPath() //发起路径
+			// ctx.moveTo(0, 0) //路径发起点：从哪里开始
+			// ctx.lineTo(300, 300)
+			// ctx.lineTo(0, 300)
+			// ctx.lineTo(0, 0)
+			// ctx.closePath()
+			// ctx.fillStyle = "#0022DD"
+			// ctx.strokeStyle = "red"
+			// ctx.stroke()
+
+			// 笑脸
+			// ctx.beginPath()
+			// // ctx.arc(x,y,r,startDeg,endDeg,false)//半径，起始角度，结束角度，False = 顺时针，true = 逆时针。
+			
+			// ctx.arc(200, 200, 200, 0, 2*Math.PI, false)
+			// ctx.moveTo(300,200)
+			// ctx.arc(200, 200, 100, 0, 1*Math.PI, false)
+			// ctx.moveTo(150,150)
+			// ctx.arc(100, 150, 50, 0, 1*Math.PI, true)
+			// ctx.moveTo(350,150)
+			// ctx.arc(300, 150, 50, 0, 1*Math.PI, true)
+			// ctx.strokeStyle = 'pink'
+			// ctx.stroke()
+			
+
+			//标靶
+			// ctx.beginPath()
+			// // ctx.arc(x,y,r,startDeg,endDeg,false)//半径，起始角度，结束角度，False = 顺时针，true = 逆时针。
+			// // ctx.moveTo(300,200)
+			// ctx.arc(200, 200, 200, 0, 2*Math.PI, false)
+			// ctx.fillStyle = "red";
+			// ctx.fill();
+			// ctx.strokeStyle="blue"
+			// ctx.fillStyle='black';//颜色
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillText("2",0,200);//实体
+			// ctx.stroke()
+			
+			// ctx.beginPath()
+			// ctx.moveTo(380,200)
+			// ctx.arc(200, 200, 180, 0, 2*Math.PI, )
+			// ctx.fillStyle = "white";
+			// ctx.fill();
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillStyle="mediumvioletred";//颜色
+			// ctx.strokeText('3',360,200);//
+			// ctx.stroke()
+			
+			// ctx.beginPath()
+			// ctx.moveTo(360,200)
+			// ctx.arc(200, 200, 160, 0, 2*Math.PI, )
+			// ctx.fillStyle = "red";
+			// ctx.fill();
+			// ctx.fillStyle='black';//颜色
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillText("4",40,200);//实体
+			// ctx.stroke()
+			
+			// ctx.beginPath()
+			// ctx.moveTo(340,200)
+			// ctx.arc(200, 200, 140, 0, 2*Math.PI, )
+			// ctx.fillStyle = "white";
+			// ctx.fill();
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillStyle="mediumvioletred";//颜色
+			// ctx.strokeText('5',320,200);//
+			// ctx.stroke()
+			
+			// ctx.beginPath()
+			// ctx.moveTo(320,200)
+			// ctx.arc(200, 200, 120, 0, 2*Math.PI, )
+			// ctx.fillStyle = "red";
+			// ctx.fill();
+			// ctx.fillStyle='black';//颜色
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillText("6",80,200);//实体
+			// ctx.stroke()
+			
+			// ctx.beginPath()
+			// ctx.moveTo(300,200)
+			// ctx.arc(200, 200, 100, 0, 2*Math.PI, )
+			// ctx.fillStyle = "white";
+			// ctx.fill();
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillStyle="mediumvioletred";//颜色
+			// ctx.strokeText('7',280,200);//
+			// ctx.stroke()
+			
+			// ctx.beginPath()
+			// ctx.moveTo(280,200)
+			// ctx.arc(200, 200,80, 0, 2*Math.PI, )
+			// ctx.fillStyle = "red";
+			// ctx.fill();
+			// ctx.fillStyle='black';//颜色
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillText("8",120,200);//实体
+			// ctx.stroke()
+			
+			// ctx.beginPath()
+			// ctx.moveTo(260,200)
+			// ctx.arc(200, 200,60, 0, 2*Math.PI, )
+			// ctx.fillStyle = "white";
+			// ctx.fill();
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillStyle="mediumvioletred";//颜色
+			// ctx.strokeText('9',240,200);//
+			// ctx.stroke()
+			
+			// ctx.beginPath()
+			// ctx.moveTo(240,200)
+			// ctx.arc(200, 200,40, 0, 2*Math.PI, )
+			// ctx.fillStyle = "red";
+			// ctx.fill();
+			// ctx.fillStyle='black';//颜色
+			// ctx.font="30px arial";//字号、字体
+			// ctx.fillText("10",180,200);//实体
+			// ctx.stroke()
+           
+			
+
+           //八卦图
+			ctx.beginPath();
+			ctx.arc(200, 200, 200, 0, 2*Math.PI, );
+			ctx.stroke();
+			// 左半圆(白色)
+			ctx.beginPath();
+			ctx.arc(200, 200, 200, 0.5 * Math.PI, 1.5 * Math.PI, );
+			ctx.fillStyle = "white";
+			ctx.fill();
+			// 右半圆(黑色)
+			ctx.beginPath();
+			ctx.arc(200, 200, 200, 1.5 * Math.PI, 0.5 * Math.PI, );
+			ctx.fillStyle = "black";
+			ctx.fill();
+			// 上大圆(黑色)
+			ctx.beginPath();
+			ctx.arc(200, 100, 100, 0, 2 * Math.PI, );
+			ctx.fillStyle = "black";
+			ctx.fill();
+			// 下大圆(白色)
+			ctx.beginPath();
+			ctx.arc(200, 300, 100, 0, 2 * Math.PI, );
+			ctx.fillStyle = "white";
+			ctx.fill();
+			
+			// // 上半圆(黑色)
+			// ctx.beginPath();
+			// ctx.arc(200, 100, 100, 0.5 * Math.PI, 1.5 * Math.PI, );
+			// ctx.fillStyle = "black";
+			// ctx.fill();
+			// //下半圆（白色）
+			// ctx.beginPath();
+			// ctx.arc(200, 300, 100, 1.5 * Math.PI, 0.5 * Math.PI, );
+			// ctx.fillStyle = "white";
+			// ctx.fill();
+            //上下两个圆
+			ctx.fillStyle = "white";
+			ctx.beginPath();
+			ctx.arc(200, 100, 25, 0, Math.PI * 2);
+			ctx.fill();
+			ctx.fillStyle = "black";
+			ctx.beginPath();
+			ctx.arc(200, 300, 25, 0, Math.PI * 2);
+			ctx.fill();
+		</script>
+
+	</body>
+</html>

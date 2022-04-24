@@ -1,0 +1,16 @@
+[{
+		"name": "xiaojie",
+		"age": 12,
+		"member": "true"
+	},
+	{
+		"name": "xiaoming",
+		"age": 15,
+		"member": "false"
+	},
+	{
+		"name": "xiaohong",
+		"age": 13,
+		"member": "true"
+	}
+]

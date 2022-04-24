@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="myCanvas">
+			您的浏览器不支持 HTML5 canvas 标签。
+		</canvas>
+
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d"); //引入绘图环境
+			console.log(ctx) //CanvasRenderingContext2D 2D绘图环境
+			c.width = window.innerWidth
+			c.height = window.innerHeight
+			//绘制填充矩形fillRect(x,y,width,height)
+			ctx.fillStyle = "#FFFF00"; //颜色
+			ctx.fillRect(200, 0, 100, 100);
+			ctx.fillStyle = "deepskyblue"; //颜色
+			ctx.fillRect(150, 50, 100, 100); //左 上 宽 高
+
+
+
+			//绘制描边矩形strokeRect(x,y,width,height)
+			ctx.strokeStyle = 'red';
+			ctx.strokeRect(100, 100, 100, 100);
+			ctx.strokeStyle = 'blue';
+			ctx.strokeRect(50, 150, 100, 100);
+
+			//描边填充文字
+			ctx.font = "30px arial"; //字号、字体
+			ctx.strokeStyle = "red"; //颜色
+			ctx.strokeText('hello world', 100, 300); //描边
+
+			ctx.fillStyle = 'seagreen'; //颜色
+			ctx.font = "50px Georgia"; //字号、字体
+			ctx.fillText("Hello World!", 300, 50); //实体
+			ctx.fillText("w3school.com.cn", 200, 220);
+
+
+			// ctx.beginPath() //发起路径
+			// ctx.moveTo(0, 0) //路径发起点：从哪里开始
+			// ctx.lineTo(300, 300)// 方法添加一个新点，然后创建从该点到画布中最后指定点的线条
+			// ctx.lineTo(0, 300)
+			// ctx.lineTo(0, 0)
+			// ctx.closePath()//closePath() 方法创建从当前点到开始点的路径。
+			// ctx.fillStyle = "blue"//设置或返回用于填充绘画的颜色、渐变或模式。
+			// ctx.fill()//fill() 方法填充当前的图像（路径）。默认颜色是黑色。
+			// ctx.strokeStyle = "red"//设置置或返回用于笔触的颜色、渐变或模式
+			// ctx.stroke()//stroke() 方法会实际地绘制出通过 moveTo() 和 lineTo() 方法定义的路径。默认颜色是黑色。
+
+			ctx.beginPath() //发起路径
+			ctx.moveTo(0, 0) //路径发起点：从哪里开始，x,y指定位置
+			ctx.lineTo(100, 100) // 方法添加一个新点，然后创建从该点到画布中最后指定点的线条
+			ctx.lineTo(200, 200)
+			ctx.lineTo(300, 300)
+			ctx.lineTo(400, 300)
+			ctx.lineTo(400, 200)
+			ctx.lineTo(300, 100)
+			ctx.lineTo(200, 0)
+			ctx.closePath() //闭合路径
+			ctx.stroke()
+
+
+
+
+			ctx.beginPath();
+			ctx.arc(600, 200, 200, 0, 2 * Math.PI, );
+			ctx.stroke();
+
+
+			ctx.beginPath();
+			ctx.arc(600, 200, 200, 0.5 * Math.PI, 1.5 * Math.PI, );
+			ctx.fillStyle = "white";
+			ctx.fill();
+			ctx.beginPath();
+			ctx.arc(600, 200, 200, 1.5 * Math.PI, 0.5 * Math.PI, );
+			ctx.fillStyle = "black";
+			ctx.fill();
+			// 上半圆(黑色)
+			ctx.beginPath();
+			ctx.arc(600, 100, 100, 0.5 * Math.PI, 1.5 * Math.PI, );
+			ctx.fillStyle = "black";
+			ctx.fill();
+			//下半圆（白色）
+			ctx.beginPath();
+			ctx.arc(600, 300, 100, 1.5 * Math.PI, 0.5 * Math.PI, );
+			ctx.fillStyle = "red";
+			ctx.fill();
+		</script>
+
+
+	</body>
+</html>

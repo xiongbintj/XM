@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.tabs {
+				margin: 0 auto;
+				border: 1px solid #8A2BE2;
+				width: 300px;
+				height: 300px;
+				position: relative;
+				/* 	background-color: #00FFFF; */
+
+			}
+
+			.tab-container {
+				overflow: hidden;
+				width: 300px;
+				height: 300px;
+			}
+
+			.tab {
+				border: none;
+				outline: none;
+				width: 100px;
+				height: 40px;
+				float: left;
+			}
+
+			.tab-content {
+				width: 100%;
+				height: calc(100% - 40px);
+				position: absolute;
+				left: 0;
+				top: 40px;
+				display: none;
+			}
+
+			.tab-content:nth-child(2) {
+				background-color: #0000FF;
+				display: block;
+			}
+
+			.tab-content:nth-child(3) {
+				background-color: #00FF00;
+
+			}
+
+			.tab-content:nth-child(4) {
+				background-color: #FFFF00;
+
+			}
+
+			.active {
+
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				//获取元素
+				const container = document.querySelector('.tab-container')
+				const tabs = document.querySelectorAll('.tab')
+				const contents = document.querySelectorAll('.tab-content')
+				let last = tabs[0]
+				//点击tabs，显示对应的对应contents
+				for (let i = 0; i < tabs.length; i++) {
+					tabs[i].index = i
+					tabs[i].onclick = function() {
+						last.classList.remove('active')
+						contents[last.index].style.display = "none"
+						this.classList.add('active')
+						contents[this.index].style.display = "block"
+						last = this
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="tab-container">
+				<button class='tab active'>选项卡1</button>
+				<button class='tab'>选项卡2</button>
+				<button class='tab'>选项卡3</button>
+			</div>
+			<div class="tab-content">内容1</div>
+			<div class="tab-content">内容2</div>
+			<div class="tab-content">内容3</div>
+		</div>
+	</body>
+</html>

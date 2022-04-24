@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const getData = (callback) => {
+				const url = 'https://jsonplaceholder.typicode.com/todos/1'
+				const request = new XMLHttpRequest()
+				request.open('Get', url)
+				request.addEventListener('readystatechange', () => {
+					if (request.readyState == 4 && request.status == 200) {
+						// console.log(request.responseText)
+						callback(undefined,request.responseText)//(callback)是回调函数
+					}else if(request.readyState == 4){
+						callback('请求数据失败',undefined)
+					}
+				})
+				request.send()
+			}
+			getData((err,data) => {//getData（）函数,[get获取，Data数据]data网络时间戳
+				console.log('我是回调函数')
+				if(err){
+					console.log(err)//err错误
+				}else{
+					console.log(data)//data正确
+				}
+			})
+		</script>
+	</body>
+</html>

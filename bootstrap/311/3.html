@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="last1">
+			<li>王五</li>
+			<li>王八</li>
+		</div>
+		<hr>
+		<div class="last2">
+			<li>小红</li>
+			<li>小刚</li>
+
+		</div>
+		<script type="text/javascript">
+			const lastLi = document.querySelector(".last1").lastElementChild
+			// node.cloneNode(true / false) true:表示复制当前元素子节点，false:表示不复制当前元素子节点
+			const copy = lastLi.cloneNode(true)
+			document.querySelector(".last2").appendChild(copy)
+			document.querySelector(".last2").appendChild(copy)
+		</script>
+	</body>
+</html>

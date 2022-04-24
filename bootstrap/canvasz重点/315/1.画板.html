@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				background-color: #F1F1F1;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height='400'></canvas>
+		<button type="button" onclick="b1()">红色</button>
+		<button type="button" onclick="b2()">蓝色</button>
+		<button type="button" onclick="b3()">字号20</button>
+		<button type="button" onclick="b4()">字号30</button>
+		<button type="button" onclick="b5()">返回初置</button>
+
+		<script type="text/javascript">
+			const c = document.querySelector("#canvas")
+			const ctx = c.getContext('2d')
+			let btn1 = document.querySelectorAll('button')[0]
+			let btn2 = document.querySelectorAll('button')[1]
+			let on = false
+			let color = 'black'
+			let size = 10
+			// c.width = window.innerWidth
+			// c.height = window.innerHeight
+			c.addEventListener('mousedown', fn1)
+			c.addEventListener('mousemove', fn2)
+			c.addEventListener('mouseup', fn3)
+
+			function fn1(ev) {
+				on = true
+				// back(ev)
+			}
+
+			function fn2(ev) {
+				if (!on) return
+				back(ev)
+			}
+
+			function fn3() {
+
+				on = false
+				ctx.beginPath() //必须
+			}
+
+			function back(ev) {
+				// ctx.beginPath() //必须
+				// ctx.moveTo(x, y)
+				ctx.lineTo(ev.clientX, ev.clientY) //必须
+				ctx.lineWidth = size
+				ctx.lineCap = "round"
+				ctx.strokeStyle = color
+				// ctx.fillStyle = "blue"
+				// ctx.fill() //必须
+				ctx.stroke() //必须
+			}
+
+			function b1() {
+				// ctx.strokeStyle = "red";
+				color = 'red'
+			}
+			function b2() {
+				// ctx.beginPath()
+				// // ctx.moveTo(ev.clientX, ev.clientY)
+				// ctx.lineTo(ev.clientX, ev.clientY)
+				// ctx.lineWidth = 10;//线条的宽度
+				// ctx.lineCap="square";//线条帽形状
+				// ctx.strokeStyle = "blue";
+				// ctx.stroke()
+				color = 'blue'
+				
+			}
+			function b3() {size = 20}
+			function b4() {size = 30}
+			function b5() {color = "black";size = 10}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <script type="text/javascript">
+			window.onload=function(){
+				const oBtn=document.querySelector("button")
+				oBtn.onclick=function(){
+					alert(123)
+				}
+			}
+		</script> -->
+		<style type="text/css">
+			img {
+				width: 400px;
+				height: 300px;
+				display: block;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function() {
+				let aImg = document.querySelectorAll('.lazy')
+				let timer = null
+				document.addEventListener('scroll',function() {
+					if(timer){
+						clearTimeout(timer)
+					}
+					timer =setTimeout(function(){
+						aImg.forEach(function(item){
+							if (item.offsetTop < (window.innerHeight + window.pageYOffset)) {
+								item.src = item.dataset.src
+							}
+					})
+					
+					},20)
+					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<!-- <button>按钮</button> -->
+		<img src="https://source.unsplash.com/random/1" alt="">
+		<img src="https://source.unsplash.com/random/2" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/3" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/4" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/5" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/6" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/7" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/8" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/9" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/10" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/11" alt="">
+		<img class="lazy" data-src="https://source.unsplash.com/random/12" alt="">
+	</body>
+</html>

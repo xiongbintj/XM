@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>extenda</title>
+	</head>
+
+	<body>
+		<h1>extends</h1>
+		<p>用途：extends关键字用于创建一个子类</p>
+		<p>语法结构：class ChildClass extends ParentClass{……}</p>
+		<p>注意：extends关键字必须在父类上使用</p>
+		<p></p>
+		
+
+		<script type="text/javascript">
+			class Person {//类名推荐首字母大写
+				constructor(name, age) {//用于设置类(构造函数)的属性
+					this.name = name //this在类声明中仅仅是一个占位符，没有任何指向，只有当使用new person()实例化一个对象时，this才会指向这个实例对象
+					this.age = age
+
+				}
+				introduce() {//为当前Person类添加一个introduce方法
+					console.log(`我是${this.name},我的年龄是${this.age}`)
+				}
+			}
+			const Person1 = new Person('张三',"19")
+			const Person2 = new Person('小红',"17")
+            //基于父类创建一个子类：Coder
+			class Coder extends Person {
+				constructor(name, age, codeYear) {//用于设置类(构造函数)的属性
+					super(name, age)//用于继承父类的所有方法
+					this.codeYear = codeYear
+				}
+				code(){
+					console.log(`${this.name}正在敲代码……`)
+				}
+			}
+			const coder1 = new Coder('小红',"39 ","10")
+		    coder1.code()
+			coder1.introduce()//子类不能调用父类方法
+			// Person1.code()//父类不能调用子类方法
+			
+			let coders =[
+				new Coder('小张',19,5),
+				new Coder('老王',29,20)
+			]
+			const develop = function (coder){
+				coders.forEach(coder=>coder.code())
+			}
+			develop()
+		</script>
+	</body>
+</html>
